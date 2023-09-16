@@ -6,6 +6,11 @@
 * License: https://bootstrapmade.com/license/
 */
 
+@font-face {
+  font-family: heroNew;
+  src: url('/assets/font/Hero\ New\ Regular.woff');
+}
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
