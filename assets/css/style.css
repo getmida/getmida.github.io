@@ -7,9 +7,20 @@
 */
 
 @font-face {
-  font-family: heroNew;
+  font-family: "Hero New";
   src: url('/assets/font/Hero\ New\ Regular.woff');
 }
+
+/* @font-face {
+  font-family: "Fira Sans";
+  src: url('fonts/fira/eot/FiraSans-Regular.eot');
+  src: url('fonts/fira/eot/FiraSans-Regular.eot') format('embedded-opentype'),
+       url('fonts/fira/woff2/FiraSans-Regular.woff2') format('woff2'),
+       url('fonts/fira/woff/FiraSans-Regular.woff') format('woff'),
+       url('fonts/fira/woff2/FiraSans-Regular.ttf') format('truetype');
+} */
+
+
 
 /*--------------------------------------------------------------
 # General
@@ -19,7 +30,7 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Hero New", sans-serif;
   color: #444444;
 }
 
@@ -39,7 +50,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Nunito", sans-serif;
+  font-family: "Hero New", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -193,8 +204,8 @@ section {
 }
 
 .header .logo img {
-  max-height: 40px;
-  margin-right: 6px;
+  max-height: 100px;
+  margin-right: 0px;
 }
 
 .header .logo span {
@@ -202,7 +213,7 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   color: #012970;
-  font-family: "Nunito", sans-serif;
+  font-family: "Hero New", sans-serif;
   margin-top: 3px;
 }
 
@@ -234,7 +245,7 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Hero New", sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #013289;
@@ -507,7 +518,7 @@ section {
 }
 
 .hero .btn-get-started span {
-  font-family: "Nunito", sans-serif;
+  font-family: "Hero New", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -607,7 +618,7 @@ section {
 }
 
 .about .btn-read-more span {
-  font-family: "Nunito", sans-serif;
+  font-family: "Hero New", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -688,7 +699,7 @@ section {
 .counts .count-box p {
   padding: 0;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Hero New", sans-serif;
   font-size: 14px;
 }
 
@@ -1001,7 +1012,7 @@ section {
   font-size: 36px;
   color: #444444;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: "Hero New", sans-serif;
 }
 
 .pricing .price sup {
@@ -1047,7 +1058,7 @@ section {
   transition: none;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Nunito", sans-serif;
+  font-family: "Hero New", sans-serif;
   font-weight: 600;
   transition: 0.3s;
   border: 1px solid #4154f1;
@@ -2340,7 +2351,7 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   color: #012970;
-  font-family: "Nunito", sans-serif;
+  font-family: "Hero New", sans-serif;
   margin-top: 3px;
 }
 
@@ -2348,7 +2359,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Hero New", sans-serif;
 }
 
 .footer .footer-top .social-links a {
