@@ -129,7 +129,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3</th>
-                                                    <td>nok</td>
+                                                    <td>nok (optional)</td>
                                                     <td>lenders client's next of kin details</td>
                                                     <td>object</td>
                                                 </tr>
@@ -177,11 +177,137 @@
                                         </table>
                                     </div><!--//table-responsive-->
 
+                                    <h6>Address Object</h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Field</th>
+                                                    <th>Description</th>
+                                                    <th>Type</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>address</td>
+                                                    <td>lender's client's full address</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>state</td>
+                                                    <td>lender's client's state of residence</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>lga</td>
+                                                    <td>lender's client's lga of residence</td>
+                                                    <td>string</td>
+                                                </tr>                                             
+                                            </tbody>
+                                        </table>
+                                    </div><!--//table-responsive-->
+
+                                    <h6>NOK Object</h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Field</th>
+                                                    <th>Description</th>
+                                                    <th>Type</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>nokFullname</td>
+                                                    <td>client's next of kin's fullname</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>nokBVN (optional)</td>
+                                                    <td>client's next of kin's BVN</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>nokPhoneNumber</td>
+                                                    <td>client's next of kin's Phone Number</td>
+                                                    <td>string</td>
+                                                </tr> 
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>nokAddress</td>
+                                                    <td>client's next of kin's full address</td>
+                                                    <td>string</td>
+                                                </tr> 
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>nokState</td>
+                                                    <td>client's next of kin's state of residence</td>
+                                                    <td>string</td>
+                                                </tr>    
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>nokLga</td>
+                                                    <td>client's next of kin's lga of residence</td>
+                                                    <td>string</td>
+                                                </tr>                                             
+                                            </tbody>
+                                        </table>
+                                    </div><!--//table-responsive-->
+
 
                                     <div class="code-block">
-                                        <h6>Default code example:</h6>
-                                        <p><code>bower install &lt;package&gt;</code></p>
-                                        <p><code>npm install &lt;package&gt;</code></p>
+                                        <h6>Sample Request: </h6>
+                                        <p><code class="">{<br/>
+                                            &nbsp;&quot;loanAccountNumber&quot;:&quot;423456789&quot;,<br/>
+                                            &nbsp;&quot;loanAmount&quot;: &quot;50000&quot;,<br/>
+                                            &nbsp;&quot;email&quot;: &quot;daveomo@gmail.com&quot;,<br/>
+                                            &nbsp;&quot;customer&quot;:{<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;fullname&quot;: &quot;Dave Omo&quot;,<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;BVN&quot;: &quot;2323232322&quot;,<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;phoneNumber&quot;: &quot;08055309113,08055623778&quot;<br/>
+                                                &nbsp;},<br/>
+                                            &nbsp;&quot;address&quot;: {<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;address&quot; : &quot;2a stong iron steet surulere&quot;,<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;state&quot; : &quot;lagos&quot;,<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;lga&quot; : &quot;lagos mainland&quot;<br/>
+                                            &nbsp;},<br/>
+                                            &nbsp;&quot;nok&quot;: {<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;nokFullname&quot; : &quot;Jane Omo&quot;,<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;nokBVN&quot; : &quot;2390857192&quot;,<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;nokPhoneNumber&quot; : &quot;0987768899&quot;,<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;nokAddress&quot; : &quot;15 maryland avenue, off thomson street.&quot;,<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;nokState&quot; : &quot;lagos&quot;,<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;nokLga&quot; : &quot;ikeja&quot;<br/>
+                                            &nbsp;},<br/>
+                                            &nbsp;&quot;schedule&quot;:[<br/>
+                                            &nbsp;&nbsp;&nbsp;{<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;dueDate&quot;: &quot;2023-08-01&quot;,<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;amount&quot;: &quot;15000&quot;,<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;status&quot;: &quot;pending&quot;<br/>
+                                                &nbsp;&nbsp;&nbsp;},{<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;dueDate&quot;: &quot;2023-09-01&quot;,<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;amount&quot;: &quot;15000&quot;,<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;status&quot;: &quot;pending&quot;<br/>
+                                                &nbsp;&nbsp;&nbsp;},{<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;dueDate&quot;: &quot;2023-10-01&quot;,<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;amount&quot;: &quot;15000&quot;,<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;status&quot;: &quot;pending&quot;<br/>
+                                                &nbsp;&nbsp;&nbsp;},{<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;dueDate&quot;: &quot;2023-11-01&quot;,<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;amount&quot;: &quot;15000&quot;,<br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;status&quot;: &quot;pending&quot;<br/>
+                                                &nbsp;&nbsp;&nbsp;}<br/>
+                                            &nbsp;&nbsp;]<br/>
+                                        }</code></p>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
                                 <div id="step2"  class="section-block">
