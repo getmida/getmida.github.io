@@ -106,7 +106,7 @@
                                                 <tr>
                                                     <th scope="row">2</th>
                                                     <td>loanAmount</td>
-                                                    <td>Total value of the loan</td>
+                                                    <td>Total value of the loan in minor</td>
                                                     <td>string</td>
                                                 </tr>
                                                 <tr>
@@ -263,6 +263,9 @@
                                         </table>
                                     </div><!--//table-responsive-->
 
+                                    <h5>Security</h5>
+                                    <p>The API security is a bearer token using your organisation API Key gotten <a href="https://app.getmida.com/settings">here</a>
+                                    </p>
 
                                     <div class="code-block">
                                         <h6>Sample Request: </h6>
@@ -312,7 +315,7 @@
                                 </div><!--//section-block-->
                                 <div id="step2"  class="section-block">
                                     <h3 class="block-title">Repayment instrument call-back</h3>
-                                    <p>To get notified on successful payment instrument collection, expose endpoints to collect the following variables via call back:
+                                    <p>To get notified on successful payment instrument collection, expose an endpoints collect the following variables via call back:
                                     </p>
                                     <h6>Feild description</h6>
                                     <div class="table-responsive">
@@ -362,7 +365,7 @@
 
 
                                     <div class="code-block">
-                                        <h6>Collection status call-back: </h6>
+                                        <h6>Repayment instrument call-back : </h6>
                                         <p><code class="">{<br/>
                                             &nbsp;&quot;status&quot;:&quot;00&quot;,<br/>
                                             &nbsp;&quot;message&quot;: &quot;card instrument successful&quot;,<br/>
@@ -380,14 +383,64 @@
 
                                 </div><!--//section-block-->
                                 <div id="step3"  class="section-block">
-                                    <h3 class="block-title">Step Three</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
+                                    <h3 class="block-title">Collection status call-back</h3>
+                                    <p>To get notified on successful collections, expose an endpoint to collect the following variables via call back:
                                     </p>
+                                    <h6>Feild description</h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Field</th>
+                                                    <th>Description</th>
+                                                    <th>Type</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>status</td>
+                                                    <td>status where 00 = success and other numbers represent a type of failure</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>message</td>
+                                                    <td>message describing status</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>loanAccountNumber</td>
+                                                    <td>Unique loan account identifer from lenders system</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>amountCollected</td>
+                                                    <td>Value successfully collected in minor</td>
+                                                    <td>string</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div><!--//table-responsive-->
+
+                                    <div class="code-block">
+                                        <h6>Collections status call-back : </h6>
+                                        <p><code class="">{<br/>
+                                            &nbsp;&quot;status&quot;:&quot;00&quot;,<br/>
+                                            &nbsp;&quot;message&quot;: &quot;card instrument successful&quot;,<br/>
+                                            &nbsp;&quot;loanAccountNumber&quot;: &quot;123456789&quot;,<br/>
+                                            &nbsp;&quot;collectedAmount&quot;: &quot;5000000&quot;<br/>
+                                        }</code></p>
+                                    </div><!--//code-block-->
+
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
                             
                             <section id="code-section" class="doc-section">
-                                <h2 class="section-title">Code</h2>
+                                <h2 class="section-title">Sample Codes</h2>
 
                                 <div id="javascript" class="section-block">
                                     <div class="code-block">
