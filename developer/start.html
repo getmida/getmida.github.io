@@ -392,30 +392,135 @@
                                 <div id="javascript" class="section-block">
                                     <div class="code-block">
                                         <h6>JavaScript Code Example</h6>
-                                        <pre><code class="language-javascript">&lt;script&gt; 
-    function myFunction(a, b) { 
-        return a * b; 
-    } 
-    
-    document.getElementById(&quot;demo&quot;).innerHTML = myFunction(4, 3); 
-&lt;/script&gt;</code></pre>
+                                        <pre><code class="language-javascript">
+&lt;script&gt; 
+var myHeaders &#x3D; new Headers();
+myHeaders.append(&quot;Content-Type&quot;, &quot;application&#x2F;json&quot;);
+myHeaders.append(&quot;Authorization&quot;, &quot;Bearer test&quot;);
+
+var raw &#x3D; JSON.stringify({
+  &quot;loanAccountNumber&quot;: &quot;423456789&quot;,
+  &quot;loanAmount&quot;: &quot;50000&quot;,
+  &quot;email&quot;: &quot;daveomo@gmail.com&quot;,
+  &quot;customer&quot;: {
+    &quot;fullname&quot;: &quot;Dave Omo&quot;,
+    &quot;BVN&quot;: &quot;2323232322&quot;,
+    &quot;phoneNumber&quot;: &quot;08055309113,08055623778&quot;
+  },
+  &quot;address&quot;: {
+    &quot;address&quot;: &quot;2a stong iron steet surulere&quot;,
+    &quot;state&quot;: &quot;lagos&quot;,
+    &quot;lga&quot;: &quot;lagos mainland&quot;
+  },
+  &quot;nok&quot;: {
+    &quot;nokFullname&quot;: &quot;Jane Omo&quot;,
+    &quot;nokBVN&quot;: &quot;2390857192&quot;,
+    &quot;nokPhoneNumber&quot;: &quot;0987768899&quot;,
+    &quot;nokAddress&quot;: &quot;15 maryland avenue, off thomson street.&quot;,
+    &quot;nokState&quot;: &quot;lagos&quot;,
+    &quot;nokLga&quot;: &quot;ikeja&quot;
+  },
+  &quot;schedule&quot;: [
+    {
+      &quot;dueDate&quot;: &quot;2023-08-01&quot;,
+      &quot;amount&quot;: &quot;15000&quot;,
+      &quot;status&quot;: &quot;pending&quot;
+    },
+    {
+      &quot;dueDate&quot;: &quot;2023-09-01&quot;,
+      &quot;amount&quot;: &quot;15000&quot;,
+      &quot;status&quot;: &quot;pending&quot;
+    },
+    {
+      &quot;dueDate&quot;: &quot;2023-10-01&quot;,
+      &quot;amount&quot;: &quot;15000&quot;,
+      &quot;status&quot;: &quot;pending&quot;
+    },
+    {
+      &quot;dueDate&quot;: &quot;2023-11-01&quot;,
+      &quot;amount&quot;: &quot;15000&quot;,
+      &quot;status&quot;: &quot;pending&quot;
+    }
+  ]
+});
+
+var requestOptions &#x3D; {
+  method: &#39;POST&#39;,
+  headers: myHeaders,
+  body: raw,
+  redirect: &#39;follow&#39;
+};
+
+fetch(&quot;https:&#x2F;&#x2F;fetch-api-staging.up.railway.app&#x2F;external&#x2F;loan&quot;, requestOptions)
+  .then(response &#x3D;&gt; response.text())
+  .then(result &#x3D;&gt; console.log(result))
+  .catch(error &#x3D;&gt; console.log(&#39;error&#39;, error));
+&lt;/script&gt;
+</code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
                                 <div id="python" class="section-block">
                                     <div class="code-block">
                                         <h6>Python Code Example</h6>
-                                        <pre><code class="language-python">&gt;&gt;&gt; x = int(input(&quot;
-Please enter an integer: &quot;)) Please enter an integer: 42 
-&gt;&gt;&gt; if x &lt; 0: 
-... x = 0 
-... print('Negative changed to zero') 
-... elif x == 0: 
-... print('Zero') 
-... elif x == 1: 
-... print('Single') 
-... else: 
-... print('More') 
-... More</code></pre>
+                                        <pre><code class="language-python">
+import http.client
+import json
+
+conn &#x3D; http.client.HTTPSConnection(&quot;fetch-api-staging.up.railway.app&quot;)
+payload &#x3D; json.dumps({
+  &quot;loanAccountNumber&quot;: &quot;423456789&quot;,
+  &quot;loanAmount&quot;: &quot;50000&quot;,
+  &quot;email&quot;: &quot;daveomo@gmail.com&quot;,
+  &quot;customer&quot;: {
+    &quot;fullname&quot;: &quot;Dave Omo&quot;,
+    &quot;BVN&quot;: &quot;2323232322&quot;,
+    &quot;phoneNumber&quot;: &quot;08055309113,08055623778&quot;
+  },
+  &quot;address&quot;: {
+    &quot;address&quot;: &quot;2a stong iron steet surulere&quot;,
+    &quot;state&quot;: &quot;lagos&quot;,
+    &quot;lga&quot;: &quot;lagos mainland&quot;
+  },
+  &quot;nok&quot;: {
+    &quot;nokFullname&quot;: &quot;Jane Omo&quot;,
+    &quot;nokBVN&quot;: &quot;2390857192&quot;,
+    &quot;nokPhoneNumber&quot;: &quot;0987768899&quot;,
+    &quot;nokAddress&quot;: &quot;15 maryland avenue, off thomson street.&quot;,
+    &quot;nokState&quot;: &quot;lagos&quot;,
+    &quot;nokLga&quot;: &quot;ikeja&quot;
+  },
+  &quot;schedule&quot;: [
+    {
+      &quot;dueDate&quot;: &quot;2023-08-01&quot;,
+      &quot;amount&quot;: &quot;15000&quot;,
+      &quot;status&quot;: &quot;pending&quot;
+    },
+    {
+      &quot;dueDate&quot;: &quot;2023-09-01&quot;,
+      &quot;amount&quot;: &quot;15000&quot;,
+      &quot;status&quot;: &quot;pending&quot;
+    },
+    {
+      &quot;dueDate&quot;: &quot;2023-10-01&quot;,
+      &quot;amount&quot;: &quot;15000&quot;,
+      &quot;status&quot;: &quot;pending&quot;
+    },
+    {
+      &quot;dueDate&quot;: &quot;2023-11-01&quot;,
+      &quot;amount&quot;: &quot;15000&quot;,
+      &quot;status&quot;: &quot;pending&quot;
+    }
+  ]
+})
+headers &#x3D; {
+  &#39;Content-Type&#39;: &#39;application&#x2F;json&#39;,
+  &#39;Authorization&#39;: &#39;Bearer test&#39;
+}
+conn.request(&quot;POST&quot;, &quot;&#x2F;external&#x2F;loan&quot;, payload, headers)
+res &#x3D; conn.getresponse()
+data &#x3D; res.read()
+print(data.decode(&quot;utf-8&quot;))
+</code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
                                 <div id="php" class="section-block">
