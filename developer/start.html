@@ -311,43 +311,73 @@
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
                                 <div id="step2"  class="section-block">
-                                    <h3 class="block-title">Repayment instrument call back</h3>
-                                    <p>To get notified on successfly payment instrument collection, expose endpoints to collect the following variables via call back:
+                                    <h3 class="block-title">Repayment instrument call-back</h3>
+                                    <p>To get notified on successful payment instrument collection, expose endpoints to collect the following variables via call back:
                                     </p>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <h6>Un-ordered list example</h6>
-                                            <ul class="list">
-        										<li>Lorem ipsum dolor sit amet.</li>
-        										<li>Aliquam tincidunt mauris.</li>
-        										<li>Ultricies eget vel aliquam libero.
-        											<ul>
-        												<li>Turpis pulvinar</li>
-        												<li>Feugiat scelerisque</li>
-        												<li>Ut tincidunt</li>
-        											</ul>
-        										</li>
-        										<li>Pellentesque habitant morbi.</li>
-        										<li>Praesent dapibus, neque id.</li>
-        									</ul>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <h6>Ordered list example</h6>
-                                            <ol class="list">
-        										<li>Lorem ipsum dolor sit amet.</li>
-        										<li>Aliquam tincidunt mauris.</li>
-        										<li>Ultricies eget vel aliquam libero.
-        											<ul>
-        												<li>Turpis pulvinar</li>
-        												<li>Feugiat scelerisque</li>
-        												<li>Ut tincidunt</li>
-        											</ul>
-        										</li>
-        										<li>Pellentesque habitant morbi.</li>
-        										<li>Praesent dapibus, neque id.</li>
-        									</ol>
-                                        </div>
-                                    </div><!--//row-->
+                                    <h6>Feild description</h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Field</th>
+                                                    <th>Description</th>
+                                                    <th>Type</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>status</td>
+                                                    <td>status where 00 = success and other numbers represent a type of failure</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>message</td>
+                                                    <td>message describing status</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>email</td>
+                                                    <td>lenders client's email</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>loanAccountNumber</td>
+                                                    <td>Unique loan account identifer from lenders system</td>
+                                                    <td>string</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5</th>
+                                                    <td>instrumentStatus</td>
+                                                    <td>status of each repayment instrument type</td>
+                                                    <td>array</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div><!--//table-responsive-->
+
+
+                                    <div class="code-block">
+                                        <h6>Collection status call-back: </h6>
+                                        <p><code class="">{<br/>
+                                            &nbsp;&quot;status&quot;:&quot;00&quot;,<br/>
+                                            &nbsp;&quot;message&quot;: &quot;card instrument successful&quot;,<br/>
+                                            &nbsp;&quot;email&quot;: &quot;daveomo@gmail.com&quot;,<br/>
+                                            &nbsp;&quot;loanAccountNumber&quot;: &quot;123456789&quot;,<br/>
+                                            &nbsp;&quot;instrumentStatus&quot;:{<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;card&quot;: &quot;successful&quot;,<br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&quot;dd&quot;: &quot;successful&quot;<br/>
+                                                &nbsp;}<br/>
+                                            
+                                        }</code></p>
+                                    </div><!--//code-block-->
+
+
+
                                 </div><!--//section-block-->
                                 <div id="step3"  class="section-block">
                                     <h3 class="block-title">Step Three</h3>
@@ -392,15 +422,69 @@ Please enter an integer: &quot;)) Please enter an integer: 42
                                     <div class="code-block">
                                         <h6>PHP Code Example</h6>
                                         <pre><code class="language-php">&lt;?php 
-$txt = &quot;Hello world!&quot;; 
-$x = 5; 
-$y = 10.5; 
+$curl &#x3D; curl_init();
 
-echo $txt; 
-echo &quot;&lt;br&gt;&quot;; 
-echo $x; 
-echo &quot;&lt;br&gt;&quot;; 
-echo $y; 
+curl_setopt_array($curl, array(
+  CURLOPT_URL &#x3D;&gt; &#39;https:&#x2F;&#x2F;fetch-api-staging.up.railway.app&#x2F;external&#x2F;loan&#39;,
+  CURLOPT_RETURNTRANSFER &#x3D;&gt; true,
+  CURLOPT_ENCODING &#x3D;&gt; &#39;&#39;,
+  CURLOPT_MAXREDIRS &#x3D;&gt; 10,
+  CURLOPT_TIMEOUT &#x3D;&gt; 0,
+  CURLOPT_FOLLOWLOCATION &#x3D;&gt; true,
+  CURLOPT_HTTP_VERSION &#x3D;&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST &#x3D;&gt; &#39;POST&#39;,
+  CURLOPT_POSTFIELDS &#x3D;&gt;&#39;{
+    &quot;loanAccountNumber&quot;:&quot;423456789&quot;,
+    &quot;loanAmount&quot;: &quot;50000&quot;,
+    &quot;email&quot;: &quot;daveomo@gmail.com&quot;,
+    &quot;customer&quot;:{
+        &quot;fullname&quot;: &quot;Dave Omo&quot;,
+        &quot;BVN&quot;: &quot;2323232322&quot;,
+        &quot;phoneNumber&quot;: &quot;08055309113,08055623778&quot;
+    }, 
+    &quot;address&quot;: {
+        &quot;address&quot; : &quot;2a stong iron steet surulere&quot;,
+        &quot;state&quot; : &quot;lagos&quot;,
+        &quot;lga&quot; : &quot;lagos mainland&quot;
+    },
+    &quot;nok&quot;: {
+        &quot;nokFullname&quot; : &quot;Jane Omo&quot;,
+        &quot;nokBVN&quot; : &quot;2390857192&quot;,
+        &quot;nokPhoneNumber&quot; : &quot;0987768899&quot;,
+        &quot;nokAddress&quot; : &quot;15 maryland avenue, off thomson street.&quot;,
+        &quot;nokState&quot; : &quot;lagos&quot;,
+        &quot;nokLga&quot; : &quot;ikeja&quot;
+    },
+    &quot;schedule&quot;:[
+        {
+            &quot;dueDate&quot;: &quot;2023-08-01&quot;,
+            &quot;amount&quot;: &quot;15000&quot;,
+            &quot;status&quot;: &quot;pending&quot;
+        },{
+            &quot;dueDate&quot;: &quot;2023-09-01&quot;,
+            &quot;amount&quot;: &quot;15000&quot;,
+            &quot;status&quot;: &quot;pending&quot;
+        },{
+            &quot;dueDate&quot;: &quot;2023-10-01&quot;,
+            &quot;amount&quot;: &quot;15000&quot;,
+            &quot;status&quot;: &quot;pending&quot;
+        },{
+            &quot;dueDate&quot;: &quot;2023-11-01&quot;,
+            &quot;amount&quot;: &quot;15000&quot;,
+            &quot;status&quot;: &quot;pending&quot;
+        }
+    ]
+}&#39;,
+  CURLOPT_HTTPHEADER &#x3D;&gt; array(
+    &#39;Content-Type: application&#x2F;json&#39;,
+    &#39;Authorization: Bearer test&#39;
+  ),
+));
+
+$response &#x3D; curl_exec($curl);
+
+curl_close($curl);
+echo $response;
 ?&gt;</code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
@@ -472,17 +556,14 @@ echo $y;
                                             <a class="nav-link scrollto" href="#step1">Create loan</a>
 	                                    </li>
 	                                    <li class="nav-item">
-                                            <a class="nav-link scrollto" href="#step2">Repayment instrument setup call back</a>
+                                            <a class="nav-link scrollto" href="#step2">Repayment instrument setup call-back</a>
 	                                    </li>
 	                                    <li class="nav-item">
-                                            <a class="nav-link scrollto" href="#step3">Collection status call back</a>
-	                                    </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link scrollto" href="#step4">Collection status call back</a>
+                                            <a class="nav-link scrollto" href="#step3">Collection status call-back</a>
 	                                    </li>
                                     </nav><!--//nav-->
                                     <li class="nav-item">
-	                                    <a class="nav-link scrollto" href="#code-section">Sample code</a>
+	                                    <a class="nav-link scrollto" href="#code-section">Sample codes</a>
                                     </li>
                                     
                                     <nav class="nav doc-sub-menu nav flex-column">
