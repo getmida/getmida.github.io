@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+  style="font-size:0.90em"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale= 0.8, user-scalable=no, minimum-scale=0.8, maximum-scale=0.8"/>
+
+    <title>Dashboard - Mida</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="../assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+          <!-- Logo -->
+          <div class="text-center">
+            <img src="../assets/img/mida.png" alt class="w-px-150 h-auto " />
+          </div>
+          <!-- /Logo -->
+
+          <div class="menu-inner-shadow"></div>
+          <ul class="menu-inner py-1">
+            <!-- Dashboard -->
+            <li class="menu-item">
+              <a href="index.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Dashboard</div>
+              </a>
+            </li>
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Pages</span>
+            </li>
+
+            <!-- Loans -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-credit-card me-2"></i>
+                <div data-i18n="Loans">Loans</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item ">
+                  <a href="add_loans.html" class="menu-link">
+                    <div data-i18n="add new loan">Add new loan</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="bulk_loans.html" class="menu-link">
+                    <div data-i18n="Bulk loans">Bulk upload</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="loans.html" class="menu-link">
+                    <div data-i18n="loans">Loans</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <!-- Transactions -->
+            <li class="menu-item active open">
+              <a href="transactions.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Transactions">Transactions</div>
+              </a>
+            </li>
+
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Administration</span>
+            </li>
+
+            <!-- Authentication -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+                <div data-i18n="Authentications">Configuration</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="organisations.html" class="menu-link">
+                    <div data-i18n="Basic">Organisations</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="users.html" class="menu-link">
+                    <div data-i18n="Basic">Users</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="roles.html" class="menu-link">
+                    <div data-i18n="Basic">Roles</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!--accounts-->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-box"></i>
+                <div data-i18n="Authentications">Accounting</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="billing.html" class="menu-link">
+                    <div data-i18n="Basic">Billing</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Misc -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+            <li class="menu-item">
+              <a
+                href=""
+                target="_blank"
+                class="menu-link"
+              >
+                <i class="menu-icon tf-icons bx bx-support"></i>
+                <div data-i18n="Support">Support</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href=""
+                target="_blank"
+                class="menu-link"
+              >
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Documentation">Documentation</div>
+              </a>
+            </li>
+
+            <!-- Profile -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Sofri MFB</span></li>
+            <li class="menu-item">
+              <a class="menu-link" href="profile.html">
+                <i class="bx bx-user me-2"></i>
+                <div data-i18n="Documentation">My Profile</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a  class="menu-link" href="login.html">
+                <i class="bx bx-power-off me-2"></i>
+                <div data-i18n="Documentation">Log Out</div>
+              </a>
+            </li>
+
+          </ul>
+        </aside>
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Transactions /</span> View Transaction</h4>
+
+              <!-- Basic Layout & Basic with Icons -->
+              <div class="row">
+                <!-- Basic Layout -->
+                <div class="col-5">
+                  <div class="card mb-4">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="mb-0">Transaction details</h5>
+                    </div>
+                    <div class="card-body">
+                      <form>
+                        <div class="row mb-1">
+                          <label class="col-sm-4 col-form-label" for="basic-default-name">Transaction Ref. <span class="text-danger fw-bolder">*</span></label>
+                          <div class="col-sm-8">
+                            a77b0b1105534329a8a1a63e2db7b22b
+                          </div>
+                        </div>
+                        <div class="row mb-1">
+                          <label class="col-sm-4 col-form-label" for="basic-default-company">Loan Account number <span class="text-danger fw-bolder">*</span></label>
+                          <div class="col-sm-8">
+                            2342322232
+                          </div>
+                        </div>
+                        <div class="row mb-1">
+                          <label class="col-sm-4 col-form-label" for="basic-default-company">Loan schedule ref<span class="text-danger fw-bolder">*</span></label>
+                          <div class="col-sm-8">
+                            6f0fc36b53b548a7b03e47bc98d45ca1
+                          </div>
+                        </div>
+                        <div class="row mb-1">
+                          <label class="col-sm-4 col-form-label" for="basic-default-company">Status<span class="text-danger fw-bolder">*</span></label>
+                          <div class="col-sm-8">
+                            failed
+                          </div>
+                        </div>
+
+                        <div class="row mb-1">
+                          <label class="col-sm-4 col-form-label" for="basic-default-company">Message <span class="text-danger fw-bolder">*</span></label>
+                          <div class="col-sm-8">
+                            Insufficient funds
+                          </div>
+                        </div>
+                        <div class="row mb-1">
+                          <label class="col-sm-4 col-form-label" for="basic-default-company">Code <span class="text-danger fw-bolder">*</span></label>
+                          <div class="col-sm-8">
+                            91
+                          </div>
+                        </div>
+                        <div class="row mb-1">
+                          <label class="col-sm-4 col-form-label" for="basic-default-company">Charged amount <span class="text-danger fw-bolder">*</span></label>
+                          <div class="col-sm-8">
+                            ₦ 81,777.91
+                          </div>
+                        </div>
+                        <div class="row mb-1">
+                          <label class="col-sm-4 col-form-label" for="basic-default-company">Collected amount <span class="text-danger fw-bolder">*</span></label>
+                          <div class="col-sm-8">
+                            ₦ 81,777.91
+                          </div>
+                        </div>
+                        <div class="row mb-1">
+                          <label class="col-sm-4 col-form-label" for="basic-default-company">Timestamp <span class="text-danger fw-bolder">*</span></label>
+                          <div class="col-sm-8">
+                            20 Oct 2023 15:46:08
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+
+
+                  </div>
+                </div>
+                <!-- Basic with Icons -->
+                <div class="col-7">
+
+                  <div class="card">
+                    <ul class="nav nav-tabs ">                
+                      <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#schedule">Transaction response</button>
+                      </li>
+     
+                    </ul>
+      
+                    
+                    
+                    <div class="tab-content pt-2">
+                      <code>
+                        {"status":true,"message":"Charge attempted","data":{"amount":8177791,"currency":"NGN","transaction_date":"2023-10-20T15:46:06.000Z","status":"failed","reference":"pugxfe4uv794wyf","domain":"live","metadata":"","gateway_response":"Insufficient funds","message":null,"channel":"card","ip_address":null,"log":null,"fees":null,"authorization":{"authorization_code":"AUTH_f39oab6hxv","bin":"539983","last4":"3383","exp_month":"07","exp_year":"2027","channel":"card","card_type":"mastercard debit","bank":"Guaranty Trust Bank","country_code":"NG","brand":"mastercard","reusable":true,"signature":"SIG_UpbDD8VC7RyxRKbLeOdo","account_name":"OLANIYI BENJAMIN BOLAJI"},"customer":{"id":143211784,"first_name":null,"last_name":null,"email":"benjaminwonderboy@gmail.com","customer_code":"CUS_3ea4va4y3x3y6si","phone":null,"metadata":null,"risk_action":"default","international_format_phone":null},"plan":null,"id":3208301410}}
+                      </code>
+
+                    </div><!-- End Bordered Tabs -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- / Content -->
+
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                 Mida Technologes
+                 
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+
+  </body>
+</html>

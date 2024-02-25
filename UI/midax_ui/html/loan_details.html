@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+  data-template="vertical-menu-template-free" style="font-size:0.90em">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=0.4" name="viewport">
+  <title>Dashboard - Mida</title>
+
+  <meta name="description" content="" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons. Uncomment required icon fonts -->
+  <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="../assets/css/demo.css" />
+
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+  <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+
+  <!-- Page CSS -->
+
+  <!-- Helpers -->
+  <script src="../assets/vendor/js/helpers.js"></script>
+
+  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+  <script src="../assets/js/config.js"></script>
+
+
+  <style>
+    .timeline-with-icons {
+      border-left: 1px solid hsl(0, 0%, 90%);
+      position: relative;
+      list-style: none;
+    }
+
+    .timeline-with-icons .timeline-item {
+      position: relative;
+    }
+
+    .timeline-with-icons .timeline-item:after {
+      position: absolute;
+      display: block;
+      top: 0;
+    }
+
+    .timeline-with-icons .timeline-icon {
+      position: absolute;
+      left: -48px;
+      background-color: hsl(217, 88.2%, 90%);
+      color: hsl(217, 88.8%, 35.1%);
+      border-radius: 50%;
+      height: 31px;
+      width: 31px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dropup .hide-toggle.dropdown-toggle::after {
+      display: none !important;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+      <!-- Menu -->
+
+      <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+        <!-- Logo -->
+        <div class="text-center">
+          <img src="../assets/img/mida.png" alt class="w-px-150 h-auto " />
+        </div>
+        <!-- /Logo -->
+
+        <div class="menu-inner-shadow"></div>
+        <ul class="menu-inner py-1">
+          <!-- Dashboard -->
+          <li class="menu-item ">
+            <a href="agentDashboard.html" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-home-circle"></i>
+              <div data-i18n="Analytics">Dashboard</div>
+            </a>
+          </li>
+
+          <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Pages</span>
+          </li>
+
+          <!-- Loans -->
+          <li class="menu-item active">
+            <a href="assigned_loans.html" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-briefcase"></i>
+              <div data-i18n="Loans">Assgined Loans</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="p2p_management.html" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-credit-card me-2"></i>
+              <div data-i18n="Loans">PTP management</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="callback_management.html" class="menu-link">
+              <i class="menu-icon tf-icons bx bx bx-phone-call"></i>
+              <div data-i18n="Loans">Call back management</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="payment_management.html" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-wallet-alt"></i>
+              <div data-i18n="Loans">Proof of payments</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="reports.html" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-bar-chart-square"></i>
+              <div data-i18n="Loans">Reports</div>
+            </a>
+          </li>
+
+
+          <!-- Profile -->
+          <li class="menu-header small text-uppercase"><span class="menu-header-text">Access</span></li>
+          <li class="menu-item">
+            <a class="menu-link" href="profile.html">
+              <i class="bx bx-user me-2"></i>
+              <div data-i18n="Documentation">My Profile</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="login.html">
+              <i class="bx bx-power-off me-2"></i>
+              <div data-i18n="Documentation">Log Out</div>
+            </a>
+          </li>
+
+
+
+        </ul>
+      </aside>
+      <!-- / Menu -->
+      <!-- Layout container -->
+      <div class="layout-page">
+
+        <!-- Content wrapper -->
+        <div class="content-wrapper">
+          <!-- Content -->
+          <div class="container-xxl flex-grow-1 container-p-y">
+
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Assigned loans /</span> 21323432134321223
+            </h4>
+
+
+            <div class="row">
+
+              <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2 mb-4">
+                <div class="card h-px-700">
+
+                  <!-- <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                                      <div class="card-title mb-0">
+                                        <h5 class="m-0 me-2">Loan Statistics</h5>
+                                        <small class="text-muted">10,659,000 outstanfing loan</small>
+                                      </div>
+                                    </div> -->
+<!-- 
+                  <div class="card-header d-flex align-items-center justify-content-between pb-0">
+
+                    <img src="../assets/img/th.png" style='height: 100%; width: 100%; object-fit: contain' />
+                  </div> -->
+<!-- 
+                  <hr class="p-0"> -->
+
+                  <div class="card-body pt-4  overflow-scroll">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <div class="d-flex flex-column align-items-left gap-1">
+                        <h4 class="mb-0">Customer information</h4>
+                      </div>
+                    </div>
+
+                    <form>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-email">Total oustanding </label>
+                        <div class="col-sm-6">
+                          ₦ 1,189.000.00
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-email">Customer name </label>
+                        <div class="col-sm-6">
+                          David Oman
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-email">Customer mail </label>
+                        <div class="col-sm-6">
+                          May.anibaba@gmail.com
+                        </div>
+                      </div>
+                      <!-- <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">Customer BVN </label>
+                        <div class="col-sm-6">
+                          221034533453
+                        </div>
+                      </div> -->
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">Sex</label>
+                        <div class="col-sm-6">
+                          Male
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">Customer Phone no </label>
+                        <div class="col-sm-6">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-telephone-forward-fill" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.761.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z" />
+                        </svg> 08078875889
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">Customer Alt Phone no </label>
+                        <div class="col-sm-6">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-telephone-forward-fill" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.761.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z" />
+                        </svg> 09099124445
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">Customer Address </label>
+                        <div class="col-sm-6">
+                          15 adebari street
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">Customer State </label>
+                        <div class="col-sm-6">
+                          Lagos
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">Customer LGA </label>
+                        <div class="col-sm-6">
+                          Surulere
+                        </div>
+                      </div>
+
+                      <hr class="p-0">
+
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex flex-column align-items-left gap-1">
+                          <h4 class="mb-0">NOK information</h4>
+                        </div>
+                      </div>
+
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-email">NOK name </label>
+                        <div class="col-sm-6">
+                          David Oman
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">Sex</label>
+                        <div class="col-sm-6">
+                          Male
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-email">NOK mail </label>
+                        <div class="col-sm-6">
+                          May.anibaba@gmail.com
+                        </div>
+                      </div>
+                      <!-- <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">NOK BVN </label>
+                        <div class="col-sm-6">
+                          221034533453
+                        </div>
+                      </div> -->
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">NOK Phone no </label>
+                        <div class="col-sm-6">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-telephone-forward-fill" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.761.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z" />
+                        </svg> 08078875889
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">NOK Address </label>
+                        <div class="col-sm-6">
+                          15 adebari street
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">NOK State </label>
+                        <div class="col-sm-6">
+                          Lagos
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <label class="col-sm-6 col-form-label" for="basic-default-phone">NOK LGA </label>
+                        <div class="col-sm-6">
+                          Surulere
+                        </div>
+                      </div>
+
+                    </form>
+
+
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2 mb-4">
+                <div class="card h-px-700">
+
+                  <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                    <div class="card-title mb-0">
+                      <h4 class="m-0 me-2">Contact timelines</h4>
+                      <!-- <small class="text-muted">15 RPC in last 14days</small> -->
+                    </div>
+                  </div>
+
+
+                  <!-- Section: Timeline -->
+                  <section class="py-5 card-body overflow-scroll ml" style="margin-left: 15px;">
+                    <ul class="timeline-with-icons">
+                      <li class="timeline-item mb-5">
+                        <span class="timeline-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-envelope-arrow-up-fill" viewBox="0 0 16 16">
+                            <path
+                              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558zm.192 8.159 6.57-4.027L8 9.586l1.239-.757.367.225A4.49 4.49 0 0 0 8 12.5c0 .526.09 1.03.256 1.5H2a2 2 0 0 1-1.808-1.144ZM16 4.697v4.974A4.491 4.491 0 0 0 12.5 8a4.49 4.49 0 0 0-1.965.45l-.338-.207z" />
+                            <path
+                              d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.354 1.25 1.25a.5.5 0 0 1-.708.708L13 12.207V14a.5.5 0 0 1-1 0v-1.717l-.28.305a.5.5 0 0 1-.737-.676l1.149-1.25a.5.5 0 0 1 .722-.016Z" />
+                          </svg>
+                        </span>
+
+                        <h5 class="fw-bold">Automated payment reminder</h5>
+                        <p class="text-muted mb-2 fw-bold">11 March 2023</p>
+                        <p class="text-muted">
+                          Hello David, your loan repayment is due in 5 days. Please fund your bank account with NGN
+                          189,000.00 or pay via ****
+                        </p>
+                      </li>
+                      <li class="timeline-item mb-5">
+
+                        <span class="timeline-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-headset" viewBox="0 0 16 16">
+                            <path
+                              d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5" />
+                          </svg>
+                        </span>
+                        <h5 class="fw-bold">Agent contact</h5>
+                        <p class="text-muted mb-2 fw-bold">25 March 2020</p>
+                        <p class="text-muted">
+                        <ul>
+                          <li>No RTP contact</li>
+                          <li>SMS triggered: Your payment is late</li>
+                          <li>Email triggered: Your payment is late</li>
+                        </ul>
+                        </p>
+                      </li>
+                      <li class="timeline-item mb-5">
+
+                        <span class="timeline-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-headset" viewBox="0 0 16 16">
+                            <path
+                              d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5" />
+                          </svg>
+                        </span>
+                        <h5 class="fw-bold">Agent contact</h5>
+                        <p class="text-muted mb-2 fw-bold">25 March 2020</p>
+                        <p class="text-muted">
+                        <ul>
+                          <li>RTP contact</li>
+                          <li>Initiated PTP
+                            <ul>
+                              <li>Due: 20th Dec 2023</li>
+                              <li>Amount: 50,000</li>
+                              <li>Payment link sent</li>
+                            </ul>
+                          </li>
+                        </ul>
+                        </p>
+                      </li>
+                      <li class="timeline-item mb-5">
+
+                        <span class="timeline-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-envelope-arrow-up-fill" viewBox="0 0 16 16">
+                            <path
+                              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558zm.192 8.159 6.57-4.027L8 9.586l1.239-.757.367.225A4.49 4.49 0 0 0 8 12.5c0 .526.09 1.03.256 1.5H2a2 2 0 0 1-1.808-1.144ZM16 4.697v4.974A4.491 4.491 0 0 0 12.5 8a4.49 4.49 0 0 0-1.965.45l-.338-.207z" />
+                            <path
+                              d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.354 1.25 1.25a.5.5 0 0 1-.708.708L13 12.207V14a.5.5 0 0 1-1 0v-1.717l-.28.305a.5.5 0 0 1-.737-.676l1.149-1.25a.5.5 0 0 1 .722-.016Z" />
+                          </svg>
+                        </span>
+                        <h5 class="fw-bold">Late payment notification</h5>
+                        <p class="text-muted mb-2 fw-bold">20 March 2020</p>
+                        <p class="text-muted">
+                          Hello David, you missed your loan repayment and are now in arrears. Please fund your account
+                          within 24 hours or pay via ****
+                        </p>
+                      </li>
+                      <li class="timeline-item mb-5">
+
+                        <span class="timeline-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-megaphone-fill" viewBox="0 0 16 16">
+                            <path
+                              d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25.222 25.222 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009a68.14 68.14 0 0 1 .496.008 64 64 0 0 1 1.51.048zm1.39 1.081c.285.021.569.047.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a65.81 65.81 0 0 1 1.692.064c.327.017.65.037.966.06z" />
+                          </svg>
+                        </span>
+                        <h5 class="fw-bold">Late payment Robo call</h5>
+                        <p class="text-muted mb-2 fw-bold">23 March 2020</p>
+                        <p class="text-muted">
+                          Hello David, you missed your loan repayment and are now in arrears. Please fund your account
+                          within 24 hours or pay via ****
+                        </p>
+                      </li>
+
+                      <li class="timeline-item mb-5">
+
+                        <span class="timeline-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-envelope-arrow-up-fill" viewBox="0 0 16 16">
+                            <path
+                              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558zm.192 8.159 6.57-4.027L8 9.586l1.239-.757.367.225A4.49 4.49 0 0 0 8 12.5c0 .526.09 1.03.256 1.5H2a2 2 0 0 1-1.808-1.144ZM16 4.697v4.974A4.491 4.491 0 0 0 12.5 8a4.49 4.49 0 0 0-1.965.45l-.338-.207z" />
+                            <path
+                              d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.354 1.25 1.25a.5.5 0 0 1-.708.708L13 12.207V14a.5.5 0 0 1-1 0v-1.717l-.28.305a.5.5 0 0 1-.737-.676l1.149-1.25a.5.5 0 0 1 .722-.016Z" />
+                          </svg>
+                        </span>
+                        <h5 class="fw-bold">Automated payment reminder</h5>
+                        <p class="text-muted mb-2 fw-bold">19 March 2020</p>
+                        <p class="text-muted">
+                          Hello David, your loan repayment is due in 1 days. Please fund your bank account with NGN
+                          189,000.00 or pay via ****
+                        </p>
+                      </li>
+
+
+                </div>
+              </div>
+
+              <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2 mb-4">
+                <div class="card h-px-700">
+
+                  <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                    <div class="card-title mb-0">
+                      <h4 class="m-0 me-2">Transactions </h4>
+                      <!-- <small class="text-muted">15 RPC in last 14days</small> -->
+                    </div>
+                  </div>
+
+                  <div class="card-body p-0 m-0 mt-4">
+
+
+                    <ul class="nav nav-tabs ">
+                      <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#schedule">Loan
+                          schedule</button>
+                      </li>
+
+                      <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab"
+                          data-bs-target="#transaction">Transactions</button>
+                      </li>
+
+                      <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#promise">PTP</button>
+                      </li>
+
+                    </ul>
+
+
+
+                    <div class="tab-content pt-2 p-0">
+
+                      <div class="tab-pane fade show active custom " id="schedule">
+                        <div class="table-responsive text-nowrap">
+                          <table class="table">
+                            <thead class="table-light">
+                              <tr>
+                                <th>Due date</th>
+                                <th>Amount due</th>
+                                <th>Status</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+                              <tr>
+                                <td>20 Jan 2023</td>
+                                <td>₦ 189.000.00</td>
+                                <td><span class="badge bg-label-success me-1">Paid</span></td>
+                              </tr>
+                              <tr>
+                                <td>20 Fed 2023</td>
+                                <td>₦ 189.000.00</td>
+                                <td><span class="badge bg-label-success me-1">Paid</span></td>
+                              </tr>
+                              <tr>
+                                <td>20 Mar 2023</td>
+                                <td>₦ 189.000.00</td>
+                                <td><span class="badge bg-label-warning me-1">Partially paid</span></td>
+                              </tr>
+                              <tr>
+                                <td>20 Apr 2023</td>
+                                <td>₦ 189.000.00</td>
+                                <td><span class="badge bg-label-warning me-1">Past due</span></td>
+                              </tr>
+                              <tr>
+                                <td>20 May 2023</td>
+                                <td>₦ 189.000.00</td>
+                                <td><span class="badge bg-label-warning me-1">Past due</span></td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+
+
+                        </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="transaction">
+                        <div class="table-responsive text-nowrap">
+                          <table class="table">
+                            <thead class="table-light">
+                              <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Card charge</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Card charge</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Funds transfer</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Direct debit</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Card charge</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Card charge</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Card charge</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Card charge</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Funds transfer</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Direct debit</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Card charge</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>Card charge</td>
+                                <td>₦ 123,569.00</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-end me-3 mt-3">
+                              <li class="page-item prev">
+                                <a class="page-link" href="javascript:void(0);"><i
+                                    class="tf-icon bx bx-chevrons-left"></i></a>
+                              </li>
+                              <li class="page-item">
+                                <a class="page-link" href="javascript:void(0);">1</a>
+                              </li>
+                              <li class="page-item">
+                                <a class="page-link" href="javascript:void(0);">2</a>
+                              </li>
+                              <li class="page-item active">
+                                <a class="page-link" href="javascript:void(0);">3</a>
+                              </li>
+                              <li class="page-item">
+                                <a class="page-link" href="javascript:void(0);">4</a>
+                              </li>
+                              <li class="page-item">
+                                <a class="page-link" href="javascript:void(0);">5</a>
+                              </li>
+                              <li class="page-item next">
+                                <a class="page-link" href="javascript:void(0);"><i
+                                    class="tf-icon bx bx-chevrons-right"></i></a>
+                              </li>
+                            </ul>
+                          </nav>
+
+                        </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="promise">
+                        <div class="table-responsive text-nowrap">
+                          <table class="table">
+                            <thead class="table-light">
+                              <tr>
+                                <th>Due</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>₦ 123,569.00</td>
+                                <td><span class="badge bg-label-primary me-1">Pending</span></td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>₦ 123,569.00</td>
+                                <td><span class="badge bg-label-success me-1">Paid</span></td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>₦ 123,569.00</td>
+                                <td><span class="badge bg-label-danger me-1">Defaulted</span></td>
+                              </tr>
+                              <tr>
+                                <td>20 Sept 2023</td>
+                                <td>₦ 123,569.00</td>
+                                <td><span class="badge bg-label-warning me-1">Due</span></td>
+                              </tr>
+
+
+                            </tbody>
+                          </table>
+
+
+
+                        </div>
+                      </div>
+
+                    </div><!-- End Bordered Tabs -->
+                  </div>
+
+
+
+                </div>
+              </div>
+
+
+            </div>
+
+
+
+
+          <div class="col-lg-4 col-md-6">
+           
+            <div class="mt-3">
+
+
+
+              <div class="dropup position-absolute bottom-0 end-0 rounded-circle m-5">
+                <button type="button" class="btn btn-primary btn-lg dropdown-toggle hide-toggle" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasBoth"
+                aria-controls="offcanvasBoth">
+                  Create Activity &nbsp;
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                  </svg>
+                  <span class="visually-hidden">Create activity</span>
+                </button>
+              </div>
+    
+
+
+
+
+
+              <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasBoth" aria-labelledby="offcanvasBothLabel">
+                    <div class="modal-body">
+
+                      <div class="row">
+                        <div class="col-6" style="height: 800px; overflow: scroll;">
+                          <p style="color:black">Sir/Ma,</p> 
+                          <p style="color:black">We noticed you have not made your loan repayment of ₦ 1,500,000, which was due on 24th January 2024. We're calling to check if you had any difficulty as you're now 35 days overdue on your repayment. Is there any problem? <P>
+
+                          <p><i>Wait for a response and record disposition. Troubleshoot if needed</i></p>
+                          
+                          <p style="color:black">Thank you for letting me know Sir/Ma - please when can we expect you to make the repayment?</p>
+                          
+                          <p><i>Press for a PTP within one week max and record disposition</i></p>
+                          
+                          <p style="color:black">This is noted and recorded Sir/Ma - We'll keep an eye on your account and expect payment on 31st January 2024. Thank you and enjoy the rest of your day</p>
+
+
+                          
+                        </div>
+  
+                        <div class="col-6 border-start">
+                          <div class="row mb-1 p-2 ">
+                            <label class="col-sm-4 col-form-label">RPC?</label>
+                            <div class="col-sm-8">
+                              <select class="form-select" aria-label="Default select example">
+                                <option value="wrong_number">Yes</option>
+                                <option value="Invalid_number">No</option>
+                              </select>
+                            </div>
+                          </div>
+      
+                          <div class="row mb-1">
+                            <label class="col-sm-4 col-form-label">No RPC reason</label>
+                            <div class="col-sm-8">
+                              <select class="form-select" aria-label="Default select example">
+                                <option value="wrong_number">Number belongs to someone else</option>
+                                <option value="Invalid_number">Number doesn't exist / Didn't ring</option>
+                                <option value="Switched_off">Number switched off</option>
+                                <option value="No_response">Ringing no response</option>
+                                <option value="Bad_connection">Inaudible conversation / Poor network or noisy area</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="row mb-1">
+                            <label class="col-sm-4 col-form-label">Disposition</label>
+                            <div class="col-sm-8">
+                              <select class="form-select" aria-label="Default select example">
+                                <option selected>Payment promise</option>
+                                <option value="1">Evading calls</option>
+                                <option value="1">Aggressive response</option>
+                                <option value="1">Financially unable to pay</option>
+                                <option value="1">Requested a call back</option>
+                              </select>
+                            </div>
+                          </div>
+      
+                          <div class="row mb-1">
+                            <label class="col-sm-4 col-form-label">Default reason</label>
+                            <div class="col-sm-8">
+                              <select class="form-select" aria-label="Default select example">
+                                <option value="1">App issue</option>
+                                <option value="2">Bank / transfer issue </option>
+                                <option value="2">Changed jobs</option>
+                                <option value="2">Delayed salary</option>
+                                <option value="2">Failed debit</option>
+                                <option value="2">Financial / personal issues</option>
+                                <option value="2">Health issues</option>
+                                <option value="2">Maternity</option>
+                                <option value="2">Out of job / suspension</option>
+                                <option value="2">Out of town / offshore</option>
+                                <option value="2">School fees</option>
+                                <option value="2">Delayed funds</option>
+                                <option value="2">Out of business</option>
+                                <option value="2">Others</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="row mb-1">
+                            <label class="col-sm-4 col-form-label">Promise amount</label>
+                            <div class="col-sm-8">
+                              <input type="number" class="form-control" />
+                            </div>
+                          </div>
+      
+                          <div class="row mb-1">
+                            <label class="col-sm-4 col-form-label">Promise date</label>
+                            <div class="col-sm-8">
+                              <input type="date" class="form-control" />
+                            </div>
+                          </div>
+      
+                          <div class="row mb-1">
+                            <label class="col-sm-4 col-form-label">Notes</label>
+                            <div class="col-sm-8">
+                              <textarea class="form-control" aria-label="With textarea"></textarea>
+                            </div>
+                          </div>
+      
+                          <div class="row mb-1">
+                            <label class="col-sm-4 col-form-label">Post actions:</label>
+                            <div class="col-sm-8">
+      
+                              <div class="col-md">
+                                <div class="form-check mt-3">
+                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="">
+                                  <label class="form-check-label" for="defaultCheck1"> Email </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" checked="">
+                                  <label class="form-check-label" for="defaultCheck2"> SMS </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+      
+                          <div class="row mb-1">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-8">
+                              <button type="button" class="btn btn-primary">Save Activity</button>
+                            </div>
+                          </div>
+    
+    
+                          <hr>
+                          <h3>Generate Payment Methods</h3>
+                          <div class="row mb-3">
+                            <div class="col-sm-12">
+                              <button type="button" class="btn btn-outline-primary">Click here to generate repayment link</button>
+                            </div>
+                          </div>
+                          <div class="row mb-3 card p-1 m-1" style="background-color: #eee; border-color: #666; border-width: 1px;">
+                            <div class="col-sm-12">
+                              <p>Payment link: <a href="payment.html">Click to view...</a></p>
+                              <p>Account name: <b>John Doe-sofri</b> <br> Account Number: <b>0100123242</b> <br> Bank name: <b>VFD Microfinance bank</b></p>
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-sm-6">
+                              <button type="button" class="btn btn-primary">Send by Email</button>
+                            </div>
+                            <div class="col-sm-6">
+                              <button type="button" class="btn btn-primary">Send by SMS</button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      
+
+                      
+  
+
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+
+
+
+          
+        </div>
+        <!-- / Content -->
+
+        <!-- Footer -->
+        <!-- <footer class="content-footer footer bg-footer-theme">
+            <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+              <div class="mb-2 mb-md-0">
+                ©
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                Mida Technologes
+
+              </div>
+            </div>
+          </footer> -->
+        <!-- / Footer -->
+
+        <div class="content-backdrop fade"></div>
+      </div>
+      <!-- Content wrapper -->
+    </div>
+    <!-- / Layout page -->
+  </div>
+
+  <!-- Overlay -->
+  <div class="layout-overlay layout-menu-toggle"></div>
+  </div>
+  <!-- / Layout wrapper -->
+
+  <!-- Core JS -->
+  <!-- build:js assets/vendor/js/core.js -->
+  <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="../assets/vendor/libs/popper/popper.js"></script>
+  <script src="../assets/vendor/js/bootstrap.js"></script>
+  <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+  <script src="../assets/vendor/js/menu.js"></script>
+  <!-- endbuild -->
+
+  <!-- Vendors JS -->
+  <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+  <!-- Main JS -->
+  <script src="../assets/js/main.js"></script>
+
+  <!-- Page JS -->
+  <script src="../assets/js/dashboards-analytics.js"></script>
+
+
+</body>
+
+</html>
