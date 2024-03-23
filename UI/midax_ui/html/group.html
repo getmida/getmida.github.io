@@ -97,7 +97,7 @@
                 <div data-i18n="Loans">Call back management</div>
               </a>
             </li>
-            <li class="menu-item active">
+            <li class="menu-item">
               <a href="payment_management.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-wallet-alt"></i>
                 <div data-i18n="Loans">Proof of payments</div>
@@ -114,7 +114,7 @@
             <!-- Profile -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Access</span></li>
 
-            <li class="menu-item">
+            <li class="menu-item active">
               <a class="menu-link" href="group.html">
                 <i class="bx bx-group me-2"></i>
                 <div data-i18n="Documentation">Groups</div>
@@ -147,7 +147,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Dashboard /</span> Payment proof managment</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Dashboard /</span> Group managment</h4>
 
               <!-- <div class="row"> 
                 <div class="mb-4 order-0">
@@ -166,27 +166,29 @@
                 <div class="card-body">
                   <div class="row">            
                     <div class="col-sm-4">
-                      <input type="text" class="form-control" placeholder="Filter" aria-label="Filter"/>   
+                      <input type="text" class="form-control" placeholder="Filter" aria-label="Filter">   
                     </div>
                     <div class="col-sm-3">
-                      <!-- <select id="defaultSelect" class="form-select">
-                        <option>All</option>
-                        <option value="1">Pending</option>
-                        <option value="1">Due</option>
-                        <option value="2">Paid</option>
-                        <option value="2">Defaulted</option>
-                      </select>  -->
+                      <select id="defaultSelect" class="form-select">
+                        <option>Active</option>
+                        <option value="1">Inactive</option>
+                        <option value="2">Blocked</option>
+                      </select> 
                     </div>
-                    <div class="col-sm-4">
-                      
+                    <div class="col-sm-3">
+                      <select id="defaultSelect" class="form-select">
+                        <option>Contact center</option>
+                        <option value="1">Feild team</option>
+                      </select> 
                     </div>
-                    <div class="col-sm-1">
-                      <button type="submit" class="btn btn-primary">Filter</button>  
-                      <!-- <button type="submit" class="btn btn-primary"><i class='bx bx-download'></i></button>   -->
-                    </div>          
+                    <div class="col-sm-2">
+                      <button type="submit" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Search" aria-label="Search"><i class="bx bx-search-alt-2"></i></button>  
+                      <a type="submit" href="add_groups.html" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Add new group" aria-label="Add new role"><i class="bx bx-message-square-add"></i></a>  
+                    </div>      
                   </div>
                 </div>
               </div>
+
 
 
             <!-- Basic Bootstrap Table -->
@@ -195,23 +197,23 @@
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th>Loan ID</th>
-                      <th>Organisation</th>
-                      <th>Customer name</th>
-                      <th>Amount</th>
-                      <th>Date uploaded</th>
+                      <th>Group name</th>
+                      <th>Group type</th>
+                      <th>Member count</th>
+                      <th>Created at</th>
+                      <th>Updated at</th>
                       <th>Status</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0">
                     <tr>
-                      <td><a href="loan_details.html"><strong>036526839928322</strong></a></td>
-                      <td>Lendigo</td>
-                      <td>Albert Cook</td>
-                      <td>₦ 1,300,000.00</td>
+                      <td><a href="group_details.html"><strong>Team armstrong</strong></a></td>
+                      <td>Contact center</td>
+                      <td>5</td>
                       <td>08 Feb 2024</td>
-                      <td><span class="badge bg-label-primary me-1">Pending Verification</span></td>
+                      <td>08 Feb 2024</td>
+                      <td><span class="badge bg-label-success me-1">Active</span></td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -219,19 +221,19 @@
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCenter"
-                              ><i class="bx bx-edit-alt me-1"></i> Validate</a
+                              ><i class="bx bx-edit-alt me-1"></i> Edit</a
                             >
                           </div>
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <td><a href="loan_details.html"><strong>036526839928322</strong></a></td>
-                      <td>Lendigo</td>
-                      <td>Albert Cook</td>
-                      <td>₦ 1,300,000.00</td>
+                      <td><a href="group_details.html"><strong>Super 4</strong></a></td>
+                      <td>Feild agent</td>
+                      <td>4</td>
                       <td>08 Feb 2024</td>
-                      <td><span class="badge bg-label-primary me-1">Pending Verification</span></td>
+                      <td>08 Feb 2024</td>
+                      <td><span class="badge bg-label-success me-1">Active</span></td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -239,19 +241,19 @@
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCenter"
-                              ><i class="bx bx-edit-alt me-1"></i> Validate</a
+                              ><i class="bx bx-edit-alt me-1"></i> Edit</a
                             >
                           </div>
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <td><a href="loan_details.html"><strong>036526839928322</strong></a></td>
-                      <td>Lendigo</td>
-                      <td>Albert Cook</td>
-                      <td>₦ 1,300,000.00</td>
+                      <td><a href="group_details.html"><strong>Team armstrong</strong></a></td>
+                      <td>Contact center</td>
+                      <td>5</td>
                       <td>08 Feb 2024</td>
-                      <td><span class="badge bg-label-primary me-1">Pending Verification</span></td>
+                      <td>08 Feb 2024</td>
+                      <td><span class="badge bg-label-success me-1">Active</span></td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -259,19 +261,19 @@
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCenter"
-                              ><i class="bx bx-edit-alt me-1"></i> Validate</a
+                              ><i class="bx bx-edit-alt me-1"></i> Edit</a
                             >
                           </div>
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <td><a href="loan_details.html"><strong>036526839928322</strong></a></td>
-                      <td>Lendigo</td>
-                      <td>Albert Cook</td>
-                      <td>₦ 1,300,000.00</td>
+                      <td><a href="group_details.html"><strong>Super 4</strong></a></td>
+                      <td>Feild agent</td>
+                      <td>4</td>
                       <td>08 Feb 2024</td>
-                      <td><span class="badge bg-label-primary me-1">Pending Verification</span></td>
+                      <td>08 Feb 2024</td>
+                      <td><span class="badge bg-label-warning me-1">Inactive</span></td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -279,12 +281,13 @@
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCenter"
-                              ><i class="bx bx-edit-alt me-1"></i> Validate</a
+                              ><i class="bx bx-edit-alt me-1"></i> Edit</a
                             >
                           </div>
                         </div>
                       </td>
                     </tr>
+
                   </tbody>
                 </table>
 
@@ -293,7 +296,7 @@
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="modalCenterTitle">Payment proof</h5>
+                        <h5 class="modal-title" id="modalCenterTitle">Edit group</h5>
                         <button
                           type="button"
                           class="btn-close"
@@ -302,41 +305,17 @@
                         ></button>
                       </div>
                       <div class="modal-body">
-                        <div class="row g-2">
-                          <div class="table-responsive text-nowrap">
-                            <table class="table table-striped">
-                              <thead>
-                                <tr>
-                                  <th>Proof</th>
-                                  <th>Status</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td><a href="#">proof of payment document.jpg</a>
-                                  <div class="mb-0 text-secondary"><i>Jane Doe - 7th January 2024</i></div></td>
-                                  <td><span class="badge bg-label-primary me-1">Pending Verification</span></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                          
-                          <div class="card-header d-flex align-items-center justify-content-between pb-0">
-                            <img src="../assets/img/payment.jpeg" style='border: 2px solid #555; height: 100%; width: 100%; object-fit: contain' />
-                          </div> 
 
-                          <div class="row">
+
                             <div class="mb-3">
                               <label for="formFile" class="form-label">Update status</label>
                               <select class="form-select" aria-label="Default select example">
-                                <option value="">Validate</option>
-                                <option value="">Decline</option>
+                                <option value="">Active</option>
+                                <option value="">Inactive</option>
                               </select>
                             </div>
-                          </div>
-                         
-
-                        </div>
+           
+  
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
