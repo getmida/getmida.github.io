@@ -117,6 +117,12 @@
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3</th>
+                                                    <td>isNewLoan</td>
+                                                    <td>true if loan is a new loan</td>
+                                                    <td>boolean</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
                                                     <td>customer</td>
                                                     <td>lenders client's details</td>
                                                     <td>object</td>
@@ -313,6 +319,7 @@
                                             &nbsp;&quot;loanAccountNumber&quot;:&quot;423456789&quot;,<br/>
                                             &nbsp;&quot;loanAmount&quot;: &quot;50000&quot;,<br/>
                                             &nbsp;&quot;email&quot;: &quot;daveomo@gmail.com&quot;,<br/>
+                                            &quot;isNewLoan&quot;: false,<br/>
                                             &nbsp;&quot;customer&quot;:{<br/>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&quot;fullname&quot;: &quot;Dave Omo&quot;,<br/>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&quot;BVN&quot;: &quot;2323232322&quot;,<br/>
@@ -501,6 +508,7 @@ var raw &#x3D; JSON.stringify({
   &quot;loanAccountNumber&quot;: &quot;423456789&quot;,
   &quot;loanAmount&quot;: &quot;50000&quot;,
   &quot;email&quot;: &quot;daveomo@gmail.com&quot;,
+  &quot;isNewLoan&quot;: false,
   &quot;customer&quot;: {
     &quot;fullname&quot;: &quot;Dave Omo&quot;,
     &quot;BVN&quot;: &quot;2323232322&quot;,
@@ -570,6 +578,7 @@ payload &#x3D; json.dumps({
   &quot;loanAccountNumber&quot;: &quot;423456789&quot;,
   &quot;loanAmount&quot;: &quot;50000&quot;,
   &quot;email&quot;: &quot;daveomo@gmail.com&quot;,
+  &quot;isNewLoan&quot;: false,
   &quot;customer&quot;: {
     &quot;fullname&quot;: &quot;Dave Omo&quot;,
     &quot;BVN&quot;: &quot;2323232322&quot;,
