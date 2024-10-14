@@ -1,0 +1,304 @@
+.logo-slider {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  border-bottom: 1px solid rgba(171, 185, 180, 0.3);
+}
+
+.trusted-by {
+  text-align: center;
+  font-family: var(--bold-font-h1);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  padding-top: 30px;
+  color: rgba(1, 52, 100, 1);
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 20px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: '';
+  z-index: 2;
+}
+
+/* .logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+} */
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  width: 152.27px;
+  height: 30.83px;
+  object-fit: contain;
+  margin: 0 40px;
+}
+
+@media screen and (max-width: 500px) {
+  .logos-slide img {
+    margin: 0 5px;
+  }
+}
+
+/* why-choose-mida */
+
+.why-choose-mida {
+  background-color: rgba(245, 253, 255, 1);
+}
+.inner-container-why-choose-mida {
+  width: 100%;
+  max-width: 1440px;
+  padding: 100px 82px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.why-mida {
+  width: 100%;
+  max-width: 1086px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.why-choose-mida-title {
+  font-family: var(--font-bold-aeonik);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  text-align: left;
+  color: rgba(22, 22, 25, 1);
+}
+
+.why-choose-mida-text {
+  font-family: var(--font-regular-satoshi);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  color: rgba(95, 96, 96, 1);
+}
+
+.why-choose-mida-cards {
+  display: flex;
+  gap: 59px;
+}
+
+@media screen and (max-width: 500px) {
+  .why-choose-mida-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43.2px;
+    text-align: center;
+  }
+  .why-choose-mida-text {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 29.7px;
+    text-align: center;
+  }
+}
+
+.mida-card-technology {
+  background-image: url(assets/images/man-illustration-image.png);
+  background-size: cover; /* Cover the entire card with the image */
+  background-position: -353px -15px; /* Center the image */
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  position: relative; /* Relative for positioning the overlay */
+  overflow: hidden; /* Make sure content stays within the card */
+  /* height: 100%;
+  max-height: 499px; */
+}
+
+.mida-card-localized-experience {
+  background-image: url(assets/images/discussion-illustration-image.jpeg);
+  background-size: cover; /* Cover the entire card with the image */
+  background-position: -104px 0px; /* Moves the image 10px to the left and 20px up */
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  position: relative; /* Relative for positioning the overlay */
+  overflow: hidden; /* Make sure content stays within the card */
+  /* height: 100%;
+  max-height: 499px; */
+}
+
+.mida-card-data-analytics {
+  background-image: url(assets/images/illustration-image.jpeg);
+  background-size: cover; /* Cover the entire card with the image */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  position: relative; /* Relative for positioning the overlay */
+  overflow: hidden; /* Make sure content stays within the card */
+  /* height: 100%;
+  max-height: 499px; */
+}
+
+.choose-mida-card-info {
+  margin-top: 279.07px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: url(assets/svgs/our-technology.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light white border */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Soft shadow for depth * */
+  padding: 40px 20px 70px 20px;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  bottom: -30px;
+}
+
+.choose-mida-card-info-data-analytics {
+  margin-top: 279.07px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: url(assets/svgs/data-analytics.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light white border */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Soft shadow for depth * */
+  padding: 40px 20px 70px 20px;
+  bottom: -30px;
+
+  /* padding: 40px 40px; */
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+}
+
+.choose-mida-card-info-localized-experience {
+  margin-top: 279.07px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: url(assets/svgs/localized-experience.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light white border */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Soft shadow for depth * */
+  padding: 40px 20px 72px 20px;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  bottom: -28px;
+}
+
+.choose-mida-card-title {
+  margin-bottom: 10px;
+  font-family: var(--font-bold-aeonik);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+  padding-left: 30px;
+}
+
+/* Radio button effect */
+.radio-circle {
+  width: 20px; /* Outer circle size */
+  height: 20px;
+  border: 1px solid white; /* Blue outer border */
+  border-radius: 50%;
+  display: inline-block;
+  padding: 3px; /* Space between outer border and inner circle */
+  margin-right: 10px;
+  box-sizing: border-box; /* Ensure padding does not increase size */
+  position: absolute;
+  top: 44px;
+}
+
+/* Inner white circle */
+.radio-circle::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* White inner fill */
+  border-radius: 50%;
+}
+
+.choose-mida-card-description {
+  font-family: var(--font-regular-satoshi);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  padding-left: 35px;
+}
+
+@media screen and (max-width: 1080px) {
+  .why-choose-mida-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .inner-container-why-choose-mida {
+    padding: 60px 30px;
+  }
+  .why-choose-mida-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .inner-container-why-choose-mida {
+    padding: 60px 20px;
+  }
+}

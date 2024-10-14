@@ -1,0 +1,289 @@
+.hero-contact {
+  background-color: rgba(230, 246, 255, 1);
+  background-image: url(assets/images/pattern-mask-group.png); /* Set the background image */
+  background-blend-mode: multiply; /* Use blending to combine image and color */
+  background-size: cover; /* Ensure the image covers the section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+.contact-second {
+  overflow-x: hidden;
+}
+.contact {
+  display: flex;
+  max-width: 933px;
+  position: relative;
+  padding-top: 200px;
+  /* padding-left: 180px; */
+}
+.contact-left-container h1 {
+  max-width: 359px;
+}
+
+.contact-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    padding-top: 100px;
+  }
+  .contact-left-container {
+    margin-bottom: 200px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  
+  .contact-left-container {
+    margin-bottom: 100px;
+  }
+}
+
+.form {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1194px;
+  gap: 86px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 755px;
+  border-right: 0.6px solid #efe9ec;
+  padding-left: 80px;
+  padding-right: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 62px;
+}
+
+.form-heading {
+  font-family: var(--bold-font-h1);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: left;
+  color: var(--color-secondary);
+}
+
+.form-description {
+  font-family: var(--regular-r-font-p);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 22px;
+  text-align: left;
+  color: #393535;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.lets-talk-container {
+  width: 100%;
+  max-width: 353px;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+select {
+  width: 100%;
+  max-width: 650px;
+  height: 60.07;
+  padding: 17.53px 21.92px 17.53px 21.92px;
+  border-radius: 8px;
+  border: 1.1px solid #121b28;
+}
+
+select {
+  appearance: none; /* Hide the default caret */
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  position: relative;
+}
+
+/* Custom caret styling */
+select::after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  /* border-top-color: #333; Color of the custom caret */
+  pointer-events: none;
+}
+
+/* Adding a background image for the caret */
+select {
+  background-image: url('assets/svgs/caret-down.svg'); /* Replace with your custom caret icon */
+  background-repeat: no-repeat;
+  background-position: right 25px center; /* Position the caret on the right */
+  background-size: 19.2px; /* Adjust size of the caret */
+}
+input::placeholder,
+select::placeholder {
+  font-family: var(--bold-font-h1);
+  font-size: 15.34px;
+  font-weight: 400;
+  line-height: 24.55px;
+  text-align: left;
+  color: #727678;
+}
+
+select::after {
+  color: #6c6969;
+}
+
+textarea {
+  width: 100%;
+  max-width: 650px;
+  height: 200px;
+  border-radius: 8px;
+  border: 1px;
+  border: 1.1px solid #121b28;
+}
+
+input[type='submit'] {
+  background-color: var(--color-secondary);
+  color: var(--white);
+  font-family: var(--bold-font-h1);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.15px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.companyName {
+  display: flex;
+  flex-direction: column;
+  gap: 10.96px;
+}
+
+label {
+  font-family: var(--bold-font-h1);
+  font-size: 15.34px;
+  font-weight: 400;
+  line-height: 24.55px;
+  text-align: left;
+  color: #121b28;
+}
+
+label span {
+  color: #e00029;
+  font-family: var(--bold-font-h1);
+  font-size: 15.34px;
+  font-weight: 400;
+  line-height: 24.55px;
+  text-align: left;
+}
+
+.lets-talk-heading {
+  font-family: var(--bold-font-h1);
+  font-size: 28.26px;
+  font-weight: 700;
+  line-height: 42.4px;
+  text-align: left;
+  color: #1f2124;
+  padding-bottom: 5px;
+}
+
+.lets-talk-description {
+  font-family: var(--regular-r-font-p);
+  font-size: 16.61px;
+  font-weight: 300;
+  line-height: 21.8px;
+  text-align: left;
+  color: #373735;
+}
+
+.middle-section {
+  padding-bottom: 43px;
+}
+
+.first {
+  display: flex;
+  gap: 8.31px;
+  align-items: flex-start;
+  border-bottom: 1.04px solid #e2e7de;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.first p b {
+  font-family: var(--bold-font-h1);
+  font-size: 15.57px;
+  font-weight: 500;
+  line-height: 17.65px;
+  text-align: left;
+}
+
+.first p {
+  font-family: var(--regular-font-p-aeonik);
+  font-size: 15.57px;
+  font-weight: 250;
+  line-height: 17.65px;
+  text-align: left;
+}
+
+.last-section {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.emailPhoneSection {
+  display: flex;
+  gap: 18px;
+}
+
+.mail-call-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.mail-call-div p {
+  font-family: var(--bold-font-h1);
+  font-size: 15.79px;
+  font-weight: 300;
+  line-height: 18.95px;
+  text-align: left;
+}
+
+.mail-call-div a {
+  font-family: var(--font-light-aeonik);
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 19.2px;
+  text-align: left;
+  color: var(--color-secondary);
+}
+
+.call {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    flex-direction: column;
+  }
+  .form-container {
+    border-right: 0;
+  }
+  .lets-talk-container {
+    max-width: 100%;
+    padding: 0 80px;
+  }
+}
