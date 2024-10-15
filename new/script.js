@@ -47,3 +47,4 @@ setInterval(autoCycleAccordion, intervalTime)
 // Activate the first accordion item and show its image by default
 handleAccordionItemClick(0)
 
+
