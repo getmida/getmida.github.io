@@ -5,6 +5,7 @@
   background-size: cover; /* Ensure the image covers the section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
+  will-change: background-image;
 }
 
 .recovery {
@@ -14,6 +15,7 @@
   background-size: cover; /* Ensure the image covers the section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
+  will-change: background-image;
 }
 
 .mida-omni {
@@ -23,6 +25,7 @@
   background-size: cover; /* Ensure the image covers the section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
+  will-change: background-image;
 }
 
 .midax {
@@ -32,6 +35,7 @@
   background-size: cover; /* Ensure the image covers the section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
+  will-change: background-image;
 }
 
 .debt-buying {
@@ -41,6 +45,7 @@
   background-size: cover; /* Ensure the image covers the section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
+  will-change: background-image;
 }
 
 .our-collection-hero {
