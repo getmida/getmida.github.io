@@ -295,6 +295,9 @@
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
   }
+  .mida-card-localized-experience {
+  background-position: center;
+  }
 }
 
 @media screen and (max-width: 500px) {

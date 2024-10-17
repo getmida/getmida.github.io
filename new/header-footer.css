@@ -608,8 +608,8 @@
 .inner-about-info p {
   width: 100%;
   max-width: 392px;
-  font-family: var(--regular-font-p);
-  font-weight: 400;
+  font-family: var(--font-light-satoshi);
+  font-weight: 300;
   font-size: 16px;
   line-height: 24px;
   color: var(--white);
@@ -623,7 +623,7 @@
 .footer-contact-info a {
   text-decoration: none;
   color: var(--white);
-  font-family: var(--regular-font-p);
+  font-family: var(--font-regular-satoshi);
   font-size: 16px;
   font-weight: 400;
   line-height: 21.6px;
@@ -670,7 +670,7 @@
   text-decoration: none;
   font-size: 16px;
   line-height: 21.6px;
-  font-family: var(--regular-font-p);
+  font-family: var(--font-light-satoshi);
   font-weight: 500;
   color: var(--color-sliver-gray);
 }

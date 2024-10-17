@@ -60,3 +60,10 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Satoshi-light';
+  src: url('assets/fonts/Satoshi/Satoshi-Light.ttf');
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,5 +1,5 @@
+'use strict'
 //accordion-cycle
-
 const accordionItems = document.querySelectorAll('.accordion-item')
 const desktopAccordionImages = document.querySelectorAll(
   '.accordion-image-container .accordion-image'
@@ -48,3 +48,25 @@ setInterval(autoCycleAccordion, intervalTime)
 handleAccordionItemClick(0)
 
 
+var swiper = new Swiper('.mySwiper', {
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true,
+  },
+  keyboard: {
+    enabled: true,
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true, 
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+  },
+})

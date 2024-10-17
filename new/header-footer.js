@@ -1,16 +1,3 @@
-// const baseUrl = window.location.origin
-// const link1 = document.createElement('a')
-// link1.href = `${baseUrl}/about`
-// link1.innerText = 'about'
-
-// const link2 = document.createElement('a')
-// link2.href = `${baseUrl}/contact`
-// link2.innerText = 'contact'
-
-// // Add links to the document
-// document.body.appendChild(link1)
-// document.body.appendChild(link2)
-
 /*=============== SHOW MENU ===============*/
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId),
