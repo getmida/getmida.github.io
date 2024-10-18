@@ -26,7 +26,7 @@
   --font-light-aeonik: 'Aeonik-light';
   --font-regular-satoshi: 'Satoshi-regular';
   --font-bold-satoshi: 'Satoshi-bold';
-  --font-light-satoshi: "Satoshi-light";
+  --font-light-satoshi: 'Satoshi-light';
   --font-outfit: 'outfit';
 }
 
@@ -1017,8 +1017,7 @@ height: 168px; */
   .testimonial-text {
     font-size: 18px;
     line-height: 27.3px;
-      padding: 50px 25px;
-
+    padding: 50px 25px;
   }
 
   .testimonial-testifier-info h2 {

@@ -114,6 +114,14 @@
 }
 
 @media screen and (max-width: 931px) {
+  ul {
+    list-style: none;
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+    text-decoration: none;
+  }
   .nav__data {
     background-color: white;
   }
@@ -157,6 +165,7 @@
     font-weight: 400;
     line-height: 24px;
     text-align: left;
+    list-style: none;
   }
   .dropdown__group {
     padding-left: 2rem;
