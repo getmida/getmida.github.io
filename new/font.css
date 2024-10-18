@@ -1,6 +1,8 @@
 @font-face {
   font-family: 'Satoshi-regular';
-  src: url('assets/fonts/Satoshi/Satoshi-Regular.ttf') format('truetype');
+  src: url('assets/fonts/Satoshi-Regular.woff2') format('woff2'),
+    url('assets/fonts/Satoshi-Regular.woff') format('woff'),
+    url('assets/fonts/Satoshi-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -8,19 +10,23 @@
 
 @font-face {
   font-family: 'Satoshi';
-  src: url('assets/fonts/Satoshi/Satoshi-Medium.ttf') format('truetype');
+  src: url('assets/fonts/Satoshi-Medium.woff2') format('woff2'),
+    url('assets/fonts/Satoshi-Medium.woff') format('woff'),
+    url('assets/fonts/Satoshi-Medium.ttf') format('ttf');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'outfit';
-  src: url('assets/fonts/Outfit/Outfit-Medium.ttf') format('truetype');
+  src: url('assets/fonts/Outfit-Medium.ttf') format('truetype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Satoshi-bold';
-  src: url('assets/fonts/Satoshi/Satoshi-Bold.ttf') format('truetype');
+  src: url('assets/fonts/Satoshi-Bold.woff2') format('woff2'),
+    url('assets/fonts/Satoshi-Bold.woff') format('woff'),
+    url('assets/fonts/Satoshi-Bold.ttf') format('ttf');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -28,42 +34,54 @@
 
 @font-face {
   font-family: 'Aeonik-Bold';
-  src: url('assets/fonts/Aeonik/Aeonik-Bold.otf') format('opentype'); 
+  src: url('assets/fonts/Aeonik-Bold.woff2') format('woff2'),
+    url('assets/fonts/Aeonik-Bold.woff') format('woff'),
+    url('assets/fonts/Aeonik-Bold.otf') format('opentype');
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Aeonik';
-  src: url('assets/fonts/Aeonik/Aeonik-Medium.otf') format('opentype');
+  src: url('assets/fonts/Aeonik-Medium.woff2') format('woff2'),
+    url('assets/fonts/Aeonik-Medium.woff') format('woff'),
+    url('assets/fonts/Aeonik-Medium.otf') format('opentype');
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Aeonik-regular';
-  src: url('assets/fonts/Aeonik/Aeonik-Regular.otf') format('opentype');
+  src: url('assets/fonts/Aeonik-Regular.woff2') format('woff2'),
+    url('assets/fonts/Aeonik-Regular.woff') format('woff'),
+    url('assets/fonts/Aeonik-Regular.otf') format('opentype');
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Aeonik-meduim';
-  src: url('assets/fonts/Aeonik/Aeonik-Medium.otf') format('opentype');
+  src: url('assets/fonts/Aeonik-Medium.woff2') format('woff2'),
+    url('assets/fonts/Aeonik-Medium.woff') format('woff'),
+    url('assets/fonts/Aeonik-Medium.otf') format('opentype');
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Aeonik-light';
-  src: url('assets/fonts/Aeonik/Aeonik-Light.otf') format('opentype');
+  src: url('assets/fonts/Aeonik-Light.woff2') format('woff2'),
+    url('assets/fonts/Aeonik-Light.woff') format('woff'),
+    url('assets/fonts/Aeonik-Light.otf') format('opentype');
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Satoshi-light';
-  src: url('assets/fonts/Satoshi/Satoshi-Light.ttf');
+  src: url('assets/fonts/Satoshi-Light.woff2') format('woff2'),
+    url('assets/fonts/Satoshi-Light.woff') format('woff'),
+    url('assets/fonts/Satoshi-Light.ttf') format('ttf');
   font-style: normal;
   font-display: swap;
 }
