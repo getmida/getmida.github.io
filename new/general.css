@@ -140,7 +140,7 @@
 }
 
 .mida-card-technology {
-  background-image: url(assets/images/man-illustration-image.png);
+  background-image: url(assets/images/man-illustration-image.webp);
 
   background-size: cover; /* Cover the entire card with the image */
   background-position: -353px -15px; /* Center the image */
@@ -155,7 +155,7 @@
 }
 
 .mida-card-localized-experience {
-  background-image: url(assets/images/discussion-illustration-image.jpeg);
+  background-image: url(assets/images/discussion-illustration-image.webp);
   background-size: cover; /* Cover the entire card with the image */
   background-position: -104px 0px; /* Moves the image 10px to the left and 20px up */
   border-radius: 10px;
@@ -168,7 +168,7 @@
 }
 
 .mida-card-data-analytics {
-  background-image: url(assets/images/illustration-image.jpeg);
+  background-image: url(assets/images/illustration-image.webp);
   background-size: cover; /* Cover the entire card with the image */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
