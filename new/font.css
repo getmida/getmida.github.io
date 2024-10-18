@@ -28,35 +28,35 @@
 
 @font-face {
   font-family: 'Aeonik-Bold';
-  src: url('assets/fonts/Aeonik/Aeonik-Bold.otf');
+  src: url('assets/fonts/Aeonik/Aeonik-Bold.otf') format('opentype'); 
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Aeonik';
-  src: url('assets/fonts/Aeonik/Aeonik-Medium.otf');
+  src: url('assets/fonts/Aeonik/Aeonik-Medium.otf') format('opentype');
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Aeonik-regular';
-  src: url('assets/fonts/Aeonik/Aeonik-Regular.otf');
+  src: url('assets/fonts/Aeonik/Aeonik-Regular.otf') format('opentype');
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Aeonik-meduim';
-  src: url('assets/fonts/Aeonik/Aeonik-Medium.otf');
+  src: url('assets/fonts/Aeonik/Aeonik-Medium.otf') format('opentype');
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Aeonik-light';
-  src: url('assets/fonts/Aeonik/Aeonik-Light.otf');
+  src: url('assets/fonts/Aeonik/Aeonik-Light.otf') format('opentype');
   font-style: normal;
   font-display: swap;
 }
