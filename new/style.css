@@ -210,6 +210,7 @@ body {
   border: 1px solid #161516;
   text-decoration: none;
   color: #161516;
+  transition: color 0.3s ease-in-out, border-color 0.5s ease-in-out;
 }
 
 .book-demo-button:hover {
@@ -235,7 +236,25 @@ body {
   margin: 0 auto;
 }
 
-.image-container {
+.fade-slide-in {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-100%); /* Start the element completely off-screen */
+  animation: fadeSlideIn 2s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* .image-container {
   padding-top: 90px;
   width: 100%;
   max-width: 1349.2px;
@@ -246,6 +265,186 @@ body {
   max-width: 1249.2px;
   object-fit: contain;
   width: 100%;
+} */
+
+/* General animation setup for sliding and rotating */
+@keyframes slideRotateIn {
+  0% {
+    transform: translateY(-200px) rotate(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* For the container of the images */
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 1084px;
+  padding-top: 231px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background-image: url('assets/images/Frame 1000001388 (1).png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* For the right image */
+.right-image {
+  position: relative;
+  z-index: 1;
+  width: 30%;
+  right: 75px;
+  bottom: 210px;
+  animation: slideRotateIn 2s ease-in-out forwards;
+  animation-delay: 0.5s; /* Adjust delay if needed */
+}
+
+/* For the stacked images container */
+.stacked-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  left: 43px;
+  top: -70px;
+}
+/* General animation setup for sliding and rotating */
+@keyframes slideRotateIn {
+  0% {
+    transform: translateY(-200px) rotate(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* For the container of the images */
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 1084px;
+  padding-top: 208px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background-image: url('assets/images/Frame 1000001388 (1).png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* For the right image */
+.right-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 30%;
+  right: 105px;
+  bottom: 171px;
+  object-fit: contain;
+  animation: slideRotateIn 2s ease-in-out forwards;
+  animation-delay: 0.5s; /* Delay to ensure it animates after the left image */
+}
+
+/* For the stacked images container */
+.stacked-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  left: 41px;
+  top: -47px;
+}
+
+/* Animation for each stacked image */
+.stacked {
+  width: 100%;
+  max-width: 325.2px;
+  object-fit: contain;
+  /* height: 97.92px; */
+  opacity: 0; /* Start hidden */
+  animation: slideRotateIn 1.5s ease-in-out forwards; /* Adjust animation duration */
+}
+
+/* Delay for each stacked image to appear one after the other */
+.stacked:nth-child(1) {
+  animation-delay: 2s; /* First stacked image after 2.5 seconds */
+}
+
+.stacked:nth-child(2) {
+  animation-delay: 3s; /* Second stacked image after 3 seconds */
+}
+
+/* Add a smooth slide and rotation animation for the left-side images */
+@keyframes slideRotateLeft {
+  0% {
+    transform: translateY(-200px) rotate(20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Apply the left image animation */
+.stacked-images {
+  animation: slideRotateLeft 2s ease-in-out forwards;
+  animation-delay: 0s; /* Left side images come first */
+}
+
+@media screen and (max-width: 1100px) {
+  .image-container {
+    max-width: 730px;
+    padding-top: 72px;
+  }
+  .right-image {
+    bottom: 65px;
+    right: -36px;
+  }
+
+  .stacked-images {
+    max-width: 164.2px;
+    object-fit: contain;
+    left: -61px;
+    top: 6px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .image-container {
+    background-image: url('assets/images/Hero\ section.webp');
+    max-width: 700px;
+    max-height: 149px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+  .right-image {
+    display: none;
+  }
+
+  .stacked-images {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .image-container {
+    max-height: 109px;
+  }
 }
 
 .home-trusted-by {

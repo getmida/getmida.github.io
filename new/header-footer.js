@@ -76,6 +76,9 @@ addEventListener('resize', removeStyle)
 const headerContainer = document.querySelector('.header-container')
 const drop = document.querySelectorAll('.dropdown__item')
 
+
+
+
 drop.forEach((list) => {
   list.addEventListener('mouseover', () => {
     headerContainer.style.backgroundColor = 'white'
