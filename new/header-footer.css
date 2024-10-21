@@ -380,7 +380,9 @@
     opacity: 1;
     pointer-events: initial;
     cursor: initial;
-    max-width: 1440px;
+    width: 100%;
+
+    /* max-width: 1440px; */
     margin: 0 auto;
     transform: translateY(0);
     transition: opacity 0s ease, transform 0.4s ease; /* Removed delay from hover */
@@ -623,15 +625,15 @@
 .inner-about-info {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 0px;
 }
 
 .inner-about-info img {
   width: 100%;
-  max-width: 84.89px;
-  object-fit: contain;
-  scale: 1.2;
-  height: 24px;
+  max-width: 104.89px;
+  object-fit: cover;
+  /* scale: 1.2;
+  height: 24px; */
 }
 
 .inner-about-info p {
@@ -641,6 +643,7 @@
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
+  padding-bottom: 16px;
   color: var(--white);
 }
 
@@ -679,7 +682,7 @@
   font-family: var(--bold-font-h1);
   font-size: 20px;
   line-height: 24px;
-  font-weight: 700;
+  font-weight: 500;
   padding-bottom: 16px;
   color: var(--white);
 }

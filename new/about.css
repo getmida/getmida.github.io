@@ -206,8 +206,8 @@
 
 .straightLine {
   width: 0.9px; /* Width of the vertical line */
-  height: 100%; /* Height of the vertical line */
-  min-height: 287px;
+  height: 70vh; /* Height of the vertical line */
+  /* min-height: 287px; */
   background-color: rgba(168, 206, 216, 1); /* Color of the line */
   margin: 20px auto; /* Space between the divs and the line */
 }
