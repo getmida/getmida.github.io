@@ -37,7 +37,6 @@
 }
 
 @media screen and (max-width: 400px) {
-  
   .contact-left-container {
     margin-bottom: 100px;
   }
@@ -201,7 +200,7 @@ label span {
 }
 
 .lets-talk-description {
-  font-family: var(--regular-r-font-p);
+  font-family: var(--font-light-satoshi);
   font-size: 16.61px;
   font-weight: 300;
   line-height: 21.8px;
@@ -231,7 +230,7 @@ label span {
 }
 
 .first p {
-  font-family: var(--regular-font-p-aeonik);
+  font-family: var(--font-light-aeonik);
   font-size: 15.57px;
   font-weight: 250;
   line-height: 17.65px;
@@ -275,7 +274,7 @@ label span {
   text-decoration: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .form {
     flex-direction: column;
   }
