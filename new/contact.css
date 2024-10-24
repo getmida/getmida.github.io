@@ -73,7 +73,7 @@
 }
 
 .form-description {
-  font-family: var(--regular-r-font-p);
+  font-family: var(--font-light-satoshi);
   font-size: 18px;
   font-weight: 300;
   line-height: 22px;
@@ -132,7 +132,7 @@ select {
 }
 input::placeholder,
 select::placeholder {
-  font-family: var(--bold-font-h1);
+  font-family: var(--font-meduim-aeonik);
   font-size: 15.34px;
   font-weight: 400;
   line-height: 24.55px;
@@ -165,7 +165,7 @@ input[type='submit'] {
   cursor: pointer;
 }
 
-.companyName {
+.form-field {
   display: flex;
   flex-direction: column;
   gap: 10.96px;
@@ -274,6 +274,95 @@ label span {
   text-decoration: none;
 }
 
+.custom-select {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+}
+
+.select-box {
+  width: 100%;
+  padding: 17.53px 21.92px;
+  border-radius: 8px;
+  border: 1.1px solid #121b28;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  min-height: 60px; /* Ensure it's a little bigger when items are selected */
+  background-image: url('assets/svgs/caret-down.svg');
+  background-repeat: no-repeat;
+  background-position: right 25px center;
+  background-size: 19.2px;
+  font-family: var(--regular-font-p-aeonik);
+  font-size: 15.34px;
+  font-weight: 400;
+  line-height: 24.55px;
+  text-align: left;
+}
+
+.selected-item {
+  background-color: rgba(246, 246, 249, 1);
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: black;
+}
+
+.selected-item .remove {
+  cursor: pointer;
+  color: rgba(224, 49, 55, 1);
+  font-size: 16px;
+}
+
+.options-container {
+  display: none; /* Hidden by default */
+  position: absolute;
+  width: 100%;
+  border: 1.1px solid #121b28;
+  background-color: white;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1;
+  top: 100%; /* Position below the select box */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Show the options when .open is applied */
+.custom-select.open .options-container {
+  display: block;
+}
+
+.options-container label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  font-family: var(--bold-font-h1);
+  font-size: 15.34px;
+  font-weight: 400;
+  line-height: 24.55px;
+  color: #121b28;
+}
+
+/* Hide checkboxes */
+.options-container input[type='checkbox'] {
+  display: none;
+}
+
+.options-container label:hover {
+  background-color: #f0f0f0;
+}
+
+.select-box::after {
+  color: #6c6969;
+}
+
 @media screen and (max-width: 900px) {
   .form {
     flex-direction: column;
@@ -284,5 +373,20 @@ label span {
   .lets-talk-container {
     max-width: 100%;
     padding: 0 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form-heading {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+  }
+
+  .form-description {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
   }
 }

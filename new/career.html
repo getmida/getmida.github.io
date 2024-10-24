@@ -18,7 +18,10 @@
     <title>Mida - Career</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="header-footer.css" />
+    <link rel="stylesheet" href="career.css" />
+
     <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="contact.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -328,6 +331,148 @@
       </div>
     </section>
 
+    <div class="career-space-out">
+      <section class="career-form-container">
+        <div class="inner-form-career">
+          <div class="form-top-section">
+            <h1 class="form-heading">Complete the form</h1>
+            <p class="form-description">
+              Contact us by filling out the form below.
+            </p>
+          </div>
+          <div class="down-section">
+            <form
+              action="https://forms.un-static.com/forms/b1bcdcd912c98c991e0a18ec9f48e50f47b24444"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <!-- Role selection -->
+              <div class="form-field">
+                <label for="application-role"
+                  >What role are you applying for? <span>*</span></label
+                >
+                <select
+                  id="application-role"
+                  name="application-role[]"
+                  required
+                >
+                  <option value="" disabled selected hidden>Select</option>
+                  <option value="Graphic Designer">Graphic designer</option>
+                  <option value="Frontend Developer">Frontend developer</option>
+                  <option value="Data Analyst">Data Analyst</option>
+                  <option value="Backend developer">Backend developer</option>
+                </select>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-field">
+                <label for="emailAddress">Email <span>*</span></label>
+                <input
+                  type="email"
+                  name="emailAddress"
+                  id="emailAddress"
+                  placeholder="Enter email"
+                  required
+                />
+              </div>
+
+              <!-- Phone input -->
+              <div class="form-field">
+                <label for="phoneNumber">Phone Number <span>*</span></label>
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  placeholder="Enter phone number"
+                  required
+                />
+              </div>
+
+              <!-- Role/Title at company input -->
+              <div class="form-field">
+                <label for="companyRole"
+                  >Your Role/Title at your Company <span>*</span></label
+                >
+                <input
+                  type="text"
+                  name="companyRole"
+                  id="companyRole"
+                  placeholder="Enter role/title here"
+                  required
+                />
+              </div>
+
+              <!-- How did you hear about us - custom multi-select -->
+              <div class="form-field">
+                <label for="howDidYouHearAboutUs"
+                  >How did you hear about us? <span>*</span></label
+                >
+                <div class="custom-select" id="howDidYouHearAboutUs">
+                  <div class="select-box">Select</div>
+                  <div class="options-container">
+                    <label
+                      ><input type="checkbox" value="Instagram" />
+                      Instagram</label
+                    >
+                    <label
+                      ><input type="checkbox" value="LinkedIn" />
+                      LinkedIn</label
+                    >
+                    <label
+                      ><input type="checkbox" value="Facebook" />
+                      Facebook</label
+                    >
+                    <label
+                      ><input type="checkbox" value="Google" /> Google</label
+                    >
+                    <label
+                      ><input type="checkbox" value="GoSales Team" /> GoSales
+                      Team</label
+                    >
+                    <label><input type="checkbox" value="Blog" /> Blog</label>
+                    <label
+                      ><input type="checkbox" value="Email Marketing" /> Email
+                      Marketing</label
+                    >
+                    <label><input type="checkbox" value="X" /> X</label>
+                    <label
+                      ><input type="checkbox" value="Others" /> Others</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hidden input to capture selected options -->
+              <input type="hidden" name="heardAboutUs" id="heardAboutUsField" />
+
+              <!-- CV upload -->
+              <div class="form-field">
+                <div class="cv">Upload CV <span>*</span></div>
+                <label for="input-file" id="drop-area">
+                  <input
+                    type="file"
+                    accept="application/pdf"
+                    id="input-file"
+                    name="cvFile"
+                    hidden
+                  />
+                  <div id="img-view">
+                    <img src="assets/images/cloud-add.png" alt="" />
+                    <p>Choose a file or drag & drop it here</p>
+                    <span>PDF formats, up to 1MB</span>
+                    <div id="loader" class="loader hidden"></div>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Submit button -->
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <footer>
       <div class="info-footer-section">
         <div class="footer-main-container">
@@ -435,6 +580,7 @@
         </div>
       </div>
     </footer>
+    <script src="career.js"></script>
     <script src="header-footer.js" defer></script>
   </body>
 </html>

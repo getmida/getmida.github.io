@@ -321,22 +321,19 @@
 
     <section class="form">
       <div class="form-container">
-        <iframe
-          src="https://forms.gle/VKFWN61rL4j57R6o7"
-          style="width: 100%; height: 100vh; background-color: transparent"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <!-- <div class="form-top-section">
+        <div class="form-top-section">
           <h1 class="form-heading">Complete the form</h1>
           <p class="form-description">
             Contact us by filling out the form below.
           </p>
         </div>
         <div class="down-section">
-          <form action="" method="post">
-            <div class="companyName">
-              <label for="">Company Name<span>*</span></label>
+          <form
+            action="https://forms.un-static.com/forms/ce364f05b5eceeea1dc4b4158e7414f2df33a3e8"
+            method="post"
+          >
+            <div class="form-field">
+              <label for="companyName">Company Name<span>*</span></label>
               <input
                 type="text"
                 name="companyName"
@@ -345,7 +342,7 @@
                 required
               />
             </div>
-            <div class="companyName">
+            <div class="form-field">
               <label for="">Company Website<span>*</span></label>
               <input
                 type="url"
@@ -355,18 +352,19 @@
                 required
               />
             </div>
-            <div class="companyName">
+            <div class="form-field">
               <label for="companyLocation"
                 >Company Location<span>*</span></label
               >
               <select id="companyLocation" name="companyLocation" required>
                 <option value="" disabled selected hidden>Select</option>
-                <option value="abuja">Abuja</option>
-                <option value="lagos">Lagos</option>
-                <option value="benin">Benin</option>
+                <option value="lagos">Lagos state</option>
+                <option value="edo">Edo state</option>
+                <option value="ogun">Ogun state</option>
+                <option value="osun">Osun state</option>
               </select>
             </div>
-            <div class="companyName">
+            <div class="form-field">
               <label for="">Full Name <span>*</span></label>
               <input
                 type="text"
@@ -376,7 +374,7 @@
                 required
               />
             </div>
-            <div class="companyName">
+            <div class="form-field">
               <label for="">Your Email Address <span>*</span></label>
               <input
                 type="email"
@@ -386,7 +384,7 @@
                 required
               />
             </div>
-            <div class="companyName">
+            <div class="form-field">
               <label for="">Your Phone Number <span>*</span></label>
               <input
                 type="tel"
@@ -396,7 +394,7 @@
                 required
               />
             </div>
-            <div class="companyName">
+            <div class="form-field">
               <label for=""
                 >Your Role/Title at your Company <span>*</span></label
               >
@@ -408,36 +406,68 @@
                 required
               />
             </div>
-            <div class="companyName">
+            <div class="form-field">
               <label for="hearAboutUs"
                 >How did you hear about us? <span>*</span></label
               >
-              <select id="hearAboutUs" name="hearAboutUs" required>
-                <option value="" disabled selected hidden>Select</option>
-                <option value="linkedin">LinkedIn</option>
-                <option value="whatsApp">WhatsApp</option>
-                <option value="instagram">Instagram</option>
-              </select>
+              <div class="custom-select" id="howDidYouHearAboutUs">
+                <div class="select-box">Select</div>
+                <div class="options-container">
+                  <label
+                    ><input type="checkbox" value="Instagram" />
+                    Instagram</label
+                  >
+                  <label
+                    ><input type="checkbox" value="LinkedIn" />LinkedIn</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Facebook" /> Facebook</label
+                  >
+                  <label><input type="checkbox" value="Google" /> Google</label>
+                  <label
+                    ><input type="checkbox" value="GoSales Team" /> GoSales
+                    Team</label
+                  >
+                  <label><input type="checkbox" value="Blog" /> Blog</label>
+                  <label
+                    ><input type="checkbox" value="Email Marketing" /> Email
+                    Marketing</label
+                  >
+                  <label><input type="checkbox" value="X" /> X</label>
+                  <label
+                    ><input type="checkbox" value="Others" /> Others
+                  </label>
+                </div>
+              </div>
             </div>
-            <div class="companyName">
-              <label for="hearAboutUs"
-                >What product (s) are you interested in? <span>*</span></label
+            <div class="form-field">
+              <label for="productInterestedIn"
+                >What product(s) are you interested in? <span>*</span></label
               >
-              <select
-                id="productInterestedIn"
-                name="productInterestedIn"
-                required
-              >
-                <option value="" disabled selected hidden>Select</option>
-                <option value="midaOmni">MidaOmni</option>
-                <option value="midaX">MidaX</option>
-                <option value="debtBuying">Debt Buying</option>
-                <option value="recovery">Recovery</option>
-                <option value="collections">Collections</option>
-              </select>
+              <div class="custom-select" id="productInterestedIn">
+                <div class="select-box">Select</div>
+                <div class="options-container">
+                  <label
+                    ><input type="checkbox" value="MidaOmni" /> MidaOmni</label
+                  >
+                  <label><input type="checkbox" value="MidaX" /> MidaX</label>
+                  <label
+                    ><input type="checkbox" value="Debt Buying" /> Debt
+                    Buying</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Recovery" /> Recovery</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Collections" />
+                    Collections</label
+                  >
+                </div>
+              </div>
             </div>
-            <div class="companyName">
-              <label for="">Additional information <span>*</span></label>
+
+            <div class="form-field">
+              <label for="">Additional information <span></span></label>
               <textarea
                 name="additionalInformation"
                 id="additionalInformation"
@@ -448,7 +478,7 @@
 
             <input type="submit" value="Submit" />
           </form>
-        </div> -->
+        </div>
       </div>
 
       <div class="lets-talk-container">
@@ -616,6 +646,7 @@
     </footer>
 
     <script src="header-footer.js" defer></script>
+    <script src="contact.js"></script>
     <script src="script.js" defer></script>
   </body>
 </html>
