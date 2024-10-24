@@ -108,3 +108,9 @@ function initializeCustomSelect(selectContainerId) {
     }
   })
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  initializeCustomSelect('howDidYouHearAboutUs')
+  initializeCustomSelect('productInterestedIn')
+})
+
