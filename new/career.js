@@ -6,37 +6,41 @@ function initializeCustomSelect(selectContainerId) {
   const selectContainer = document.getElementById(selectContainerId)
   const selectBox = selectContainer.querySelector('.select-box')
   const optionsContainer = selectContainer.querySelector('.options-container')
+  const checkboxes = optionsContainer.querySelectorAll('input[type="checkbox"]')
 
+  // Toggle dropdown visibility
   selectBox.addEventListener('click', function () {
     selectContainer.classList.toggle('open')
   })
 
-  optionsContainer.addEventListener('change', function (e) {
-    const value = e.target.value
-    if (e.target.checked) {
-      selectedOptions.push(value)
-    } else {
-      selectedOptions = selectedOptions.filter((item) => item !== value)
-    }
-    updateSelectBox(selectBox, selectedOptions)
-    document.getElementById('heardAboutUsField').value =
-      selectedOptions.join(',') // Update hidden field
+  // Listen to checkbox changes
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', function (e) {
+      const value = e.target.value
+      if (e.target.checked) {
+        if (!selectedOptions.includes(value)) {
+          selectedOptions.push(value)
+        }
+      } else {
+        selectedOptions = selectedOptions.filter((item) => item !== value)
+      }
+      updateSelectBox(selectBox, selectedOptions)
+      document.getElementById('heardAboutUsField').value =
+        selectedOptions.join(',')
+    })
   })
 
   // Update the displayed text in the select box
   function updateSelectBox(selectBox, selectedOptions) {
     selectBox.innerHTML = ''
-
     if (selectedOptions.length > 0) {
       selectedOptions.forEach((option) => {
         const item = document.createElement('div')
         item.classList.add('selected-item')
         item.innerHTML = `${option} <span class="remove">x</span>`
-
         item.querySelector('.remove').addEventListener('click', function () {
           removeOption(option)
         })
-
         selectBox.appendChild(item)
       })
     } else {
@@ -44,6 +48,7 @@ function initializeCustomSelect(selectContainerId) {
     }
   }
 
+  // Remove option
   function removeOption(value) {
     const checkbox = optionsContainer.querySelector(`input[value="${value}"]`)
     if (checkbox) checkbox.checked = false
@@ -53,6 +58,7 @@ function initializeCustomSelect(selectContainerId) {
       selectedOptions.join(',')
   }
 
+  // Close dropdown when clicking outside
   document.addEventListener('click', function (e) {
     if (!selectContainer.contains(e.target)) {
       selectContainer.classList.remove('open')
@@ -60,7 +66,7 @@ function initializeCustomSelect(selectContainerId) {
   })
 }
 
-// Form and File Upload Initialization
+// Initialize on DOM content load
 document.addEventListener('DOMContentLoaded', function () {
   initializeCustomSelect('howDidYouHearAboutUs')
 
@@ -69,41 +75,61 @@ document.addEventListener('DOMContentLoaded', function () {
   const imageView = document.getElementById('img-view')
   const loader = document.getElementById('loader')
 
+  dropArea.addEventListener('dragenter', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    dropArea.classList.add('highlight')
+  })
+
+  dropArea.addEventListener('dragover', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+  })
+
+  dropArea.addEventListener('dragleave', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    dropArea.classList.remove('highlight')
+  })
+
+  dropArea.addEventListener('drop', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    dropArea.classList.remove('highlight')
+    const files = e.dataTransfer.files
+    if (files.length > 0) {
+      inputFile.files = files
+      inputFile.dispatchEvent(new Event('change'))
+    }
+  })
+
   inputFile.addEventListener('change', handleFileUpload)
 
   function handleFileUpload() {
     const file = inputFile.files[0]
+    if (!file) return
 
     showLoader(true)
 
-    if (file && file.type !== 'application/pdf') {
+    if (file.type !== 'application/pdf') {
       showLoader(false)
       updateImgViewContent('Error: Please upload a valid PDF file.')
+      inputFile.value = '' // Reset file input
       return
     }
 
-    if (file && file.size > 1048576) {
+    if (file.size > 1048576) {
       showLoader(false)
       updateImgViewContent(
         'Error: File size exceeds 1MB. Please upload a smaller file.'
       )
+      inputFile.value = '' // Reset file input
       return
     }
 
     showLoader(false)
-    uploadedFileName = file.name
-    updateImgViewContent(`PDF uploaded: ${uploadedFileName}`)
+    updateImgViewContent(`PDF uploaded: ${file.name}`)
   }
-
-  dropArea.addEventListener('dragover', function (e) {
-    e.preventDefault()
-  })
-
-  dropArea.addEventListener('drop', function (e) {
-    e.preventDefault()
-    inputFile.files = e.dataTransfer.files
-    handleFileUpload()
-  })
 
   function showLoader(visible) {
     loader.classList.toggle('hidden', !visible)
@@ -113,37 +139,6 @@ document.addEventListener('DOMContentLoaded', function () {
     imageView.innerHTML = `<p>${message}</p>`
   }
 
-  // Form Submission using fetch
-  const form = document.querySelector('form')
-  form.addEventListener('submit', function (event) {
-    event.preventDefault() // Prevent default form submission
-
-    // Collect form data
-    const formData = new FormData(form)
-
-    // Submit form data using fetch()
-    fetch(form.action, {
-      method: 'POST',
-      body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json() // Assuming JSON response; adjust if necessary
-        } else {
-          throw new Error('Form submission failed')
-        }
-      })
-      .then((data) => {
-        // Handle success, e.g., display a success message
-        alert('Form submitted successfully!')
-        form.reset() // Optionally reset the form
-        updateImgViewContent('Choose a file or drag & drop it here') // Reset file input display
-        selectedOptions = []
-        updateSelectBox(document.querySelector('.select-box'), selectedOptions) // Reset custom select
-      })
-      .catch((error) => {
-        // Handle error, e.g., display an error message
-        alert('Error: ' + error.message)
-      })
-  })
 })
+
+

@@ -119,6 +119,13 @@
   display: none;
 }
 
+#drop-area.highlight {
+  border: 1px dashed rgba(23, 26, 54, 1); /* Change to your desired highlight color */
+  border-radius: 8px;
+
+  /* background-color: rgba(0, 123, 255, 0.1); Light blue background */
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
