@@ -344,7 +344,6 @@
             <form
               action="https://forms.un-static.com/forms/b1bcdcd912c98c991e0a18ec9f48e50f47b24444"
               method="post"
-              enctype="multipart/form-data"
             >
               <!-- Role selection -->
               <div class="form-field">
@@ -403,7 +402,69 @@
               </div>
 
               <!-- How did you hear about us - custom multi-select -->
+
               <div class="form-field">
+                <label>How did you hear about us? <span>*</span></label>
+
+                <div class="check-box-custom">
+                  <input type="checkbox" id="instagram" />
+                  <label for="instagram">Instagram</label>
+
+                  <input type="checkbox" id="linkedin" />
+                  <label for="linkedin">LinkedIn</label>
+
+                  <input type="checkbox" id="facebook" />
+                  <label for="facebook">Facebook</label>
+
+                  <input type="checkbox" id="google" />
+                  <label for="google">Google</label>
+
+                  <input type="checkbox" id="gosales-team" />
+                  <label for="gosales-team">GoSales Team</label>
+
+                  <input type="checkbox" id="blog" />
+                  <label for="blog">Blog</label>
+
+                  <input type="checkbox" id="email-marketing" />
+                  <label for="email-marketing">Email Marketing</label>
+
+                  <input type="checkbox" id="x" />
+                  <label for="x">X</label>
+
+                  <input type="checkbox" id="others" />
+                  <label for="others">Others</label>
+                </div>
+                <div id="error-message" style="color: red; display: none">
+                  Please select at least one option.
+                </div>
+
+                <!-- <div class="check-box-custom">
+                  <label
+                    ><input type="checkbox" value="Instagram" />
+                    Instagram</label
+                  >
+                  <label
+                    ><input type="checkbox" value="LinkedIn" /> LinkedIn</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Facebook" /> Facebook</label
+                  >
+                  <label><input type="checkbox" value="Google" /> Google</label>
+                  <label
+                    ><input type="checkbox" value="GoSales Team" /> GoSales
+                    Team</label
+                  >
+                  <label><input type="checkbox" value="Blog" /> Blog</label>
+                  <label
+                    ><input type="checkbox" value="Email Marketing" /> Email
+                    Marketing</label
+                  >
+                  <label><input type="checkbox" value="X" /> X</label>
+                  <label><input type="checkbox" value="Others" /> Others</label>
+                </div> -->
+              </div>
+
+              <!-- <div class="form-field">
                 <label for="howDidYouHearAboutUs"
                   >How did you hear about us? <span>*</span></label
                 >
@@ -440,10 +501,10 @@
                     >
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Hidden input to capture selected options -->
-              <input type="hidden" name="heardAboutUs" id="heardAboutUsField" />
+              <!-- <input type="hidden" name="heardAboutUs" id="heardAboutUsField" /> -->
 
               <!-- CV upload -->
               <div class="form-field">

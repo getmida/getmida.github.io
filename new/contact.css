@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
 .hero-contact {
   background-color: rgba(230, 246, 255, 1);
   background-image: url(assets/images/pattern-mask-group.png); /* Set the background image */
@@ -273,6 +275,61 @@ label span {
 .call {
   text-decoration: none;
 }
+
+.check-box-custom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* flex-direction: column; */
+}
+
+@media screen and (max-width: 500px) {
+  .check-box-custom {
+    grid-template-columns: repeat(2, 1fr);
+    /* flex-direction: column; */
+  }
+}
+
+.check-box-custom [type='checkbox'] {
+  display: none;
+}
+
+/* Custom checkbox */
+.check-box-custom label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: Instrument Sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  font-family: var(--font-meduim-aeonik);
+}
+
+.check-box-custom label::before {
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px dashed #000;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-sizing: border-box;
+}
+
+/* Checked state */
+.check-box-custom [type='checkbox']:checked + label::before {
+  /* background-color: rgba(242, 218, 255, 1); */
+  background-color: rgba(255, 217, 238, 0.31);
+  /* background-color: var(--color-secondary); */
+}
+
+/* .check-box-custom [type='checkbox'] {
+  width: 100%;
+  max-width: 15px;
+  height: 15px;
+  border-radius: 50% !important;
+} */
 
 .custom-select {
   position: relative;
