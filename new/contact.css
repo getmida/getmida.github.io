@@ -134,7 +134,7 @@ select {
 }
 input::placeholder,
 select::placeholder {
-  font-family: var(--font-meduim-aeonik);
+  font-family: var(--regular-font-p-aeonik);
   font-size: 15.34px;
   font-weight: 400;
   line-height: 24.55px;
