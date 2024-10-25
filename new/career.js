@@ -1,24 +1,24 @@
-function validateCheckboxes() {
-  const checkboxes = document.querySelectorAll('input[name="howDidYouHear[]"]')
-  const errorMessage = document.getElementById('error-message')
-  let isChecked = false
+// function validateCheckboxes() {
+//   const checkboxes = document.querySelectorAll('input[name="howDidYouHear[]"]')
+//   const errorMessage = document.getElementById('error-message')
+//   let isChecked = false
 
-  // Check if at least one checkbox is checked
-  checkboxes.forEach((checkbox) => {
-    if (checkbox.checked) {
-      isChecked = true
-    }
-  })
+//   // Check if at least one checkbox is checked
+//   checkboxes.forEach((checkbox) => {
+//     if (checkbox.checked) {
+//       isChecked = true
+//     }
+//   })
 
-  // Show error message and prevent submission if none are checked
-  if (!isChecked) {
-    errorMessage.style.display = 'block'
-    return false // Prevent form submission
-  } else {
-    errorMessage.style.display = 'none'
-    return true // Allow form submission
-  }
-}
+//   // Show error message and prevent submission if none are checked
+//   if (!isChecked) {
+//     errorMessage.style.display = 'block'
+//     return false // Prevent form submission
+//   } else {
+//     errorMessage.style.display = 'none'
+//     return true // Allow form submission
+//   }
+// }
 
 // let selectedOptions = []
 // let uploadedFileName = '' // Store uploaded file name
