@@ -118,6 +118,9 @@
 }
 
 @media screen and (max-width: 931px) {
+  .nav__list {
+    list-style-type: none;
+  }
   .nav__data {
     background-color: white;
   }
