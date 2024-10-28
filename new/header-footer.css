@@ -118,6 +118,12 @@
 }
 
 @media screen and (max-width: 931px) {
+  ul {
+    list-style: none;
+  }
+  li {
+    list-style: none;
+  }
   .nav__list {
     list-style-type: none;
   }
