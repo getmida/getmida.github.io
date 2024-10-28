@@ -318,10 +318,12 @@
   .nav__toggle {
     display: none;
   }
+
   .nav__list {
     display: flex;
     column-gap: 2.2rem;
     height: 100%;
+    list-style-type: none;
   }
 
   .show-menu {
