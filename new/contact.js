@@ -114,3 +114,37 @@
 //   initializeCustomSelect('productInterestedIn')
 // })
 
+// add value of checked checkboxes to input field
+const checkboxes = document.querySelectorAll(
+    "#productInterestedIn input"
+);
+const input = document.querySelector("input[name=product]");
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+        let values = [];
+        checkboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+                values.push(checkbox.value);
+            }
+        });
+        input.value = values.join(", ");
+    });
+});
+
+// add value of checked checkboxes to input field
+const checkboxestwo = document.querySelectorAll(
+    "#hearAbout input"
+);
+const inputtwo = document.querySelector("input[name=hearAboutUs]");
+checkboxestwo.forEach((checkboxtwo) => {
+    checkboxtwo.addEventListener("change", function () {
+        let values = [];
+        checkboxestwo.forEach((checkboxtwo) => {
+            if (checkboxtwo.checked) {
+                values.push(checkboxtwo.value);
+            }
+        });
+        inputtwo.value = values.join(", ");
+    });
+});
+
