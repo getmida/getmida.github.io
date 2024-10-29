@@ -344,6 +344,7 @@
             <form
               action="https://forms.un-static.com/forms/b1bcdcd912c98c991e0a18ec9f48e50f47b24444"
               method="post"
+              enctype="multipart/form-data"
             >
               <!-- Role selection -->
               <div class="form-field">
@@ -352,7 +353,7 @@
                 >
                 <select
                   id="application-role"
-                  name="application-role[]"
+                  name="application-role"
                   required
                 >
                   <option value="" disabled selected hidden>Select</option>
@@ -406,37 +407,39 @@
               <div class="form-field">
                 <label>How did you hear about us? <span>*</span></label>
 
-                <div class="check-box-custom">
-                  <input type="checkbox" id="instagram" />
+                <div class="check-box-custom" id="hearAbout">
+                  <input type="checkbox" id="instagram" value="instagram"/>
                   <label for="instagram">Instagram</label>
-
-                  <input type="checkbox" id="linkedin" />
+  
+                  <input type="checkbox" id="linkedin" value="linkedin"/>
                   <label for="linkedin">LinkedIn</label>
-
-                  <input type="checkbox" id="facebook" />
+  
+                  <input type="checkbox" id="facebook" value="facebook" />
                   <label for="facebook">Facebook</label>
-
-                  <input type="checkbox" id="google" />
+  
+                  <input type="checkbox" id="google" value="google"/>
                   <label for="google">Google</label>
-
-                  <input type="checkbox" id="gosales-team" />
+  
+                  <input type="checkbox" id="gosales-team" value="gosales-team"/>
                   <label for="gosales-team">GoSales Team</label>
-
-                  <input type="checkbox" id="blog" />
+  
+                  <input type="checkbox" id="blog" value="blog" />
                   <label for="blog">Blog</label>
-
-                  <input type="checkbox" id="email-marketing" />
+  
+                  <input type="checkbox" id="email-marketing" value="email-marketing"/>
                   <label for="email-marketing">Email Marketing</label>
-
-                  <input type="checkbox" id="x" />
+  
+                  <input type="checkbox" id="x" value="x" />
                   <label for="x">X</label>
-
-                  <input type="checkbox" id="others" />
+  
+                  <input type="checkbox" id="others" value="others"/>
                   <label for="others">Others</label>
                 </div>
                 <div id="error-message" style="color: red; display: none">
                   Please select at least one option.
                 </div>
+
+                <input type="hidden" name="hearAboutUs" value="" />
 
                 <!-- <div class="check-box-custom">
                   <label

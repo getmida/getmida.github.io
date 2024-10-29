@@ -162,3 +162,20 @@
 //   }
 
 // })
+
+// add value of checked checkboxes to input field
+const checkboxestwo = document.querySelectorAll(
+    "#hearAbout input"
+);
+const inputtwo = document.querySelector("input[name=hearAboutUs]");
+checkboxestwo.forEach((checkboxtwo) => {
+    checkboxtwo.addEventListener("change", function () {
+        let values = [];
+        checkboxestwo.forEach((checkboxtwo) => {
+            if (checkboxtwo.checked) {
+                values.push(checkboxtwo.value);
+            }
+        });
+        inputtwo.value = values.join(", ");
+    });
+});
