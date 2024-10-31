@@ -1,499 +1,1095 @@
-<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      href="assets/fonts/Satoshi-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="header-footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Mida</title>
+  </head>
+  <body>
+    <section class="hero-section">
+      <!--=============== HEADER ===============-->
+      <div class="inner-hero-section">
+        <section class="header-container">
+          <header class="header">
+            <nav class="nav container">
+              <div class="nav__data">
+                <a href="index.html" class="nav__logo">
+                  <img src="assets/images/logo main.png" alt="" srcset="" />
+                </a>
 
-  <title>Mida - AI-powered, ethical debt collection & recovery</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+                <div class="nav__toggle" id="nav-toggle">
+                  <img
+                    src="assets/images/open-hamburger.png"
+                    class="nav__toggle-menu"
+                  />
+                  <img
+                    src="assets/images/close-hamburger.png"
+                    class="nav__toggle-close"
+                  />
+                </div>
+              </div>
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.ico" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+              <!--=============== NAV MENU ===============-->
+              <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                  <li>
+                    <a href="index.html" class="nav__link">Home</a>
+                  </li>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+                  <!--=============== DROPDOWN 1 ===============-->
+                  <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">
+                      About us
+                      <img
+                        src="assets/svgs/chevron-down.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </div>
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+                    <div class="dropdown__container">
+                      <div class="dropdown__content">
+                        <div class="dropdown__group">
+                          <div class="dropdown__header__card">
+                            <h2 class="dropdown__header__card-title">
+                              Company
+                            </h2>
+                            <p class="dropdown__header__card-paragraph">
+                              We’re Powering Businesses Forward with Innovative
+                              Solutions
+                            </p>
+                            <div class="dropdown-header-card-cta-link-header">
+                              <a
+                                href="https://app.getmida.com/register"
+                                class="dropdown-header-card-get-started-header"
+                                >Get started</a
+                              >
+                              <a
+                                href="contact.html"
+                                class="dropdown-header-card-book-demo-header"
+                                >Book demo</a
+                              >
+                            </div>
+                          </div>
+                        </div>
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+                        <div class="dropdown__group">
+                          <a href="about.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/About us.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Mida Technologies</h2>
+                                <p>Overview of our Core value</p>
+                              </div>
+                            </div>
+                          </a>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C44ESZHF0J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+                          <a href="career.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/Career.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Career</h2>
+                                <p>See our openings</p>
+                              </div>
+                            </div>
+                          </a>
 
-  gtag('config', 'G-C44ESZHF0J');
-</script>
+                          <!-- <a href="http://">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/Blog.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Blog</h2>
+                                <p>See important updates</p>
+                              </div>
+                            </div>
+                          </a> -->
+                        </div>
+                      </div>
+                    </div>
+                  </li>
 
-  <!-- =======================================================
-  * Template Name: FlexStart
-  * Updated: Jun 19 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+                  <!--=============== DROPDOWN 2 ===============-->
+                  <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">
+                      0ur solutions
+                      <img
+                        src="assets/svgs/chevron-down.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </div>
 
-<body>
+                    <div class="dropdown__container">
+                      <div class="dropdown__content">
+                        <div class="dropdown__group">
+                          <div class="dropdown__header__card">
+                            <h2 class="dropdown__header__card-title">
+                              Products
+                            </h2>
+                            <p class="dropdown__header__card-paragraph">
+                              We’re Powering Businesses Forward with Innovative
+                              Solutions
+                            </p>
+                            <div class="dropdown-header-card-cta-link-header">
+                              <a
+                                href="https://app.getmida.com/register"
+                                class="dropdown-header-card-get-started-header"
+                                >Get started</a
+                              >
+                              <a
+                                href="contact.html"
+                                class="dropdown-header-card-book-demo-header"
+                                >Book demo</a
+                              >
+                            </div>
+                          </div>
+                        </div>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+                        <div class="dropdown__group">
+                          <a href="collections.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/Collections.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Collection</h2>
+                                <p>Collection service</p>
+                              </div>
+                            </div>
+                          </a>
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/mida.png" alt="">
-        <!-- <span>Mida</span> -->
-      </a>
+                          <a href="recovery.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/Recovery.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Recovery</h2>
+                                <p>Recovery service</p>
+                              </div>
+                            </div>
+                          </a>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#services">Our solutions</a></li>
-          <li><a class="nav-link scrollto" href="#about">About us</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact us</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#team">Login</a></li> -->
-          <!-- <li><a href="blog.html">Blog</a></li> -->
-          <li class="dropdown"><a href="#"><span>Developers</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="developer/start.html">API documentation</a></li>
-              <!-- <li><a href="#">Plugins</a></li> -->
-            </ul>
-          </li>
-          <li><a class="getstarted scrollto" href="https://app.getmida.com/login">Login</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+                          <a href="mida-omni.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/MidaOmni.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>MidaOmni</h2>
+                                <p>Customize Strategies</p>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="dropdown__group">
+                          <a href="midax.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/MidaX.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>MidaX</h2>
+                                <p>Tracing solution</p>
+                              </div>
+                            </div>
+                          </a>
 
-    </div>
-  </header><!-- End Header -->
+                          <a href="debt-buying.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/Debt buying.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Debt Buying</h2>
+                                <p>Purchase of loan portfolio</p>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center">
+                  <li>
+                    <a
+                      href="developer/start.html"
+                      class="nav__link"
+                      >Developer</a
+                    >
+                  </li>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">AI-powered, ethical debt collection & recovery</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400"> Leveraging advanced analytics and AI to predict and deliver significantly better collections performance for lenders, enabling them to scale confidently</h2>
-          <div data-aos="fade-up" data-aos-delay="600">
-            <div class="text-center text-lg-start">
-              <a href="#contact" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>Book a demo</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
+                  <li>
+                    <a href="contact.html" class="nav__link">Contact us</a>
+                  </li>
+
+                  <div class="cta-link-header">
+                    <a href="https://app.getmida.com/login" class="login-header"
+                      >Log In</a
+                    >
+                    <a
+                      href="https://app.getmida.com/register"
+                      class="get-started-header"
+                      >Get Started</a
+                    >
+                  </div>
+                </ul>
+              </div>
+            </nav>
+          </header>
+        </section>
+
+        <section class="hero-section-container">
+          <div class="hero-info-cta">
+            <div class="inner-take-action-info fade-slide-in">
+              <h1 class="product-title">
+                AI-powered, ethical debt collection and recovery solutions
+              </h1>
+              <p class="product-short-info">
+                Leveraging advanced analytics and AI to predict and deliver
+                significantly better collections performance for lenders,
+                enabling them to scale confidently
+              </p>
+              <div class="talk-to-us-action-button">
+                <a
+                  class="talk-to-us-button"
+                  href="https://app.getmida.com/register"
+                  >Get started</a
+                >
+
+                <a class="book-demo-button" href="contact.html">Book demo</a>
+              </div>
+            </div>
+          </div>
+          <div class="mobile-desktop-image-container">
+            <div class="image-container">
+              <img
+                src="assets/images/3px.png"
+                class="image right-image"
+                alt=""
+              />
+
+              <div class="stacked-images">
+                <img src="assets/images/4px.png" class="image stacked" alt="" />
+                <img src="assets/images/5px.png" class="image stacked" alt="" />
+              </div>
+            </div>
+            <div class="image-container-mobile">
+              <img src="assets/images/section hero.png" alt="" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="logo-slider">
+      <h1 class="trusted-by">Trusted By;</h1>
+      <div class="logos">
+        <div class="logos-slide">
+          <img src="assets/images/oxygen-web-logor.png" alt="oxygen-logo" />
+          <img
+            src="assets/images/access-bank-plc-icon-512x128-r5rvcuv8.png"
+            alt="access-logo"
+          />
+          <img
+            src="assets/images/GkjpA72KuTfMqGekr1yw4jIVa5E (1).png"
+            alt="lendigo-logo"
+          />
+          <img
+            src="assets/images/carbon_primary_positive_RGB.8ad3546d (1).png"
+            alt="carbon-logo"
+          />
+          <img src="assets/images/lightlogox2 (1).png" alt="seamlessHR-logo" />
+          <img src="assets/images/logo (1) (1).png" alt="onepipe-logo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- our-solution-section -->
+    <section class="mida-solution">
+      <h2 class="our-solution-border-button">OUR solution</h2>
+      <div class="mida-solution-container">
+        <h2 class="mida-solution-title">
+          Tech-enabled solutions that put humans first
+        </h2>
+
+        <div class="our-mida-solutions-cards">
+          <div class="mida-solution-card">
+            <div class="our-card-solution-text-icon">
+              <div class="icon-title">
+                <img src="assets/svgs/collections-home.svg" alt="" srcset="" />
+                <h2>Collections</h2>
+              </div>
+
+              <p class="our-card-solution-text">
+                Online and contact center collections service for lenders.
+              </p>
+            </div>
+            <div class="our-card-solution-cta">
+              <a href="collections.html" class="learn-more">learn-more</a>
+              <div class="cta-solution-card">
+                <a href="collections.html"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mida-solution-card">
+            <div class="icon-title">
+              <img src="assets/svgs/recovery-home.svg" alt="" srcset="" />
+              <h2>Recovery</h2>
+            </div>
+            <div class="our-card-solution-text">
+              <p>Online and field recovery services for NPLs & write-offs.</p>
+            </div>
+            <div class="our-card-solution-cta">
+              <div>
+                <a href="recovery.html" class="learn-more">learn-more</a>
+              </div>
+              <div class="cta-solution-card">
+                <a href="recovery.html"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mida-solution-card">
+            <div class="icon-title">
+              <img src="assets/svgs/debt-buying-home.svg" alt="" srcset="" />
+              <h2>Debt Buying</h2>
+            </div>
+            <div class="our-card-solution-text">
+              <p>Outright purchase of structured loan portfolios.</p>
+            </div>
+            <div class="our-card-solution-cta">
+              <div>
+                <a href="debt-buying.html" class="learn-more">learn-more</a>
+              </div>
+              <div class="cta-solution-card">
+                <a href="debt-buying.html"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mida-solution-card">
+            <div class="icon-title">
+              <img src="assets/svgs/mida-omini-home.svg" alt="" srcset="" />
+              <h2>Mida Omni Enterprise</h2>
+            </div>
+            <div class="our-card-solution-text">
+              <p>Enterprise workflow solution for collections & recovery.</p>
+            </div>
+            <div class="our-card-solution-cta">
+              <div>
+                <a href="mida-omni.html" class="learn-more">learn-more</a>
+              </div>
+              <div class="cta-solution-card">
+                <a href="mida-omni.html"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mida-solution-card">
+            <div class="icon-title">
+              <img src="assets/svgs/midax-home.svg" alt="" srcset="" />
+              <h2>MidaX</h2>
+            </div>
+            <div class="our-card-solution-text">
+              <p>Digital skip tracing solution for hard to find defaulters.</p>
+            </div>
+            <div class="our-card-solution-cta">
+              <div><a href="midax.html" class="learn-more">learn-more</a></div>
+              <div class="cta-solution-card">
+                <a href="midax.html"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mida-solution-last-card">
+            <h2 class="mida-solution-last-card-title">Explore Features</h2>
+            <p class="mida-solution-last-card-text">
+              Leverage our advance analytics and AI solution for better
+              collections performance
+            </p>
+            <div class="mida-solution-last-card-cta">
+              <a href="https://app.getmida.com/register" class="learn-more"
+                >Get Started</a
+              >
             </div>
           </div>
         </div>
-        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-          <img src="assets/img/Home.png" class="img-fluid" alt="">
+      </div>
+    </section>
+
+    <!-- why choose mida -->
+
+    <section class="why-choose-mida">
+      <div class="inner-container-why-choose-mida">
+        <div class="why-mida">
+          <h2 class="why-choose-mida-title">Why Choose Mida?</h2>
+          <p class="why-choose-mida-text">
+            We offer an optimized blend of advanced technology and experienced
+            people to deliver better success rates
+          </p>
         </div>
-      </div>
-    </div>
 
-  </section><!-- End Hero -->
-
-  <main id="main">
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-        <!-- Feature Icons -->
-        <div class="row feature-icons" data-aos="fade-up">
-          <h3>Mida handles all loan repayment needs from collections to recovery.</h3>
-          <!-- <sub>When to collect. Where to collect. How to collect</sub> -->
-          <legend style="text-align:center"><h4>Where to collect. When to collect. How to collect.</h4></legend>
-
-          <div class="row">
-
-            <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
-              <img src="assets/img/Mida.gif" class="img-fluid p-4" alt="">
-            </div>
-
-            <div class="col-xl-8 d-flex content">
-              <div class="row align-self-center gy-4">
-
-                <div class="col-md-6 icon-box" data-aos="fade-up">
-                  <i class="ri-line-chart-line"></i>
-                  <div>
-                    <h4>Smart repayment</h4>
-                    <p>From card tokenization to direct debits, our AI driven repayment logic, proactively manages potential default.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                  <i class="ri-stack-line"></i>
-                  <div>
-                    <h4>Omni channel engagement</h4>
-                    <p>Our multi channel user engagement pre to post collection leverages multiple data points to minimize default.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                  <i class="ri-brush-4-line"></i>
-                  <div>
-                    <h4>Dynamic collections</h4>
-                    <p>We increase your success rate with automated data-driven multi-platform, multi-bank variable collections.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                  <i class="ri-magic-line"></i>
-                  <div>
-                    <h4>Ethical recovery</h4>
-                    <p>For debts that are past due, we offer our experienced and ethical recovery technology to empower your field teams.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                  <i class="ri-command-line"></i>
-                  <div>
-                    <h4>Usability</h4>
-                    <p>We quickly integrate with your existing systems and offer real-time reporting and visualization on your company dashbaord.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-                  <i class="ri-radar-line"></i>
-                  <div>
-                    <h4>Proprietary solution</h4>
-                    <p>Our proprietary algorithm & advanced analytics successfully predict when to collect, where to collect and how to collect.</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div><!-- End Feature Icons -->
-
-      </div>
-
-    </section><!-- End Features Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>Our solutions</h2>
-          <p>Tech-enabled solutions that put humans first</p>
-        </header>
-
-        <div class="row gy-4 justify-content-center">
-          <!-- <p>We believe that better repayment performance builds trust for creditors while a dynamic & ethical approach increases repayment rates for borrowers. Our solution ensure both happen. </p>
-
- -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-box blue">
-              <img src="assets/img/collections.png" class="w-25" alt="Collections">
-              <h3>Collections</h3>
-              <p>From setting up the repayment instrument on your platform, and dynamic user engagement to variable multi-platform collections, we deliver higher success rates.</p>
-              <a href="#" class="read-more"><span>Learn More</span> <i class="bi bi-arrow-right"></i></a>
+        <div class="why-choose-mida-cards">
+          <div
+            class="mida-card-technology"
+            style="
+              background-image: url(assets/images/man-illustration-image.webp);
+            "
+          >
+            <div
+              class="choose-mida-card-info"
+              style="background-image: url(assets/svgs/our-technology.svg)"
+            >
+              <span class="radio-circle"></span>
+              <h3 class="choose-mida-card-title">Our Technology</h3>
+              <p class="choose-mida-card-description">
+                We rapidly test multiple tactics in real-time, then intensify &
+                automate those that successfully influence collections at scale,
+                ensuring we can serve more people faster.
+              </p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-box orange">
-              <img src="assets/img/recovery.png" class="w-25" alt="Recovery">
-              <h3>Recovery</h3>
-              <p>We combine digital collections with a data-driven contact center and field reovery technology to empower your team to locate your customers and collect outstanding repayments.</p>
-              <a href="#" class="read-more"><span>Learn More</span> <i class="bi bi-arrow-right"></i></a>
+          <div
+            class="mida-card-data-analytics"
+            style="background-image: url(assets/images/illustration-image.webp)"
+          >
+            <div
+              class="choose-mida-card-info-data-analytics"
+              style="background-image: url(assets/svgs/data-analytics.svg)"
+            >
+              <span class="radio-circle"></span>
+              <h3 class="choose-mida-card-title">Our Data Analytics</h3>
+              <p class="choose-mida-card-description">
+                Our algorithm processes a large data set of over 300 user
+                variables to identify trends & patterns that influence how and
+                when we engage pre and post-default
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="mida-card-localized-experience"
+            style="
+              background-image: url(assets/images/discussion-illustration-image.webp);
+            "
+          >
+            <div
+              class="choose-mida-card-info-localized-experience"
+              style="
+                background-image: url(assets/svgs/localized-experience.svg);
+              "
+            >
+              <span class="radio-circle"></span>
+              <h3 class="choose-mida-card-title">Our Localized Experience</h3>
+              <p class="choose-mida-card-description">
+                With over 40 years of experience in Africa’s toughest market, we
+                combine technology with a hands-on approach and community
+                integration to drive performance.
+              </p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
+    <!-- our-end to end solution -->
+    <section class="mida-end-to-end-solution">
+      <div class="mida-end-to-end-solution-container">
+        <p class="our-end-to-end-border-button">END-TO-END SOLUTION</p>
+        <h2 class="end-to-end-solution-title">
+          When to collect. Where to collect. How to collect
+        </h2>
+        <p class="end-to-end-solution-text">
+          Mida handles all loan repayment needs from instrument set-up to
+          collections as well as early & late recovery
+        </p>
       </div>
 
-    </section><!-- End Services Section -->
-
-        <!-- ======= Values Section ======= -->
-        <section id="values" class="values">
-
-          <div class="container" data-aos="fade-up">
-    
-            <header class="section-header">
-              <p>Why choose Mida?</p>
-            </header>
-    
-            <div class="row">
-    
-              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="box">
-                  <img src="assets/img/our technology.png" class="img-fluid" alt="">
-                  <h3>Our technology</h3>
-                  <p>We rapidly test multiple tactics in real-time then intensify & automate those that successfully influence collections at scale, ensuring we can serve more people faster.</p>
+      <div class="accordion-section-home">
+        <div class="accordion">
+          <div class="accordion-wrapper">
+            <div class="accordion-item" data-image="smart-payment.svg">
+              <div class="accordion-item-header">
+                <span
+                  ><img
+                    src="assets/gifs/wallet-1-1--unscreen.gif"
+                    alt="Smart Payment"
+                /></span>
+                <h3 class="title">Smart Payment</h3>
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  <p>
+                    From card tokenization to direct debits, our AI-driven
+                    repayment logic, proactively manages potential default
+                  </p>
+                  <!-- <a href="" class="learn-more-a">Learn More</a> -->
                 </div>
               </div>
-    
-              <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-                <div class="box">
-                  <img src="assets/img/Our data analysis.png" class="img-fluid" alt="">
-                  <h3>Our data analytics</h3>
-                  <p>Our algorithm processes a large data set of multiple user variables to identify trends & patterns that influence how and when we engage pre and post-default.</p>
-                </div>
+            </div>
+            <div class="accordion-image-container-mobile">
+              <img
+                src="assets/svgs/smart-payment.svg"
+                class="accordion-image"
+                alt="Smart Payment"
+              />
+            </div>
+          </div>
+
+          <div class="accordion-wrapper">
+            <div
+              class="accordion-item"
+              data-image="omni-channel-engagement.svg"
+            >
+              <div class="accordion-item-header">
+                <span
+                  ><img
+                    src="assets/gifs/message-1-1--unscreen.gif"
+                    alt="Omni Channel Engagement"
+                /></span>
+                <h3 class="title">Omni Channel Engagement</h3>
               </div>
-    
-              <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
-                <div class="box">
-                  <img src="assets/img/localized experience.png" class="img-fluid" alt="">
-                  <h3>Our localized experience</h3>
-                  <p>With over 40 years of experience in Africa’s toughest market, we combine technology with a hands-on approach and community integration to drive performance
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  <p>
+                    Our multi-channel user engagement pre to post-collection
+                    leverages multiple data points to minimize default
                   </p>
                 </div>
               </div>
-    
             </div>
-    
-          </div>
-    
-        </section><!-- End Values Section -->
-
-            <!-- ======= Features Section ======= -->
-    <section id="about" class="features">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>About Mida</h2>
-        </header>
-        <!-- Feature Tabs -->
-        <div class="row feture-tabs" data-aos="fade-up">
-          <div class="col-lg-6">
-
-            <!-- Tabs -->
-        
-            <!-- Tab Content -->
-            <div class="tab-content">
-
-              <div class="tab-pane fade show active" id="tab1">
-                <p>We are a blended team of financial services experts, software innovators, and data scientists who believe that sustainability is a key driver of financial inclusion and a thriving credit ecosystem in Africa.</p>
-                <div class="d-flex align-items-center mb-2">
-                  <i class="bi bi-check2"></i>
-                  <h4>The problem we’re solving</h4>
-                </div>
-                <p>Up to 45% of consumer loans are unrecovered due to technology, expertise, and capacity limitations driving worse NPLs, unsustainable collections practices, and lower credit access.</p>
-                <div class="d-flex align-items-center mb-2">
-                  <i class="bi bi-check2"></i>
-                  <h4>Our passion</h4>
-                </div>
-                <p>We’re obsessed with driving financial inclusion in a way that is meaningful, impactful and that drives both personal and economic growth.</p>
-              </div><!-- End Tab 1 Content -->
+            <div class="accordion-image-container-mobile">
+              <img
+                src="assets/svgs/omni-channel-engagement.svg"
+                class="accordion-image"
+                alt="Omni Channel Engagement"
+              />
             </div>
-
           </div>
 
-          <div class="col-lg-6">
-            <img src="assets/img/about us.png" class="img-fluid" alt="">
-          </div>
-
-        </div><!-- End Feature Tabs -->
-
-      </div>
-
-    </section><!-- End Features Section -->
-
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>Contact</h2>
-          <p>Contact Us</p>
-        </header>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-12">
-
-            <div class="row gy-4">
-              <!-- <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
-                  <p>19b Chris Efuyemi Onanuga,<br>Lekki 1, Lagos</p> 
-                </div>
-              </div> -->
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Call Us</h3>
-                  <p>+234 803 676 3248
-                    <br>+1 (289) 885 8717</p>
-                </div>
+          <div class="accordion-wrapper">
+            <div class="accordion-item" data-image="dynamic-collections.svg">
+              <div class="accordion-item-header">
+                <span
+                  ><img
+                    src="assets/gifs/perseverance-1-1--unscreen.gif"
+                    alt="Dynamic Collections"
+                /></span>
+                <h3 class="title">Dynamic Collections</h3>
               </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>hello@getmida.com<br>admin@getmida.com</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-clock"></i>
-                  <h3>Open Hours</h3>
-                  <p>Monday - Friday<br>8:00AM - 05:00PM</p>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  <p>
+                    We increase your success rate with automated data-driven
+                    multi-platform, multi-bank variable collections
+                  </p>
                 </div>
               </div>
             </div>
-
+            <div class="accordion-image-container-mobile">
+              <img
+                src="assets/svgs/dynamic-collections.svg"
+                class="accordion-image"
+                alt="Dynamic Collections"
+              />
+            </div>
           </div>
 
-          <!-- <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
+          <div class="accordion-wrapper">
+            <div class="accordion-item" data-image="ethical-recovery.svg">
+              <div class="accordion-item-header">
+                <span
+                  ><img
+                    src="assets/gifs/telecommuting-1-1--unscreen.gif"
+                    alt="Ethical Recovery"
+                /></span>
+                <h3 class="title">Ethical Recovery</h3>
               </div>
-            </form>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  <p>
+                    For debts that are past due, we offer our experienced modern
+                    contact center and ethical field debt recovery expertise
+                    enabled by our cutting edge technology
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-image-container-mobile">
+              <img
+                src="assets/svgs/ethical-recovery.svg"
+                class="accordion-image"
+                alt="Ethical Recovery"
+              />
+            </div>
+          </div>
 
-          </div> -->
-
+          <div class="accordion-wrapper">
+            <div class="accordion-wrapper">
+              <div class="accordion-item" data-image="usability.svg">
+                <div class="accordion-item-header">
+                  <span
+                    ><img src="assets/gifs/praise-unscreen.gif" alt="Usability"
+                  /></span>
+                  <h3 class="title">Usability</h3>
+                </div>
+                <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                    <p>
+                      We quickly integrate with your existing systems and offer
+                      real-time reporting and visualization on your company
+                      dashboard
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-image-container-mobile">
+                <img
+                  src="assets/svgs/usability.svg"
+                  class="accordion-image"
+                  alt="Usability"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
-      </div>
-
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-<!-- 
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-12 text-center">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          </div>
-          <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
+        <div class="accordion-image-container">
+          <img
+            src="assets/svgs/smart-payment.svg"
+            class="accordion-image"
+            alt="Smart Payment"
+          />
+          <img
+            src="assets/svgs/omni-channel-engagement.svg"
+            class="accordion-image"
+            alt="Omni Channel Engagement"
+          />
+          <img
+            src="assets/svgs/dynamic-collections.svg"
+            class="accordion-image"
+            alt="Dynamic Collections"
+          />
+          <img
+            src="assets/svgs/ethical-recovery.svg"
+            class="accordion-image"
+            alt="Ethical Recovery"
+          />
+          <img
+            src="assets/svgs/usability.svg"
+            class="accordion-image"
+            alt="Usability"
+          />
         </div>
       </div>
-    </div> -->
 
-    <div class="footer-top">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-5 col-md-12 footer-info">
-            <!-- <a href="index.html" class="logo d-flex align-items-center">
-              <img src="assets/img/logo.png" alt="">
-              <span>FlexStart</span>
-            </a> -->
-            <p>We believe that better repayment performance builds trust for creditors while a dynamic & ethical approach increases repayment rates for borrowers. Our solution ensure both happen. </p>
-            <div class="social-links mt-3">
-              <a href="https://twitter.com/hellomida" target="_blank" class="twitter"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
-                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
-              </svg></a>
-              <a href="https://web.facebook.com/getmida" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/getmida" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/getmida" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <div class="our-end-to-end-solution-mobile">
+        <div class="mobile-card-container">
+          <div class="inner-mobile-card">
+            <div class="mobile-card">
+              <div class="mobile-card-icon-title">
+                <span
+                  ><img
+                    src="assets/gifs/wallet-1-1--unscreen.gif"
+                    alt="mida-wallet"
+                /></span>
+                <h3 class="title">Smart Payment</h3>
+              </div>
+
+              <div class="mobile-card-info-text">
+                <p>
+                  From card tokenization to direct debits, our AI-driven
+                  repayment logic, proactively manages potential default
+                </p>
+              </div>
             </div>
           </div>
 
-          <!-- <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div> -->
+          <div class="inner-mobile-card">
+            <div class="mobile-card">
+              <div class="mobile-card-icon-title">
+                <span
+                  ><img
+                    src="assets/gifs/message-1-1--unscreen.gif"
+                    alt="omni-channel-engagement"
+                /></span>
+                <h3 class="title">Omni Channel Engagement</h3>
+              </div>
 
-          <!-- <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div> -->
+              <div class="mobile-card-info-text">
+                <p>
+                  Our multi-channel user engagement pre to post-collection
+                  leverages multiple data points to minimize default
+                </p>
+              </div>
+            </div>
+          </div>
 
-          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
-            <!-- <p>
-              19b Chris Efuyemi Onanuga<br>
-              Lekki 1, Lagos<br>
-              Nigeria <br><br> -->
-              <strong>Phone:</strong> +234 803 676 3248<br>
-              <strong>Email:</strong> hello@getmida.com<br>
+          <div class="inner-mobile-card">
+            <div class="mobile-card">
+              <div class="mobile-card-icon-title">
+                <span
+                  ><img
+                    src="assets/gifs/perseverance-1-1--unscreen.gif"
+                    alt="dynamic-collections"
+                /></span>
+                <h3 class="title">Dynamic Collections</h3>
+              </div>
+
+              <div class="mobile-card-info-text">
+                <p>
+                  We increase your success rate with automated data-driven
+                  multi-platform, multi-bank variable collections
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inner-mobile-card">
+            <div class="mobile-card">
+              <div class="mobile-card-icon-title">
+                <span
+                  ><img
+                    src="assets/gifs/telecommuting-1-1--unscreen.gif"
+                    alt="ethical-recovery"
+                /></span>
+                <h3 class="title">Ethical Recovery</h3>
+              </div>
+
+              <div class="mobile-card-info-text">
+                <p>
+                  For debts that are past due, we offer our experienced modern
+                  contact center and ethical field debt recovery expertise
+                  enabled by our cutting edge technology
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inner-mobile-card">
+            <div class="mobile-card">
+              <div class="mobile-card-icon-title">
+                <span
+                  ><img src="assets/gifs/praise-unscreen.gif" alt="usability"
+                /></span>
+                <h3 class="title">Usability</h3>
+              </div>
+
+              <div class="mobile-card-info-text">
+                <p>
+                  We quickly integrate with your existing systems and offer
+                  real-time reporting and visualization on your company
+                  dashboard
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <!-- <section class="testimonial">
+      <div class="upper-testimonial">
+        <p class="testimonial-section-title">TESTIMONIAL</p>
+        <h1 class="what-client-says">What Our Clients Say:</h1>
+      </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="testimonial-card swiper-slide">
+            <p class="testimonial-text">
+              “We discovered Mida when we were looking for a full service debt
+              management platform that was powerful, scalable and priced fairly.
+              I was impressed by the comprehensive nature of the solution”
             </p>
-
+            <div class="testimonial-testifier-info">
+              <h2 class="name">D. Watts</h2>
+              <p class="position">Chief Risk Officer - Oxygen (Access bank)</p>
+            </div>
           </div>
+          <div class="testimonial-card swiper-slide">
+            <p class="testimonial-text">
+              “We discovered Mida when we were looking for a full service debt
+              management platform that was powerful, scalable and priced fairly.
+              I was impressed by the comprehensive nature of the solution”
+            </p>
+            <div class="testimonial-testifier-info">
+              <h2 class="name">D. Watts</h2>
+              <div class="position">
+                Chief Risk Officer - Oxygen (Access bank)
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p class="testimonial-text">
+              “We discovered Mida when we were looking for a full service debt
+              management platform that was powerful, scalable and priced fairly.
+              I was impressed by the comprehensive nature of the solution”
+            </p>
+            <div class="testimonial-testifier-info">
+              <h2 class="name">D. Watts</h2>
+              <div class="position">
+                Chief Risk Officer - Oxygen (Access bank)
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p class="testimonial-text">
+              “We discovered Mida when we were looking for a full service debt
+              management platform that was powerful, scalable and priced fairly.
+              I was impressed by the comprehensive nature of the solution”
+            </p>
+            <div class="testimonial-testifier-info">
+              <h2 class="name">D. Watts</h2>
+              <div class="position">
+                Chief Risk Officer - Oxygen (Access bank)
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p class="testimonial-text">
+              “We discovered Mida when we were looking for a full service debt
+              management platform that was powerful, scalable and priced fairly.
+              I was impressed by the comprehensive nature of the solution”
+            </p>
+            <div class="testimonial-testifier-info">
+              <h2 class="name">D. Watts</h2>
+              <div class="position">
+                Chief Risk Officer - Oxygen (Access bank)
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p class="testimonial-text">
+              “We discovered Mida when we were looking for a full service debt
+              management platform that was powerful, scalable and priced fairly.
+              I was impressed by the comprehensive nature of the solution”
+            </p>
+            <div class="testimonial-testifier-info">
+              <h2 class="name">D. Watts</h2>
+              <div class="position">
+                Chief Risk Officer - Oxygen (Access bank)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section> -->
 
+    <!-- //b4 footer section -->
+    <section>
+      <div class="section-before-info-footer">
+        <div class="inner-take-action-info-footer">
+          <h1 class="footer-more-title">
+            End-to-end solutions for better debt collections performance and
+            debt management
+          </h1>
+          <p class="footer-more-short-info">
+            Connect with our sales team to explore how our innovative tools can
+            transform your collections performance
+          </p>
+          <div class="talk-to-us-action-button">
+            <a class="talk-to-us-button-footer" href="contact.html"
+              >Talk to us</a
+            >
+
+            <a class="book-demo-button-footer" href="contact.html">Book demo</a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Mida Technologies</span></strong>. All Rights Reserved
+    <!-- //footer-section -->
+    <footer>
+      <div class="info-footer-section">
+        <div class="footer-main-container">
+          <div class="footer-container">
+            <div class="md-footer-more-info">
+              <div class="inner-about-info">
+                <img
+                  src="assets/images/white_transparent.png"
+                  alt="mida-logo"
+                  srcset=""
+                />
+                <p>
+                  We believe that better repayment performance builds trust for
+                  creditors while a dynamic & ethical approach increases
+                  repayment rates for borrowers. Our solution ensures both
+                  happen. 
+                </p>
+                <div class="footer-contact-info">
+                  <a href="tel:+2348109988688" class="footer-telephone-number">
+                    Phone: <span>+234 8109 988 688</span>
+                  </a>
+                  <a
+                    href="mailto:hello@getmida.com"
+                    class="footer-email-address"
+                  >
+                    Email: <span>hello@getmida.com</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="right-top-footer">
+                <div class="our-solution">
+                  <h3 class="footer-header-title">Our Solution</h3>
+                  <ul class="footer-link-list">
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="recovery.html">Recovery</a></li>
+                    <li><a href="debt-buying.html">Debt buying</a></li>
+                    <li><a href="mida-omni.html">MidaOmni</a></li>
+                    <li><a href="midax.html">MidaX</a></li>
+                  </ul>
+                </div>
+                <div class="company">
+                  <h3 class="footer-header-title">Company</h3>
+                  <ul class="footer-link-list">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li>
+                      <a href="contact.html">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="developer">
+                  <h3 class="footer-header-title">Developer</h3>
+                  <ul class="footer-link-list">
+                    <li>
+                      <a
+                        href="developer/start.html"
+                        >Documentation</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="developer/start.html"
+                        >API Reference</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="legal-footer">
+                  <h3 class="footer-header-title">Legal</h3>
+                  <ul class="footer-link-list">
+                    <li><a href="http://">Privacy policy</a></li>
+                    <li><a href="http://">Cookie policy</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="date-container">
+              <div class="hr"></div>
+              <div class="date-privacy-policy">
+                <p class="date">
+                  © Mida Technologies <span id="date-span"></span>
+                </p>
+                <div class="privacy-cookies">
+                  <a href="#">
+                    Privacy policy
+                    <span
+                      ><img
+                        src="assets/svgs/arrow-up-right.svg"
+                        alt="arrow-up-right"
+                    /></span>
+                  </a>
+                  <a href="#">
+                    Cookie policy
+                    <span
+                      ><img
+                        src="assets/svgs/arrow-up-right.svg"
+                        alt="arrow-up-right"
+                    /></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer><!-- End Footer -->
+    </footer>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+    <script src="general.js" defer></script>
+    <script src="header-footer.js" async></script>
+  </body>
 </html>
