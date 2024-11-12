@@ -46,8 +46,8 @@ body {
 .inner-take-action-info {
   width: 100%;
   margin: 0 auto;
-  max-width: 700px;
-  padding: 43px 11px;
+  max-width: 712px;
+  padding: 43px 0px;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -84,7 +84,7 @@ body {
   font-size: 22px;
   text-align: center;
   line-height: 29.7px;
-  max-width: 606.9px;
+  max-width: 1121px;
   width: 100%;
   color: rgba(95, 96, 96, 1);
 }
