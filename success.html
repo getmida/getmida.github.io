@@ -1,0 +1,480 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      href="assets/fonts/Satoshi-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="products.css" />
+    <link rel="stylesheet" href="header-footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Mida</title>
+    <!-- Google Tag Manager -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-K45GHL4V')
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-K45GHL4V"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <section class="hero-section success-page">
+      <!--=============== HEADER ===============-->
+      <div class="inner-hero-section">
+        <section class="header-container">
+          <header class="header">
+            <nav class="nav container">
+              <div class="nav__data">
+                <a href="index.html" class="nav__logo">
+                  <img src="assets/images/logo main.png" alt="" srcset="" />
+                </a>
+
+                <div class="nav__toggle" id="nav-toggle">
+                  <img
+                    src="assets/images/open-hamburger.png"
+                    class="nav__toggle-menu"
+                  />
+                  <img
+                    src="assets/images/close-hamburger.png"
+                    class="nav__toggle-close"
+                  />
+                </div>
+              </div>
+
+              <!--=============== NAV MENU ===============-->
+              <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                  <li>
+                    <a href="index.html" class="nav__link">Home</a>
+                  </li>
+
+                  <!--=============== DROPDOWN 1 ===============-->
+                  <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">
+                      About us
+                      <img
+                        src="assets/svgs/chevron-down.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </div>
+
+                    <div class="dropdown__container">
+                      <div class="dropdown__content">
+                        <div class="dropdown__group">
+                          <div class="dropdown__header__card">
+                            <h2 class="dropdown__header__card-title">
+                              Company
+                            </h2>
+                            <p class="dropdown__header__card-paragraph">
+                              We’re Powering Businesses Forward with Innovative
+                              Solutions
+                            </p>
+                            <div class="dropdown-header-card-cta-link-header">
+                              <a
+                                href="https://app.getmida.com/register"
+                                class="dropdown-header-card-get-started-header"
+                                >Get started</a
+                              >
+                              <a
+                                href="contact.html"
+                                class="dropdown-header-card-book-demo-header"
+                                >Book demo</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dropdown__group">
+                          <a href="about.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/About us.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Mida Technologies</h2>
+                                <p>Overview of our Core value</p>
+                              </div>
+                            </div>
+                          </a>
+
+                          <a href="career.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/Career.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Career</h2>
+                                <p>See our openings</p>
+                              </div>
+                            </div>
+                          </a>
+
+                          <!-- <a href="http://">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/Blog.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Blog</h2>
+                                <p>See important updates</p>
+                              </div>
+                            </div>
+                          </a> -->
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!--=============== DROPDOWN 2 ===============-->
+                  <li class="dropdown__item">
+                    <div class="nav__link dropdown__button">
+                      0ur solutions
+                      <img
+                        src="assets/svgs/chevron-down.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </div>
+
+                    <div class="dropdown__container">
+                      <div class="dropdown__content">
+                        <div class="dropdown__group">
+                          <div class="dropdown__header__card">
+                            <h2 class="dropdown__header__card-title">
+                              Products
+                            </h2>
+                            <p class="dropdown__header__card-paragraph">
+                              We’re Powering Businesses Forward with Innovative
+                              Solutions
+                            </p>
+                            <div class="dropdown-header-card-cta-link-header">
+                              <a
+                                href="https://app.getmida.com/register"
+                                class="dropdown-header-card-get-started-header"
+                                >Get started</a
+                              >
+                              <a
+                                href="contact.html"
+                                class="dropdown-header-card-book-demo-header"
+                                >Book demo</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dropdown__group">
+                          <a href="collections.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/Collections.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Collection</h2>
+                                <p>Collection service</p>
+                              </div>
+                            </div>
+                          </a>
+
+                          <a href="recovery.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/Recovery.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Recovery</h2>
+                                <p>Recovery service</p>
+                              </div>
+                            </div>
+                          </a>
+
+                          <a href="mida-omni.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/MidaOmni.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>MidaOmni</h2>
+                                <p>Customize Strategies</p>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="dropdown__group">
+                          <a href="midax.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/MidaX.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>MidaX</h2>
+                                <p>Tracing solution</p>
+                              </div>
+                            </div>
+                          </a>
+
+                          <a href="debt-buying.html">
+                            <div class="header-icon-list">
+                              <div class="icon-div">
+                                <img
+                                  src="assets/svgs/Debt buying.svg"
+                                  alt=""
+                                  srcset=""
+                                />
+                              </div>
+                              <div class="company-about-us">
+                                <h2>Debt Buying</h2>
+                                <p>Purchase of loan portfolio</p>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <a href="developer/start.html" class="nav__link"
+                      >Developer</a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="contact.html" class="nav__link">Contact us</a>
+                  </li>
+
+                  <div class="cta-link-header">
+                    <a href="https://app.getmida.com/login" class="login-header"
+                      >Log In</a
+                    >
+                    <a
+                      href="https://app.getmida.com/register"
+                      class="get-started-header"
+                      >Get Started</a
+                    >
+                  </div>
+                </ul>
+              </div>
+            </nav>
+          </header>
+        </section>
+
+        <section class="hero-section-container our-collection-hero">
+          <div class="hero-info-cta">
+            <div class="inner-take-action-info">
+              <!-- <p class="product-tag">OUR PRODUCT</p> -->
+              <h1 class="product-title">Thank you</h1>
+              <p class="product-short-info">We will contact you soon</p>
+              <div class="talk-to-us-action-button">
+                <a
+                  class="talk-to-us-button"
+                  href="https://app.getmida.com/register"
+                  >Get started</a
+                >
+
+                <a class="book-demo-button" href="contact.html">Book demo</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- //b4 footer section -->
+    <!-- <section>
+      <div class="section-before-info-footer">
+        <div class="inner-take-action-info-footer">
+          <h1 class="footer-more-title">
+            End-to-end solutions for better debt collections performance and
+            debt management
+          </h1>
+          <p class="footer-more-short-info">
+            Connect with our sales team to explore how our innovative tools can
+            transform your collections performance
+          </p>
+          <div class="talk-to-us-action-button">
+            <a class="talk-to-us-button-footer" href="contact.html"
+              >Talk to us</a
+            >
+
+            <a class="book-demo-button-footer" href="contact.html">Book demo</a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- //footer-section -->
+    <footer>
+      <div class="info-footer-section">
+        <div class="footer-main-container">
+          <div class="footer-container">
+            <div class="md-footer-more-info">
+              <div class="inner-about-info">
+                <img
+                  src="assets/images/white_transparent.png"
+                  alt="mida-logo"
+                  srcset=""
+                />
+                <p>
+                  We believe that better repayment performance builds trust for
+                  creditors while a dynamic & ethical approach increases
+                  repayment rates for borrowers. Our solution ensures both
+                  happen. 
+                </p>
+                <div class="footer-contact-info">
+                  <a href="tel:+2348036763248" class="footer-telephone-number">
+                    Phone: <span>+234 8036763248</span>
+                  </a>
+                  <a
+                    href="mailto:hello@getmida.com"
+                    class="footer-email-address"
+                  >
+                    Email: <span>hello@getmida.com</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="right-top-footer">
+                <div class="our-solution">
+                  <h3 class="footer-header-title">Our Solution</h3>
+                  <ul class="footer-link-list">
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="recovery.html">Recovery</a></li>
+                    <li><a href="debt-buying.html">Debt buying</a></li>
+                    <li><a href="mida-omni.html">MidaOmni</a></li>
+                    <li><a href="midax.html">MidaX</a></li>
+                  </ul>
+                </div>
+                <div class="company">
+                  <h3 class="footer-header-title">Company</h3>
+                  <ul class="footer-link-list">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li>
+                      <a href="contact.html">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="developer">
+                  <h3 class="footer-header-title">Developer</h3>
+                  <ul class="footer-link-list">
+                    <li>
+                      <a href="developer/start.html">Documentation</a>
+                    </li>
+                    <li>
+                      <a href="developer/start.html">API Reference</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="legal-footer">
+                  <h3 class="footer-header-title">Legal</h3>
+                  <ul class="footer-link-list">
+                    <li><a href="http://">Privacy policy</a></li>
+                    <li><a href="http://">Cookie policy</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="date-container">
+              <div class="hr"></div>
+              <div class="date-privacy-policy">
+                <p class="date">
+                  © Mida Technologies <span id="date-span"></span>
+                </p>
+                <div class="privacy-cookies">
+                  <a href="#">
+                    Privacy policy
+                    <span
+                      ><img
+                        src="assets/svgs/arrow-up-right.svg"
+                        alt="arrow-up-right"
+                    /></span>
+                  </a>
+                  <a href="#">
+                    Cookie policy
+                    <span
+                      ><img
+                        src="assets/svgs/arrow-up-right.svg"
+                        alt="arrow-up-right"
+                    /></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+    <script src="general.js" defer></script>
+    <script src="header-footer.js" async></script>
+  </body>
+</html>

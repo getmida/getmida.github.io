@@ -53,6 +53,16 @@
   padding-bottom: 70px;
 }
 
+.success-page {
+  background-color: rgba(230, 246, 255, 1);
+  background-image: none; /*Set the background image*/
+  background-blend-mode: multiply; /* Use blending to combine image and color */
+  background-size: cover; /* Ensure the image covers the section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  will-change: background-image;
+}
+
 .get-started {
   /* width: Fixed (136px)px; */
   /* height: Fixed (48px)px; */
