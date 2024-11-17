@@ -1,3 +1,91 @@
+.career-bg {
+  background-color: rgba(255, 217, 237, 1); /* Set the background color */
+  background-image: none; /* Set the background image */
+  background-blend-mode: multiply; /* Use blending to combine image and color */
+  background-size: cover; /* Ensure the image covers the section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+.career-text-parent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.career-text {
+  max-width: 613px;
+}
+
+.page-title-career {
+  font-family: var(--font-bold-aeonik);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(237, 15, 132, 1);
+}
+
+.page-info-long-text-career {
+  font-family: var(--font-bold-aeonik);
+  font-family: Aeonik;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 33.6px;
+  text-align: center;
+  color: rgba(19, 21, 22, 1);
+  max-width: 501px;
+}
+
+.career-info-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -50px;
+  margin-bottom: 100px;
+  width: 100%;
+  max-width: 873.7px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 30px;
+}
+
+.career-info-container img {
+  width: 100%;
+  max-width: 873.7px;
+  margin-bottom: 50px;
+}
+
+.career-info {
+  max-width: 510.88px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.career-info p {
+  font-family: var(--regular-r-font-p);
+  font-size: 24.28px;
+  font-weight: 400;
+  line-height: 32.78px;
+  text-align: center;
+  color: rgba(95, 96, 96, 1);
+}
+
+.career-info a {
+  width: 100%;
+  max-width: 128.48px;
+  padding: 12.14px 24.28px;
+  border-radius: 8.09px;
+  background-color: rgba(0, 35, 67, 1);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+}
 .career-space-out {
   margin: 0 20px;
 }
@@ -25,8 +113,6 @@
   padding: 50px 20px;
   gap: 30px;
 }
-
-
 
 #drop-area {
   width: 100%;
