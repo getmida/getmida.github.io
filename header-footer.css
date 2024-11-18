@@ -187,6 +187,9 @@
 
 .dropdown__group a {
   text-decoration: none;
+  /* display: flex;
+  flex-direction: column;
+  gap: 10px; */
 }
 
 /* Show menu */
@@ -294,6 +297,7 @@
   line-height: 21.6px;
   text-align: left;
   color: rgba(18, 27, 40, 1);
+  margin-bottom: 5px;
 }
 
 .company-about-us p {
@@ -415,6 +419,11 @@
     padding: 4rem 0;
     align-content: baseline;
     row-gap: 2.25rem;
+    max-width: 387px;
+  }
+
+  .dropdown__group a {
+    max-width: 320px;
   }
   .dropdown__group:first-child,
   .dropdown__group:last-child {
@@ -458,7 +467,7 @@
     border-radius: 0px 21.19px 0px 21.19px;
     background-color: rgba(255, 245, 247, 1);
     width: 100%;
-    max-width: 365px;
+    max-width: 399px;
     padding: 20px 20px 60px 25px;
   }
 
@@ -525,9 +534,9 @@
   }
 
   .dropdown-header-card-book-demo-header {
-    max-width: 137.6px;
+    max-width: 157.6px;
     width: 100%;
-    padding: 12.8px 24.8px 12.8px 24.8px;
+    padding: 12.8px 24.8px;
     border-radius: 8px;
     border: 1px solid rgba(0, 35, 67, 1);
     color: rgba(15, 15, 15, 1);

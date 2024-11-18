@@ -96,7 +96,7 @@ body {
   padding-top: 35.44px;
   text-decoration: none;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -121,7 +121,7 @@ body {
 }
 
 .book-demo-button-footer {
-  max-width: 149.6px;
+  max-width: 179.6px;
   width: 100%;
   padding: 12.8px 24.8px 12.8px 24.8px;
   border-radius: 8px;
@@ -195,7 +195,7 @@ body {
 }
 
 .book-demo-button {
-  max-width: 134.16px;
+  max-width: 164.16px;
   background-color: transparent;
   font-family: var(--bold-font-h1);
   font-weight: 500;
