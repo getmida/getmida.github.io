@@ -235,9 +235,9 @@ body {
   margin: 0 auto; */
   /* background-image: url(assets/images/pattern-mask-group.png); Set the background image */
   background-blend-mode: multiply; /* Use blending to combine image and color */
-  background-size: contain; /* Ensure the image covers the section */
+  background-size: cover; /* Ensure the image covers the section */
   background-position: center; /* Center the image */
-  background-repeat: repeat-y; /* Prevent the image from repeat */
+  background-repeat: no-repeat; /* Prevent the image from repeat */
 }
 
 .inner-hero-section {
