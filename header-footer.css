@@ -4,7 +4,7 @@
 }
 
 .container {
-  max-width: 933px;
+  max-width: 1000px;
 }
 
 /*=============== NAV ===============*/
@@ -411,7 +411,7 @@
 
   .dropdown__content {
     grid-template-columns: repeat(3, max-content);
-    column-gap: 6rem;
+    column-gap: 3rem;
     max-width: 933px;
     margin-inline: auto;
   }
