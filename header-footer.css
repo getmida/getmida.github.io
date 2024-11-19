@@ -670,7 +670,7 @@
 .footer-contact-info {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  /* gap: 16px; */
 }
 .footer-contact-info a {
   text-decoration: none;
@@ -689,6 +689,20 @@
   line-height: 24px;
   color: var(--white);
   line-height: 21.6px;
+}
+
+.social-media-icon-div {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 135px;
+  display: flex;
+  gap: 13px;
+}
+
+.social-media-icon-div img {
+  max-width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .footer-links {

@@ -221,14 +221,23 @@ body {
 /* hero-section */
 
 .hero-section {
+  /* background-color: #fbe9f2; Set the background color */
+
   background: linear-gradient(
-    72.03deg,
-    rgba(237, 15, 132, 0.2) 7.56%,
-    rgba(237, 15, 132, 0.2) 58.61%,
-    rgba(132, 37, 195, 0.2) 107.97%
-  );
-  width: 100%;
-  margin: 0 auto;
+      72.03deg,
+      rgba(237, 15, 132, 0.2) 7.56%,
+      rgba(237, 15, 132, 0.2) 58.61%,
+      rgba(132, 37, 195, 0.2) 107.97%
+    ),
+    url(assets/images/pattern-mask-group.png);
+
+  /* width: 100%;
+  margin: 0 auto; */
+  /* background-image: url(assets/images/pattern-mask-group.png); Set the background image */
+  background-blend-mode: multiply; /* Use blending to combine image and color */
+  background-size: contain; /* Ensure the image covers the section */
+  background-position: center; /* Center the image */
+  background-repeat: repeat-y; /* Prevent the image from repeat */
 }
 
 .inner-hero-section {
