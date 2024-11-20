@@ -1,6 +1,6 @@
 .career-bg {
   background-color: rgba(255, 217, 237, 1); /* Set the background color */
-  background-image: none; /* Set the background image */
+  background-image: url(assets/images/pattern-mask-group.png);; /* Set the background image */
   background-blend-mode: multiply; /* Use blending to combine image and color */
   background-size: cover; /* Ensure the image covers the section */
   background-position: center; /* Center the image */
