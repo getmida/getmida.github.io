@@ -8,8 +8,9 @@ const mobileAccordionImages = document.querySelectorAll(
   '.accordion-image-container-mobile .accordion-image'
 )
 
-let currentIndexs = 0
+let currentIndex = 0
 const intervalTime = 3000 // Time between each accordion auto-click (in milliseconds)
+let autoCycleInterval
 
 // Function to handle accordion item click
 function handleAccordionItemClick(index) {
@@ -20,6 +21,15 @@ function handleAccordionItemClick(index) {
     accordionItemBody.style.maxHeight = isActive
       ? accordionItemBody.scrollHeight + 'px'
       : 0
+
+    // Dynamically add or remove mouse event listeners
+    if (isActive) {
+      item.addEventListener('mouseenter', stopAutoCycle)
+      item.addEventListener('mouseleave', startAutoCycle)
+    } else {
+      item.removeEventListener('mouseenter', stopAutoCycle)
+      item.removeEventListener('mouseleave', startAutoCycle)
+    }
   })
 
   // Show the associated image and hide others for desktop
@@ -35,17 +45,35 @@ function handleAccordionItemClick(index) {
 
 // Function to auto-cycle through accordion items
 function autoCycleAccordion() {
-  handleAccordionItemClick(currentIndexs)
+  handleAccordionItemClick(currentIndex)
 
   // Move to the next item, or loop back to the first item
-  currentIndexs = (currentIndexs + 1) % accordionItems.length
+  currentIndex = (currentIndex + 1) % accordionItems.length
 }
 
-// Set up automatic cycling of accordion items
-setInterval(autoCycleAccordion, intervalTime)
+// Start auto-cycling
+function startAutoCycle() {
+  autoCycleInterval = setInterval(autoCycleAccordion, intervalTime)
+}
 
-// Activate the first accordion item and show its image by default
+// Stop auto-cycling
+function stopAutoCycle() {
+  clearInterval(autoCycleInterval)
+}
+
+// Add click event listeners to all accordion items
+accordionItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    stopAutoCycle() // Optionally stop auto-cycle on click
+    handleAccordionItemClick(index)
+    currentIndex = index // Update the current index
+  })
+})
+
+// Initialize the first accordion item and start auto-cycling
 handleAccordionItemClick(0)
+startAutoCycle()
+
 
 document.addEventListener('DOMContentLoaded', function () {
   var swiper = new Swiper('.mySwiper', {
