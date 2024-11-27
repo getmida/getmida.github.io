@@ -509,7 +509,7 @@
     background-color: rgba(237, 15, 132, 1);
     max-width: 320.6px;
     width: 100%;
-    padding: 12.8px 24.8px 12.8px 24.8px;
+    padding: 12.8px 24.8px;
     color: white;
     text-decoration: none;
     font-family: var(--font-meduim-aeonik);
@@ -546,7 +546,7 @@
   .dropdown-header-card-book-demo-header {
     max-width: 157.6px;
     width: 100%;
-    padding: 12.8px 24.8px;
+    padding: 12.8px;
     border-radius: 8px;
     border: 1px solid rgba(0, 35, 67, 1);
     color: rgba(15, 15, 15, 1);
@@ -556,7 +556,7 @@
     font-weight: 500;
     line-height: 22.4px;
     letter-spacing: -0.20000000298023224px;
-    text-align: left;
+    text-align: center;
     transition: color 0.3s ease-in-out, border-color 0.5s ease-in-out;
   }
 
