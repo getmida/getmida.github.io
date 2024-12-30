@@ -626,7 +626,7 @@ h2.our-solution-border-button {
 .cta-solution-card {
   /* width: Fixed (36px)px;
 height: Fixed (36px)px; */
-  padding: 12px 13px 12px 13px;
+  padding: 12px 16px 12px 16px;
   background-color: rgba(237, 15, 132, 1);
   border-radius: 50%;
 }
