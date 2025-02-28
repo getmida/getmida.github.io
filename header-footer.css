@@ -129,9 +129,7 @@
   .nav__list {
     list-style-type: none;
   }
-  .nav__data {
-    background-color: white;
-  }
+
   .nav__menu {
     background-color: var(--body-color);
     position: absolute;
