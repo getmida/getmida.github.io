@@ -44,6 +44,86 @@
       })(window, document, 'script', 'dataLayer', 'GTM-K45GHL4V')
     </script>
     <!-- End Google Tag Manager -->
+    <style>
+      .cookie-consent {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.60);
+        color: #fff;
+        padding: 1rem 2rem;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        transition: bottom 0.3s ease-in-out;
+        z-index: 9999;
+      }
+
+      .cookie-consent.active {
+        bottom: 0;
+      }
+
+      .cookie-consent p {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .cookie-consent a {
+        color: #0066cc;
+        text-decoration: underline;
+      }
+
+      .cookie-consent-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-shrink: 0;
+      }
+
+      .cookie-consent button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.2s;
+      }
+
+      .accept-cookies {
+        background: #0066cc;
+        color: white;
+      }
+
+      .accept-cookies:hover {
+        background: #0052a3;
+      }
+
+      .decline-cookies {
+        background: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+
+      .decline-cookies:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .cookie-consent {
+          flex-direction: column;
+          text-align: center;
+          padding: 1rem;
+        }
+        
+        .cookie-consent-buttons {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -1161,6 +1241,17 @@
       </div>
     </footer>
 
+    <div class="cookie-consent">
+      <p>
+        We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. 
+        Learn more in our <a href="cookie-policy.html">Cookie Policy</a>.
+      </p>
+      <div class="cookie-consent-buttons">
+        <button class="accept-cookies">Accept</button>
+        <button class="decline-cookies">Decline</button>
+      </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
       defer
@@ -1168,5 +1259,6 @@
     <script src="script.js" defer></script>
     <script src="general.js" defer></script>
     <script src="header-footer.js" async></script>
+    <script src="cookie-consent.js" defer></script>
   </body>
 </html>
