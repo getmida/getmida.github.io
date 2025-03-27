@@ -317,3 +317,34 @@
     padding: 60px 20px;
   }
 }
+
+
+.certification-badges {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.certification-badges img {
+  max-width: 200px;
+  height: auto;
+}
+
+.ndpr-badge img {
+  width: 150px; /* Adjust as needed */
+}
+
+.google-startups-badge img {
+  width: 180px; /* Adjust as needed */
+}
+
+@media (max-width: 768px) {
+  .certification-badges {
+    align-items: center;
+  }
+  
+  .certification-badges img {
+    max-width: 160px;
+  }
+}
