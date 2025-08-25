@@ -767,12 +767,12 @@
   font-family: var(--regular-font-p);
 }
 
-.privacy-cookies {
+.footer-legal-links {
   display: flex;
   gap: 30px;
 }
 
-.privacy-cookies a {
+.footer-legal-links a {
   text-decoration: none;
   font-family: var(--font-regular-satoshi);
   font-size: 14px;
@@ -806,7 +806,7 @@
   .legal-footer {
     display: block;
   }
-  .privacy-cookies {
+  .footer-legal-links {
     display: none;
   }
 }
