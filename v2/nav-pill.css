@@ -1,0 +1,109 @@
+/* Pill-style menu bar (index page only) – desktop; mobile view unchanged */
+/* Hero background: unchanged – uses original gradient + pattern from style.css */
+
+@media screen and (min-width: 932px) {
+  /* Pill container: padding so the bar doesn’t touch edges */
+  .nav-pill-style .header-container {
+    padding: 20px 24px 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: transparent;
+  }
+
+  .nav-pill-style .header-container:hover,
+  .nav-pill-style .header-container:has(.dropdown__item:hover) {
+    background-color: transparent;
+  }
+
+  /* White pill bar */
+  .nav-pill-style .header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 9999px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+    padding: 0 28px;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-pill-style .nav {
+    width: 100%;
+    height: auto;
+    min-height: 64px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-pill-style .nav__data {
+    height: auto;
+    padding: 0;
+  }
+
+  .nav-pill-style .nav__logo img {
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Nav links: dark grey, even spacing */
+  .nav-pill-style .nav__link {
+    color: #333333;
+    padding: 0 0.6rem;
+  }
+
+  .nav-pill-style .nav__link:hover {
+    color: #000;
+  }
+
+  .nav-pill-style .nav__list {
+    column-gap: 1.75rem;
+  }
+
+  .nav-pill-style .dropdown__button img {
+    opacity: 0.7;
+  }
+
+  /* Log in: text link, no border */
+  .nav-pill-style .login-header {
+    color: #333333;
+    border-right: none;
+    padding: 10px 16px 10px 0;
+  }
+
+  .nav-pill-style .login-header:hover {
+    color: #000;
+  }
+
+  /* Get Started: rounded pink button */
+  .nav-pill-style .get-started-header {
+    background-color: #FF007F;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-weight: 500;
+  }
+
+  .nav-pill-style .get-started-header:hover {
+    background-color: #e60072;
+    color: #ffffff;
+  }
+
+  /* Dropdown appears below the pill */
+  .nav-pill-style .dropdown__item:hover > .dropdown__container {
+    top: 5.25rem;
+  }
+
+  .nav-pill-style .dropdown__container {
+    top: 5.5rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Mobile: keep existing header; only ensure pill logo doesn’t break */
