@@ -1,5 +1,5 @@
 'use strict'
-//accordion-cycle
+//accordion-cycle (skipped on pages without accordion, e.g. index)
 const accordionItems = document.querySelectorAll('.accordion-item')
 const desktopAccordionImages = document.querySelectorAll(
   '.accordion-image-container .accordion-image'
@@ -12,8 +12,8 @@ let currentIndex = 0
 const intervalTime = 3000 // Time between each accordion auto-click (in milliseconds)
 let autoCycleInterval
 
-// Function to handle accordion item click
 function handleAccordionItemClick(index) {
+  if (!accordionItems.length) return
   accordionItems.forEach((item, i) => {
     const isActive = i === index
     item.classList.toggle('active', isActive)
@@ -43,36 +43,32 @@ function handleAccordionItemClick(index) {
   })
 }
 
-// Function to auto-cycle through accordion items
 function autoCycleAccordion() {
+  if (!accordionItems.length) return
   handleAccordionItemClick(currentIndex)
-
-  // Move to the next item, or loop back to the first item
   currentIndex = (currentIndex + 1) % accordionItems.length
 }
 
-// Start auto-cycling
 function startAutoCycle() {
+  if (!accordionItems.length) return
   autoCycleInterval = setInterval(autoCycleAccordion, intervalTime)
 }
 
-// Stop auto-cycling
 function stopAutoCycle() {
-  clearInterval(autoCycleInterval)
+  if (autoCycleInterval) clearInterval(autoCycleInterval)
 }
 
-// Add click event listeners to all accordion items
-accordionItems.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    stopAutoCycle() // Optionally stop auto-cycle on click
-    handleAccordionItemClick(index)
-    currentIndex = index // Update the current index
+if (accordionItems.length > 0) {
+  accordionItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      stopAutoCycle()
+      handleAccordionItemClick(index)
+      currentIndex = index
+    })
   })
-})
-
-// Initialize the first accordion item and start auto-cycling
-handleAccordionItemClick(0)
-startAutoCycle()
+  handleAccordionItemClick(0)
+  startAutoCycle()
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {

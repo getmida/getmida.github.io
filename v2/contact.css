@@ -165,6 +165,8 @@ input[type='submit'] {
   text-align: center;
   border: none;
   cursor: pointer;
+  padding: 12px 28px;
+  border-radius: 8px;
 }
 
 .form-field {

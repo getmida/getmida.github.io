@@ -81,7 +81,7 @@
 
   /* Get Started: rounded pink button */
   .nav-pill-style .get-started-header {
-    background-color: #FF007F;
+    background-color: #ED0F84;
     color: #ffffff;
     padding: 12px 24px;
     border-radius: 8.86px;
@@ -89,7 +89,6 @@
   }
 
   .nav-pill-style .get-started-header:hover {
-    background-color: #e60072;
     color: #ffffff;
   }
 

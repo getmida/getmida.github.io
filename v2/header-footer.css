@@ -87,7 +87,7 @@
 
 .get-started-header {
   padding: 10px 20px 12px 20px;
-  /* Same radius as .talk-to-us-button (v2/style.css) */
+  /* Same radius as .talk-to-us-button (v2/style.css); ripple hover in style.css */
   border-radius: 8.86px;
   background-color: rgba(237, 15, 132, 1);
   color: rgba(255, 255, 255, 1);
@@ -98,6 +98,9 @@
   line-height: 19.2px;
   letter-spacing: 0.25px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .nav__link {
@@ -559,7 +562,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    z-index: 0;
+    z-index: 1;
   }
 
   .dropdown-header-card-get-started-header::before {
@@ -599,10 +602,6 @@
     transition: color 0.3s ease-in-out, border-color 0.5s ease-in-out;
   }
 
-  .dropdown-header-card-book-demo-header:hover {
-    border-color: transparent;
-    color: rgba(237, 15, 132, 1);
-  }
 }
 @media screen and (min-width: 993px) {
   .container {
@@ -612,7 +611,7 @@
 
 /* footer csss */
 .section-before-info-footer {
-  background-color: #fbe9f2; /* Set the background color */
+  background-color: #fce8f2; /* Set the background color */
   background-image: url(assets/images/pattern-mask-group.png); /* Set the background image */
   background-blend-mode: multiply; /* Use blending to combine image and color */
   background-size: cover; /* Ensure the image covers the section */
