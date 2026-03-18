@@ -81,7 +81,7 @@ body {
 .inner-take-action-info .product-short-info {
   font-family: var(--font-regular-satoshi);
   font-weight: 400;
-  font-size: 22px;
+  font-size: 16px;
   text-align: center;
   line-height: 29.7px;
   max-width: 1121px;
@@ -195,11 +195,11 @@ body {
 }
 
 .book-demo-button {
-  max-width: 164.16px;
+  max-width: 500.16px;
   background-color: transparent;
   font-family: var(--bold-font-h1);
   font-weight: 500;
-  font-size: 16.75px;
+  /* font-size: 16.75px; */
   line-height: 24.81px;
   /* letter-spacing: -0.22149531543254852px; */
   text-align: center;
@@ -755,6 +755,212 @@ height: Fixed (36px)px; */
     font-weight: 700;
     line-height: 32.23px;
     text-align: left;
+  }
+}
+
+/* Unified platform section (index) */
+.mida-solution--unified {
+  background-color: #f9fafb;
+  padding: 80px 24px 96px;
+  gap: 24px;
+}
+
+.mida-solution-unified-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  background: transparent;
+  font-family: var(--font-bold-aeonik), var(--bold-font-h1), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000000;
+  text-align: center;
+}
+
+.mida-solution-unified-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.mida-solution-unified-title {
+  font-family: var(--font-bold-aeonik), var(--bold-font-h1), sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: #0c1017;
+  max-width: 920px;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 44px;
+  word-wrap: break-word
+}
+
+.mida-solution-unified-highlight {
+  display: block;
+  color: #ff0077;
+}
+
+@media screen and (min-width: 768px) {
+  .mida-solution-unified-highlight {
+    display: inline;
+  }
+}
+
+.mida-solution-unified-desc {
+  font-family: var(--font-regular-satoshi), var(--regular-font-p), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  line-height: 29.7px;
+  max-width: 1121px;
+  width: 100%;
+}
+
+.mida-solution-unified-diagram {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mida-solution-unified-diagram--interactive .unified-platform-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  line-height: 0;
+}
+
+.mida-solution-unified-diagram--interactive .unified-platform-img {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: block;
+}
+
+.unified-platform-hotspots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.unified-hotspot {
+  position: absolute;
+  pointer-events: auto;
+  text-decoration: none;
+  color: inherit;
+  z-index: 2;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Rounded-rect hit areas matching diagram boxes (position/size via inline %) */
+.unified-hotspot--box {
+  margin: 0;
+  overflow: visible;
+}
+
+/* Circular hub over center logo */
+.unified-hotspot--hub {
+  left: 50%;
+  top: 50%;
+  width: 15.5%;
+  aspect-ratio: 1;
+  max-width: 168px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.unified-hotspot-surface {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: transparent;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.unified-hotspot--hub .unified-hotspot-surface {
+  border-radius: 50%;
+}
+
+.unified-hotspot:hover .unified-hotspot-surface,
+.unified-hotspot:focus-visible .unified-hotspot-surface {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.unified-hotspot:focus-visible {
+  outline: 2px solid #ff0077;
+  outline-offset: 3px;
+}
+
+.unified-hotspot-label {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 8px 14px;
+  background: #fff;
+  color: #0f0f0f;
+  font-family: var(--font-regular-satoshi), var(--regular-font-p), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 5;
+}
+
+.unified-hotspot--hub .unified-hotspot-label {
+  bottom: auto;
+  top: calc(100% + 10px);
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.unified-hotspot:hover .unified-hotspot-label,
+.unified-hotspot:focus-visible .unified-hotspot-label {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.unified-hotspot--hub:hover .unified-hotspot-label,
+.unified-hotspot--hub:focus-visible .unified-hotspot-label {
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+  .unified-hotspot-label {
+    font-size: 11px;
+    padding: 6px 10px;
+    max-width: min(220px, 70vw);
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .mida-solution--unified {
+    padding: 56px 20px 64px;
   }
 }
 

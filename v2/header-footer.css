@@ -87,7 +87,8 @@
 
 .get-started-header {
   padding: 10px 20px 12px 20px;
-  border-radius: 8px;
+  /* Same radius as .talk-to-us-button (v2/style.css) */
+  border-radius: 8.86px;
   background-color: rgba(237, 15, 132, 1);
   color: rgba(255, 255, 255, 1);
   text-decoration: none;
@@ -393,6 +394,10 @@
     background-color: transparent;
     transition: background-color 0s ease; /* Smooth background change */
     z-index: 1;
+  }
+
+  .inner-hero-section .header-container:hover {
+    background-color: transparent !important;
   }
 
   /* When hovering over the dropdown item */
