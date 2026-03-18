@@ -100,31 +100,174 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 })
 
-/* Modular solutions tabs (index) */
+/* Modular solutions tabs — auto-advance + pane transitions (index) */
 ;(function () {
   const root = document.querySelector('.modular-solutions')
   if (!root) return
-  const tabs = root.querySelectorAll('.modular-solutions-tab')
+  const tabs = Array.from(root.querySelectorAll('.modular-solutions-tab'))
   const panes = root.querySelectorAll('.modular-solutions-pane')
+  const tabRow = root.querySelector('.modular-solutions-tabs')
+  if (!tabs.length) return
+
+  const INTERVAL_MS = 2000
+  const EXIT_MS = 380
+  let current = Math.max(
+    0,
+    tabs.findIndex((t) => t.classList.contains('is-active'))
+  )
+  let timer = null
+  let exitingPane = null
+  let exitHandler = null
+  let exitFallbackTimer = null
+
+  function scrollTabIntoView(tab) {
+    if (
+      tabRow &&
+      tabRow.scrollWidth > tabRow.clientWidth + 2
+    ) {
+      tab.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      })
+    }
+  }
+
+  function abortPaneTransition() {
+    if (exitFallbackTimer != null) {
+      window.clearTimeout(exitFallbackTimer)
+      exitFallbackTimer = null
+    }
+    if (exitingPane && exitHandler) {
+      exitingPane.classList.remove('modular-pane--exit')
+      exitingPane.setAttribute('hidden', '')
+      exitingPane.classList.remove('is-active')
+    }
+    exitingPane = null
+    exitHandler = null
+  }
+
+  function revealPane(newPane, tab) {
+    newPane.removeAttribute('hidden')
+    newPane.classList.add('is-active')
+    newPane.classList.add('modular-pane--enter')
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        newPane.classList.remove('modular-pane--enter')
+      })
+    })
+    current = tabs.indexOf(tab)
+    scrollTabIntoView(tab)
+  }
+
+  function activateTab(tab) {
+    const paneId = tab.getAttribute('aria-controls')
+    const newPane = paneId ? document.getElementById(paneId) : null
+    if (!newPane) return
+
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
+    const oldPane = root.querySelector('.modular-solutions-pane:not([hidden])')
+
+    abortPaneTransition()
+
+    tabs.forEach((t) => {
+      const on = t === tab
+      t.classList.toggle('is-active', on)
+      t.setAttribute('aria-selected', on ? 'true' : 'false')
+    })
+
+    if (oldPane === newPane) {
+      current = tabs.indexOf(tab)
+      scrollTabIntoView(tab)
+      return
+    }
+
+    if (reduceMotion) {
+      panes.forEach((p) => {
+        p.setAttribute('hidden', '')
+        p.classList.remove('is-active', 'modular-pane--exit', 'modular-pane--enter')
+      })
+      newPane.removeAttribute('hidden')
+      newPane.classList.add('is-active')
+      current = tabs.indexOf(tab)
+      scrollTabIntoView(tab)
+      return
+    }
+
+    if (!oldPane) {
+      panes.forEach((p) => {
+        p.setAttribute('hidden', '')
+        p.classList.remove('is-active', 'modular-pane--exit', 'modular-pane--enter')
+      })
+      revealPane(newPane, tab)
+      return
+    }
+
+    exitingPane = oldPane
+    exitHandler = function finishExit() {
+      if (exitFallbackTimer != null) {
+        window.clearTimeout(exitFallbackTimer)
+        exitFallbackTimer = null
+      }
+      exitingPane = null
+      exitHandler = null
+      oldPane.setAttribute('hidden', '')
+      oldPane.classList.remove('is-active', 'modular-pane--exit')
+      revealPane(newPane, tab)
+    }
+    window.requestAnimationFrame(() => {
+      oldPane.classList.add('modular-pane--exit')
+    })
+    exitFallbackTimer = window.setTimeout(() => {
+      exitFallbackTimer = null
+      if (exitingPane === oldPane && exitHandler) exitHandler()
+    }, EXIT_MS)
+  }
+
+  function goNext() {
+    const next = (current + 1) % tabs.length
+    activateTab(tabs[next])
+  }
+
+  function startAuto() {
+    stopAuto()
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    timer = window.setInterval(goNext, INTERVAL_MS)
+  }
+
+  function stopAuto() {
+    if (timer != null) {
+      window.clearInterval(timer)
+      timer = null
+    }
+  }
+
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      const paneId = tab.getAttribute('aria-controls')
-      if (!paneId) return
-      tabs.forEach((t) => {
-        t.classList.remove('is-active')
-        t.setAttribute('aria-selected', 'false')
-      })
-      panes.forEach((p) => {
-        p.classList.remove('is-active')
-        p.setAttribute('hidden', '')
-      })
-      tab.classList.add('is-active')
-      tab.setAttribute('aria-selected', 'true')
-      const pane = document.getElementById(paneId)
-      if (pane) {
-        pane.classList.add('is-active')
-        pane.removeAttribute('hidden')
-      }
+      activateTab(tab)
+      stopAuto()
+      startAuto()
     })
   })
+
+  const paneBody = root.querySelector('.modular-solutions-panes')
+  if (paneBody) {
+    paneBody.addEventListener('mouseenter', stopAuto)
+    paneBody.addEventListener('mouseleave', startAuto)
+    paneBody.addEventListener('focusin', stopAuto)
+    paneBody.addEventListener('focusout', (e) => {
+      if (!e.relatedTarget || !paneBody.contains(e.relatedTarget)) {
+        startAuto()
+      }
+    })
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopAuto()
+    else startAuto()
+  })
+
+  startAuto()
 })()
