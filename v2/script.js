@@ -267,3 +267,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   startAuto()
 })()
+
+/* Smooth scroll: Explore Our Solutions → #our-solutions (index) */
+;(function () {
+  var btn = document.querySelector('a.book-demo-button[href="#our-solutions"]')
+  var target = document.getElementById('our-solutions')
+  if (!btn || !target) return
+  btn.addEventListener('click', function (e) {
+    e.preventDefault()
+    var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    target.scrollIntoView({
+      behavior: smooth ? 'smooth' : 'auto',
+      block: 'start',
+    })
+    try {
+      history.replaceState(null, '', '#our-solutions')
+    } catch (err) {}
+  })
+})()

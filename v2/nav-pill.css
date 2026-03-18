@@ -11,7 +11,8 @@
   }
 
   .nav-pill-style .header-container:hover,
-  .nav-pill-style .header-container:has(.dropdown__item:hover) {
+  .nav-pill-style .header-container:has(.dropdown__item:hover),
+  .nav-pill-style .header-container:has(.dropdown__item.dropdown--open) {
     background-color: transparent;
   }
 
@@ -93,7 +94,8 @@
   }
 
   /* Dropdown appears below the pill */
-  .nav-pill-style .dropdown__item:hover > .dropdown__container {
+  .nav-pill-style .dropdown__item:hover > .dropdown__container,
+  .nav-pill-style .dropdown__item.dropdown--open > .dropdown__container {
     top: 5.25rem;
   }
 

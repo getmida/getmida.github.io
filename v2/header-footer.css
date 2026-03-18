@@ -439,8 +439,9 @@
     background-color: transparent !important;
   }
 
-  /* When hovering over the dropdown item */
-  .dropdown__item:hover > .dropdown__container {
+  /* Hover or JS .dropdown--open: mega menu is full-width so pointer often leaves the <li> */
+  .dropdown__item:hover > .dropdown__container,
+  .dropdown__item.dropdown--open > .dropdown__container {
     top: 5.5rem;
     visibility: visible;
     opacity: 1;
@@ -507,7 +508,8 @@
   .dropdown__item {
     cursor: pointer;
   }
-  .dropdown__item:hover .dropdown__arrow {
+  .dropdown__item:hover .dropdown__arrow,
+  .dropdown__item.dropdown--open .dropdown__arrow {
     transform: rotate(180deg);
   }
 

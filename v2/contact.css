@@ -1,46 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 
-.hero-contact {
-  background-color: rgba(230, 246, 255, 1);
-  background-image: url(assets/images/pattern-mask-group.png); /* Set the background image */
-  background-blend-mode: multiply; /* Use blending to combine image and color */
-  background-size: cover; /* Ensure the image covers the section */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
+/* Above-the-fold: same image stack as index (pattern + multiply), light blue tint */
+body.contact-page .hero-section.hero-contact {
+  background-color: #f0f7ff;
+  background: rgba(230, 246, 255, 1);
+  background-image: url(assets/images/pattern-mask-group.png);
+  background-blend-mode: multiply;
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body.contact-page .hero-section.hero-contact > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (min-width: 932px) {
+  body.contact-page.nav-pill-style .get-started-header {
+    border-radius: 999px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
 }
 
 .contact-second {
   overflow-x: hidden;
 }
-.contact {
+
+/* Two-column hero */
+.contact-hero-fold.our-collection-hero {
+  padding-top: clamp(28px, 4vw, 56px);
+  padding-bottom: clamp(56px, 7vw, 96px);
+  background: transparent;
+}
+
+.contact-hero-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 1.12fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+
+.contact-hero-copy {
+  text-align: left;
+}
+
+.contact-hero-eyebrow {
+  font-family: var(--bold-font-h1), 'Satoshi', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ed0f84;
+  margin: 0 0 14px;
+}
+
+.contact-hero-title {
+  font-family: var(--bold-font-h1), 'Satoshi', sans-serif;
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: #121b28;
+  margin: 0 0 20px;
+  max-width: 20ch;
+}
+
+.contact-hero-lead {
+  font-family: var(--font-light-satoshi), var(--regular-font-p-aeonik), sans-serif;
+  font-size: clamp(16px, 1.25vw, 18px);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #5f6060;
+  margin: 0;
+  max-width: 480px;
+}
+
+.contact-hero-visual {
+  perspective: 1200px;
+  perspective-origin: 45% 35%;
+}
+
+.contact-hero-visual-frame {
+  transform-style: preserve-3d;
   display: flex;
-  max-width: 933px;
-  position: relative;
-  padding-top: 200px;
-  /* padding-left: 180px; */
-}
-.contact-left-container h1 {
-  max-width: 359px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.contact-image {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.contact-hero-dashboard {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  transform: rotateX(7deg) rotateY(-16deg) rotateZ(0.5deg);
+  transform-origin: 50% 50%;
+  box-shadow:
+    0 20px 40px -8px rgba(18, 50, 80, 0.15),
+    0 50px 90px -25px rgba(18, 50, 80, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  background: #fff;
 }
 
-@media screen and (max-width: 768px) {
-  .contact {
-    padding-top: 100px;
+@media screen and (max-width: 960px) {
+  .contact-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
-  .contact-left-container {
-    margin-bottom: 200px;
+
+  .contact-hero-copy {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .contact-hero-title {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-hero-visual-frame {
+    justify-content: center;
+  }
+
+  .contact-hero-dashboard {
+    max-width: min(520px, 100%);
+    transform: rotateX(5deg) rotateY(-10deg);
   }
 }
 
-@media screen and (max-width: 400px) {
-  .contact-left-container {
-    margin-bottom: 100px;
+@media screen and (max-width: 480px) {
+  .contact-hero-dashboard {
+    transform: rotateX(4deg) rotateY(-6deg);
+    border-radius: 10px;
   }
 }
 
@@ -83,6 +188,19 @@
   color: #393535;
 }
 
+.contact-form-error {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: rgba(237, 15, 132, 0.08);
+  border: 1px solid rgba(237, 15, 132, 0.35);
+  font-family: var(--font-regular-satoshi), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #9a0b52;
+  line-height: 1.4;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -100,7 +218,7 @@ input,
 select {
   width: 100%;
   max-width: 650px;
-  height: 60.07;
+  height: 60.07px;
   padding: 17.53px 21.92px 17.53px 21.92px;
   border-radius: 8px;
   border: 1.1px solid #121b28;

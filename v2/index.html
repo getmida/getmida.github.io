@@ -48,86 +48,7 @@
       })(window, document, 'script', 'dataLayer', 'GTM-K45GHL4V')
     </script>
     <!-- End Google Tag Manager -->
-    <style>
-      .cookie-consent {
-        position: fixed;
-        bottom: -100%;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.75);
-        color: #fff;
-        padding: 1rem 2rem;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        transition: bottom 0.3s ease-in-out;
-        z-index: 9999;
-      }
-
-      .cookie-consent.active {
-        bottom: 0;
-      }
-
-      .cookie-consent p {
-        margin: 0;
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      .cookie-consent a {
-        color: #0066cc;
-        text-decoration: underline;
-      }
-
-      .cookie-consent-buttons {
-        display: flex;
-        gap: 1rem;
-        flex-shrink: 0;
-      }
-
-      .cookie-consent button {
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: 500;
-        transition: background-color 0.2s;
-      }
-
-      .accept-cookies {
-        background: #0066cc;
-        color: white;
-      }
-
-      .accept-cookies:hover {
-        background: #0052a3;
-      }
-
-      .decline-cookies {
-        background: transparent;
-        color: #fff;
-        border: 1px solid #fff;
-      }
-
-      .decline-cookies:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      @media (max-width: 768px) {
-        .cookie-consent {
-          flex-direction: column;
-          text-align: center;
-          padding: 1rem;
-        }
-        
-        .cookie-consent-buttons {
-          width: 100%;
-          justify-content: center;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="cookie-consent.css" />
   </head>
   <body class="nav-pill-style">
     <script type="text/javascript">
@@ -145,15 +66,22 @@
       s.parentNode.insertBefore(b, s);})(window.lintrk);
       </script>
       <noscript>
-      <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8183569&fmt=gif" />
+      <img
+        class="linkedin-insight-pixel"
+        height="1"
+        width="1"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8183569&fmt=gif"
+      />
       </noscript>
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
+        class="gtm-noscript-iframe"
         src="https://www.googletagmanager.com/ns.html?id=GTM-K45GHL4V"
         height="0"
         width="0"
-        style="display: none; visibility: hidden"
+        title=""
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
@@ -381,7 +309,7 @@
                             </div>
                           </a>
 
-                          <a href="debt-buying.html">
+                          <a href="forms.html">
                             <div class="header-icon-list">
                               <div class="icon-div">
                                 <img
@@ -436,7 +364,7 @@
                       >Log in</a
                     >
                     <a
-                      href="https://app.getmida.com/register"
+                      href="contact.html"
                       class="get-started-header"
                       >Get Started</a
                     >
@@ -459,11 +387,11 @@
               <div class="talk-to-us-action-button">
                 <a
                   class="talk-to-us-button"
-                  href="https://app.getmida.com/register"
+                  href="contact.html"
                   >Get started</a
                 >
 
-                <a class="book-demo-button" href="contact.html"
+                <a class="book-demo-button" href="#our-solutions"
                   >Explore Our Solutions</a
                 >
               </div>
@@ -679,8 +607,9 @@
             <script>
               ;(function () {
                 var el = document.getElementById('unified-feature-diagram-root')
-                var section = document.querySelector('.mida-solution.mida-solution--unified')
-                if (!el || !section) return
+                var trigger =
+                  document.getElementById('unified-platform-diagram') || el
+                if (!el || !trigger) return
                 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                   el.classList.remove('unified-feature-diagram--idle')
                   el.classList.add('unified-feature-diagram--settled')
@@ -688,25 +617,49 @@
                 }
                 function idle() {
                   el.classList.remove('unified-feature-diagram--play')
+                  el.classList.remove('unified-feature-diagram--settled')
                   el.classList.add('unified-feature-diagram--idle')
+                }
+                function settled() {
+                  el.classList.remove('unified-feature-diagram--idle')
+                  el.classList.remove('unified-feature-diagram--play')
+                  el.classList.add('unified-feature-diagram--settled')
                 }
                 function play() {
                   el.classList.remove('unified-feature-diagram--idle')
+                  el.classList.remove('unified-feature-diagram--settled')
                   el.classList.remove('unified-feature-diagram--play')
                   void el.offsetWidth
                   el.classList.add('unified-feature-diagram--play')
                 }
-                var sectionVisible = false
+                /* Once per full page load; scroll away → settled, scroll back → settled (no replay) */
+                var playedThisPage = false
+                var triggerVisible = false
                 function onIntersect(visible) {
                   if (visible) {
-                    if (!sectionVisible) {
-                      sectionVisible = true
-                      play()
+                    if (!triggerVisible) {
+                      triggerVisible = true
+                      if (playedThisPage) {
+                        settled()
+                      } else {
+                        playedThisPage = true
+                        requestAnimationFrame(function () {
+                          requestAnimationFrame(play)
+                        })
+                      }
                     }
                   } else {
-                    sectionVisible = false
-                    idle()
+                    triggerVisible = false
+                    if (playedThisPage) {
+                      settled()
+                    } else {
+                      idle()
+                    }
                   }
+                }
+                if (!('IntersectionObserver' in window)) {
+                  play()
+                  return
                 }
                 var io = new IntersectionObserver(
                   function (entries) {
@@ -714,9 +667,9 @@
                       onIntersect(e.isIntersecting)
                     })
                   },
-                  { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+                  { threshold: [0, 0.08, 0.15], rootMargin: '0px 0px 12% 0px' }
                 )
-                io.observe(section)
+                io.observe(trigger)
               })()
             </script>
           </div>
@@ -725,7 +678,11 @@
     </section>
 
     <!-- Modular lending solutions (tabbed) -->
-    <section class="modular-solutions" aria-labelledby="modular-solutions-heading">
+    <section
+      class="modular-solutions"
+      id="our-solutions"
+      aria-labelledby="modular-solutions-heading"
+    >
       <div class="modular-solutions-inner">
         <span class="modular-solutions-badge">Our solutions</span>
         <h2 id="modular-solutions-heading" class="modular-solutions-title">
@@ -733,7 +690,7 @@
         </h2>
         <p class="modular-solutions-lead">
           Mida offers a unified system built to prevent bad debt, manage risk proactively, and
-          resolve delinquency ethically — covering:
+          resolve delinquency ethically:
         </p>
 
         <div class="modular-solutions-panel">
@@ -817,7 +774,7 @@
                     Configurable onboarding, decisioning and loan management for lenders. Deliver
                     plug and play channels across mobile apps, web apps and third-party platforms.
                   </p>
-                  <a class="modular-solutions-cta" href="contact.html">Learn More</a>
+                  <a class="modular-solutions-cta" href="forms.html">Learn More</a>
                 </div>
                 <div class="modular-solutions-visual">
                   <div class="modular-solutions-visual-frame">

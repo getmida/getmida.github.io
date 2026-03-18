@@ -1700,6 +1700,11 @@ html:not(.js) #unified-feature-diagram-root .feature-wrapper {
   box-sizing: border-box;
 }
 
+/* Anchor scroll: clear fixed/sticky header */
+#our-solutions {
+  scroll-margin-top: clamp(72px, 12vh, 120px);
+}
+
 .modular-solutions-inner {
   max-width: 1120px;
   margin: 0 auto;
