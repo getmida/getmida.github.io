@@ -758,25 +758,30 @@ height: Fixed (36px)px; */
   }
 }
 
-/* Unified platform section (index) */
-.mida-solution--unified {
+/* Unified platform section (index) — full-bleed #f9fafb */
+.mida-solution.mida-solution--unified {
+  max-width: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
   background-color: #f9fafb;
   padding: 80px 24px 96px;
   gap: 24px;
+  box-sizing: border-box;
 }
 
 .mida-solution-unified-badge {
   display: inline-block;
   padding: 8px 16px;
   border-radius: 8px;
-  border: 1px solid #000000;
+  border: 1px solid #002343;
   background: transparent;
   font-family: var(--font-bold-aeonik), var(--bold-font-h1), sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #000000;
+  color: #002343;
   text-align: center;
 }
 
@@ -959,8 +964,263 @@ height: Fixed (36px)px; */
 }
 
 @media screen and (max-width: 650px) {
-  .mida-solution--unified {
+  .mida-solution.mida-solution--unified {
     padding: 56px 20px 64px;
+  }
+}
+
+/* ========== Modular solutions (tabbed) — index ========== */
+.modular-solutions {
+  width: 100%;
+  background: #f4f6f8;
+  padding: 72px 24px 88px;
+  box-sizing: border-box;
+}
+
+.modular-solutions-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.modular-solutions-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid #1a1a1a;
+  background: transparent;
+  font-family: var(--font-bold-aeonik), var(--bold-font-h1), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+.modular-solutions-title {
+  font-family: var(--font-bold-aeonik), var(--bold-font-h1), sans-serif;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: #0c1017;
+  max-width: 720px;
+  margin: 8px 0 0;
+}
+
+.modular-solutions-lead {
+  font-family: var(--font-regular-satoshi), var(--regular-font-p), sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  text-align: center;
+  color: #5c6370;
+  max-width: 640px;
+  margin: 0 0 8px;
+}
+
+.modular-solutions-panel {
+  width: 100%;
+  margin-top: 28px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.modular-solutions-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  padding: 0 8px;
+  border-bottom: 1px solid #e8eaed;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.modular-solutions-tab {
+  flex: 0 0 auto;
+  padding: 16px 18px 14px;
+  margin: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-regular-satoshi), var(--regular-font-p), sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #3d4450;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.modular-solutions-tab:hover {
+  color: #0c1017;
+}
+
+.modular-solutions-tab.is-active {
+  font-weight: 700;
+  color: #0c1017;
+}
+
+.modular-solutions-tab.is-active::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 0;
+  height: 3px;
+  background: #ff0077;
+  border-radius: 2px 2px 0 0;
+}
+
+.modular-solutions-panes {
+  padding: 0;
+}
+
+.modular-solutions-pane {
+  padding: 40px 40px 44px;
+}
+
+.modular-solutions-pane[hidden] {
+  display: none !important;
+}
+
+.modular-solutions-pane-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 48px;
+  align-items: center;
+}
+
+.modular-solutions-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.modular-product-wordmark {
+  margin: 0;
+  font-family: var(--font-bold-aeonik), var(--bold-font-h1), sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.modular-product-wordmark__mida {
+  color: #0c1017;
+  text-transform: lowercase;
+}
+
+.modular-product-wordmark__accent {
+  color: #ff0077;
+  text-transform: lowercase;
+}
+
+.modular-product-wordmark--tyche .modular-product-wordmark__tyche {
+  color: #0c1017;
+  font-size: 32px;
+}
+
+.modular-solutions-subtitle {
+  margin: 0;
+  font-family: var(--font-bold-aeonik), var(--bold-font-h1), sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+.modular-solutions-desc {
+  margin: 0;
+  font-family: var(--font-regular-satoshi), var(--regular-font-p), sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5c6370;
+  max-width: 420px;
+}
+
+.modular-solutions-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  background: #ff0077;
+  color: #fff !important;
+  font-family: var(--font-bold-aeonik), var(--bold-font-h1), sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.modular-solutions-cta:hover {
+  background: #e6006b;
+  color: #fff !important;
+}
+
+.modular-solutions-visual {
+  min-width: 0;
+}
+
+.modular-solutions-visual-frame {
+  border-radius: 14px;
+  background: linear-gradient(160deg, #e8f4fc 0%, #d4e8f7 45%, #cfe5f5 100%);
+  padding: 20px 16px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modular-solutions-visual-frame img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .modular-solutions-pane-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .modular-solutions-visual {
+    order: -1;
+  }
+
+  .modular-solutions-pane {
+    padding: 28px 20px 36px;
+  }
+
+  .modular-solutions-copy {
+    align-items: center;
+    text-align: center;
+  }
+
+  .modular-solutions-desc {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .modular-solutions {
+    padding: 48px 16px 64px;
+  }
+
+  .modular-solutions-tab {
+    padding: 14px 14px 12px;
+    font-size: 14px;
   }
 }
 

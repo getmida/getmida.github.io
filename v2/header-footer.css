@@ -141,9 +141,14 @@
     overflow: auto;
     padding-block: 1.5rem 4rem;
     pointer-events: none;
-    /* opacity: 0; */
-    display: none;
-    transition: top 0.4s, opacity 0.3s;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    /* Longer fade-out when closing; visibility delays until opacity finishes */
+    transition:
+      opacity 0.72s cubic-bezier(0.33, 1, 0.68, 1),
+      visibility 0s linear 0.72s,
+      top 0.5s cubic-bezier(0.33, 1, 0.68, 1);
   }
   .nav__menu::-webkit-scrollbar {
     width: 0.5rem;
@@ -153,9 +158,17 @@
   }
 
   .cta-link-header {
-    margin-top: 30px;
+    margin-top: 1.5rem;
+    margin-left: 0;
+    padding-top: 1.25rem;
     padding-right: 1.5rem;
-    margin-left: 0.25rem;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(208, 205, 205, 1);
+    width: calc(100% - 3rem);
+    max-width: 100%;
+    justify-content: flex-start;
+    gap: 1rem;
   }
 
   .login-header {
@@ -201,6 +214,17 @@
   pointer-events: initial;
   background-color: white;
   z-index: 100;
+}
+
+/* Snappier fade-in on open (mobile); must follow .show-menu for cascade */
+@media screen and (max-width: 931px) {
+  .nav__menu.show-menu {
+    visibility: visible;
+    transition:
+      opacity 0.32s ease-out,
+      visibility 0s,
+      top 0.38s ease-out;
+  }
 }
 
 /* Show icon */
@@ -345,6 +369,18 @@
     column-gap: 2.2rem;
     height: 100%;
     list-style-type: none;
+    align-items: center;
+  }
+
+  /* Space + vertical line before Log in / Get Started */
+  .cta-link-header {
+    margin-left: 0.5rem;
+    padding-left: 1.75rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+    align-self: center;
+    flex-shrink: 0;
+    height: auto;
+    min-height: 2rem;
   }
 
   .show-menu {

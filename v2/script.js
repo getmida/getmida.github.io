@@ -99,3 +99,32 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   })
 })
+
+/* Modular solutions tabs (index) */
+;(function () {
+  const root = document.querySelector('.modular-solutions')
+  if (!root) return
+  const tabs = root.querySelectorAll('.modular-solutions-tab')
+  const panes = root.querySelectorAll('.modular-solutions-pane')
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const paneId = tab.getAttribute('aria-controls')
+      if (!paneId) return
+      tabs.forEach((t) => {
+        t.classList.remove('is-active')
+        t.setAttribute('aria-selected', 'false')
+      })
+      panes.forEach((p) => {
+        p.classList.remove('is-active')
+        p.setAttribute('hidden', '')
+      })
+      tab.classList.add('is-active')
+      tab.setAttribute('aria-selected', 'true')
+      const pane = document.getElementById(paneId)
+      if (pane) {
+        pane.classList.add('is-active')
+        pane.removeAttribute('hidden')
+      }
+    })
+  })
+})()
