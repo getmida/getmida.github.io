@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const tabRow = root.querySelector('.modular-solutions-tabs')
   if (!tabs.length) return
 
-  const INTERVAL_MS = 2000
+  const INTERVAL_MS = 3000
   const EXIT_MS = 380
   let current = Math.max(
     0,
@@ -115,6 +115,8 @@ document.addEventListener('DOMContentLoaded', function () {
   let exitingPane = null
   let exitHandler = null
   let exitFallbackTimer = null
+  let pointerOverTabs = false
+  let pointerOverPanes = false
 
   function scrollTabIntoView(tab) {
     if (
@@ -227,17 +229,19 @@ document.addEventListener('DOMContentLoaded', function () {
     activateTab(tabs[next])
   }
 
-  function startAuto() {
-    stopAuto()
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    timer = window.setInterval(goNext, INTERVAL_MS)
-  }
-
   function stopAuto() {
     if (timer != null) {
       window.clearInterval(timer)
       timer = null
     }
+  }
+
+  function startAuto() {
+    stopAuto()
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (document.hidden) return
+    if (pointerOverTabs || pointerOverPanes) return
+    timer = window.setInterval(goNext, INTERVAL_MS)
   }
 
   tabs.forEach((tab) => {
@@ -248,10 +252,27 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 
+  if (tabRow) {
+    tabRow.addEventListener('mouseenter', () => {
+      pointerOverTabs = true
+      stopAuto()
+    })
+    tabRow.addEventListener('mouseleave', () => {
+      pointerOverTabs = false
+      startAuto()
+    })
+  }
+
   const paneBody = root.querySelector('.modular-solutions-panes')
   if (paneBody) {
-    paneBody.addEventListener('mouseenter', stopAuto)
-    paneBody.addEventListener('mouseleave', startAuto)
+    paneBody.addEventListener('mouseenter', () => {
+      pointerOverPanes = true
+      stopAuto()
+    })
+    paneBody.addEventListener('mouseleave', () => {
+      pointerOverPanes = false
+      startAuto()
+    })
     paneBody.addEventListener('focusin', stopAuto)
     paneBody.addEventListener('focusout', (e) => {
       if (!e.relatedTarget || !paneBody.contains(e.relatedTarget)) {

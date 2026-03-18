@@ -2383,8 +2383,8 @@ html:not(.js) #unified-feature-diagram-root .feature-wrapper {
 }
 
 .mida-why-choose-header {
-  text-align: center;
-  margin: 0 auto 56px;
+  text-align: left;
+  margin: 0 0 56px;
   max-width: 680px;
 }
 

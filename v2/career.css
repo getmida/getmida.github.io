@@ -17,6 +17,16 @@
   max-width: 613px;
 }
 
+.hero-left-right-container {
+  display: flex;
+  max-width: 973px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 20px 150px 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
 .page-title-career {
   font-family: var(--font-bold-aeonik);
   font-size: 20px;
