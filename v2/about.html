@@ -6,6 +6,9 @@
     <title>About Mida Technologies - Driving Financial Inclusion in Africa</title>
     <meta name="description" content="Learn how Mida Technologies is driving sustainability in financial services with technology-driven debt management solutions.">
     <meta name="keywords" content="About Mida, financial inclusion, credit ecosystem, innovative solutions, ethical debt management, Africa financial services.">
+    <script>
+      document.documentElement.classList.add('js')
+    </script>
     <link
       rel="preload"
       href="assets/fonts/Satoshi-Regular.woff2"
@@ -13,11 +16,28 @@
       type="font/woff2"
       crossorigin="anonymous"
     />
+    <link
+      rel="preload"
+      href="assets/fonts/Aeonik-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="font.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="header-footer.css" />
-    <link rel="stylesheet" href="about.css" />
     <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="header-footer.css" />
+    <link rel="stylesheet" href="nav-pill.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="cookie-consent.css" />
     <!-- Google Tag Manager -->
     <script>
       ;(function (w, d, s, l, i) {
@@ -33,7 +53,7 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body>
+  <body class="nav-pill-style">
     <script type="text/javascript">
       _linkedin_partner_id = "8183569";
       window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
@@ -49,15 +69,22 @@
       s.parentNode.insertBefore(b, s);})(window.lintrk);
       </script>
       <noscript>
-      <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8183569&fmt=gif" />
+      <img
+        class="linkedin-insight-pixel"
+        height="1"
+        width="1"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8183569&fmt=gif"
+      />
       </noscript>
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
+        class="gtm-noscript-iframe"
         src="https://www.googletagmanager.com/ns.html?id=GTM-K45GHL4V"
         height="0"
         width="0"
-        style="display: none; visibility: hidden"
+        title=""
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
@@ -69,7 +96,7 @@
             <nav class="nav container">
               <div class="nav__data">
                 <a href="index.html" class="nav__logo">
-                  <img src="assets/images/logo main.png" alt="" srcset="" />
+                  <img src="assets/images/logo main.png" alt="Mida" />
                 </a>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -115,15 +142,15 @@
                             </p>
                             <div class="dropdown-header-card-cta-link-header">
                               <a
-                                href="https://app.getmida.com/register"
+                                href="contact.html"
                                 class="dropdown-header-card-get-started-header"
-                                >Get started</a
+                                >Contact Us</a
                               >
-                              <a
+                              <!-- <a
                                 href="contact.html"
                                 class="dropdown-header-card-book-demo-header"
                                 >Request a demo</a
-                              >
+                              > -->
                             </div>
                           </div>
                         </div>
@@ -156,7 +183,7 @@
                               </div>
                               <div class="company-about-us">
                                 <h2>Careers</h2>
-                                <p>Join our team</p>
+                                <p>Join our team</p>
                               </div>
                             </div>
                           </a>
@@ -184,7 +211,7 @@
                   <!--=============== DROPDOWN 2 ===============-->
                   <li class="dropdown__item">
                     <div class="nav__link dropdown__button">
-                      0ur solutions
+                      Our Solutions
                       <img
                         src="assets/svgs/chevron-down.svg"
                         alt=""
@@ -205,15 +232,15 @@
                             </p>
                             <div class="dropdown-header-card-cta-link-header">
                               <a
-                                href="https://app.getmida.com/register"
+                                href="contact.html"
                                 class="dropdown-header-card-get-started-header"
-                                >Get started</a
+                                >Contact Sales</a
                               >
-                              <a
+                              <!-- <a
                                 href="contact.html"
                                 class="dropdown-header-card-book-demo-header"
                                 >Request a demo</a
-                              >
+                              > -->
                             </div>
                           </div>
                         </div>
@@ -280,12 +307,12 @@
                               </div>
                               <div class="company-about-us">
                                 <h2>MidaX</h2>
-                                <p>Digital skip-tracing solution</p>
+                                <p>Digital skip-tracing solution</p>
                               </div>
                             </div>
                           </a>
 
-                          <a href="debt-buying.html">
+                          <a href="forms.html">
                             <div class="header-icon-list">
                               <div class="icon-div">
                                 <img
@@ -295,8 +322,8 @@
                                 />
                               </div>
                               <div class="company-about-us">
-                                <h2>Debt Buying</h2>
-                                <p>Purchase of loan portfolio</p>
+                                <h2>MidaForms</h2>
+                                <p>Loan origination and decisioning</p>
                               </div>
                             </div>
                           </a>
@@ -337,10 +364,10 @@
 
                   <div class="cta-link-header">
                     <a href="https://app.getmida.com/login" class="login-header"
-                      >Log In</a
+                      >Log in</a
                     >
                     <a
-                      href="https://app.getmida.com/register"
+                      href="contact.html"
                       class="get-started-header"
                       >Get Started</a
                     >
@@ -352,21 +379,19 @@
         </section>
 
         <section class="hero-section-container our-collection-hero">
-          <div class="hero-left-right-container">
+          <div class="hero-left-right-container" style="padding-bottom: 200px !important;">
             <div class="hero-left-container">
               <div class="inner-top-left-container">
                 <p class="page-title">ABOUT US</p>
                 <h1 class="page-info-long-text">
-                  We are a blended team of financial services experts, software
-                  innovators, and data scientists
+                  Mida is a lending technology company building infrastructure for sustainable credit in emerging markets
                 </h1>
               </div>
               <p class="page-info-short-paragraph">
-                We believe that sustainability is a key driver of financial
-                inclusion and a thriving credit ecosystem in Africa.
+                We combine technology, data, and deep domain expertise to help lenders grow responsibly.
               </p>
               <a href="contact.html" class="cta--left-container-book-demo"
-                >Request a Demo</a
+                >Talk to Us</a
               >
             </div>
             <div class="hero-right-container">
@@ -378,23 +403,28 @@
     </section>
 
     <section class="passion-section">
-      <img src="assets/gifs/puzzle.gif" alt="passion-section" srcset="" />
       <div class="about-passion">
-        <h2>Our Passion</h2>
+        <h2>Our <span class="product-info-highlight">People</span></h2>
 
         <div class="about-passion-info">
-          <p>
-            We are obsessed with driving financial inclusion in a way that is
-            meaningful, impactful and that drives both personal and economic
-            growth.
+          <p style="font-size: 20px; color: #111827; font-weight: 600; line-height: 20px; padding-top: 20px;">
+            We are a blended team of financial services experts, software
+            innovators, and data scientists.
           </p>
-          <p>
-            We believe that better repayment performance builds trust for
-            creditors while a dynamic & ethical approach increases repayment
-            rates for borrowers. Our solution ensures both happen.
+          <ps style="font-size: 20px; color: #111827; font-weight: 600; line-height: 20px; padding-bottom: 60px;">
+            We believe that sustainability is a key driver of financial
+            inclusion and a thriving credit ecosystem in Africa.
           </p>
         </div>
       </div>
+      <img
+        src="assets/images/pages/about.png"
+        alt="Mida team"
+        width="1200"
+        height="600"
+        loading="lazy"
+        decoding="async"
+      />
     </section>
 
     <section class="vision-mission">
@@ -426,6 +456,95 @@
         </div>
       </div>
     </section>
+
+    <section class="sustainable-lending-banner">
+      <div class="sustainable-lending-banner__decoration sustainable-lending-banner__decoration--left" aria-hidden="true">
+        <img
+          src="assets/images/pages/arrows_left.png"
+          alt=""
+          width="160"
+          height="80"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <h2 class="sustainable-lending-banner__text">
+        Sustainable lending is not a<br />
+        feature. It&rsquo;s a <strong><i>system.</i></strong>
+      </h2>
+      <div class="sustainable-lending-banner__decoration sustainable-lending-banner__decoration--right" aria-hidden="true">
+        <img
+          src="assets/images/pages/arrows_right.png"
+          alt=""
+          width="160"
+          height="80"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <section class="mida-thesis-section">
+      <div class="mida-thesis-inner">
+        <h2 class="mida-thesis-title">
+          The Mida <span class="product-info-highlight">Thesis</span>
+        </h2>
+        <div class="mida-thesis-copy">
+          <p>
+            We believe that better repayment performance builds trust for
+            creditors while a dynamic &amp; ethical approach increases repayment
+            rates for borrowers. Our solution ensures both happen.
+          </p>
+          <p>
+            Lending becomes unsustainable when debt is treated as an afterthought.
+            Poor onboarding, rigid rules, limited visibility, siloed systems, and
+            reactive collections lead to compounding losses.
+          </p>
+          <p>
+            Mida is built on a simple belief: debt management must be designed
+            into lending from day one.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-we-work-section">
+      <div class="how-we-work-inner">
+        <h2 class="how-we-work-title">
+          How <span class="product-info-highlight">We Work</span>
+        </h2>
+        <div class="how-we-work-copy">
+          <h3 class="how-we-work-subtitle">
+            Designed for fast deployment, configured for your operations.
+          </h3>
+          <p>
+            Mida is implemented through a guided onboarding process that ensures
+            the platform is set up to match your lending model, regulatory
+            requirements, and risk strategy — from day one.
+          </p>
+        </div>
+      </div>
+    </section>
+
+        <!-- //b4 footer section -->
+        <section>
+          <div class="section-before-info-footer">
+            <div class="inner-take-action-info-footer">
+              <h1 class="footer-more-title">
+                End-to-end solutions for better debt portfolio performance
+              </h1>
+              <p class="footer-more-short-info">
+                Connect with our sales team to explore how our innovative tools can
+                transform your collections performance
+              </p>
+              <div class="talk-to-us-action-button">
+                <a class="talk-to-us-button-footer" href="contact.html"
+                  >Talk to us</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
 
     <footer>
       <div class="info-footer-section">
@@ -585,7 +704,10 @@
       </div>
     </footer>
 
-    <script src="header-footer.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="general.js" defer></script>
+    <script src="header-footer.js" async></script>
+    <script src="cookie-consent.js" defer></script>
     <script>(function(w, d) { w.CollectId = "67e59c163b5fcbcbdb7873c0"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
   </body>
 </html>

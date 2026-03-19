@@ -78,6 +78,16 @@
 }
 
 @font-face {
+  font-family: 'Aeonik TRIAL';
+  src: url('assets/fonts/Aeonik-Regular.woff2') format('woff2'),
+    url('assets/fonts/Aeonik-Regular.woff') format('woff'),
+    url('assets/fonts/Aeonik-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Satoshi-light';
   src: url('assets/fonts/Satoshi-Light.woff2') format('woff2'),
     url('assets/fonts/Satoshi-Light.woff') format('woff'),
