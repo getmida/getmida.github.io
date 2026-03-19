@@ -18,6 +18,108 @@
   will-change: background-image;
 }
 
+/* Mida Recovery hero: full-bleed photo + navy gradient (left), white copy */
+/* Height rhythm matches other product heroes (midax / midaforms / omni fold + 52vw/420 visual) */
+.hero-section.recovery-hero-section {
+  position: relative;
+  overflow: hidden;
+  background: #071a3d;
+  background-image: none;
+  background-blend-mode: normal;
+}
+
+.hero-section.recovery-hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(assets/images/pages/recovery_hero.png) center / cover no-repeat;
+  z-index: 0;
+}
+
+.hero-section.recovery-hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 26, 61, 0.97) 0%,
+    rgba(7, 26, 61, 0.9) 22%,
+    rgba(7, 26, 61, 0.55) 42%,
+    rgba(7, 26, 61, 0.18) 58%,
+    transparent 74%
+  );
+}
+
+.hero-section.recovery-hero-section .inner-hero-section {
+  position: relative;
+  z-index: 2;
+}
+
+.recovery-hero-fold.our-collection-hero {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-top: clamp(28px, 4vw, 48px);
+  padding-bottom: clamp(48px, 7vw, 88px);
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+  min-height: min(52vw, 420px);
+  display: flex;
+  align-items: center;
+}
+
+.recovery-hero-copy {
+  max-width: min(540px, 100%);
+  text-align: left;
+}
+
+.recovery-hero-title {
+  font-family: var(--bold-font-h1), var(--font-bold-aeonik), sans-serif;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 clamp(16px, 2vw, 24px);
+}
+
+.recovery-hero-lead {
+  font-family: var(--font-regular-satoshi), var(--regular-font-p-aeonik), sans-serif;
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.96);
+  margin: 0 0 clamp(28px, 4vw, 40px);
+}
+
+.recovery-hero-copy .get-started-header {
+  display: inline-block;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .recovery-hero-fold.our-collection-hero {
+    min-height: auto;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .hero-section.recovery-hero-section::before {
+    background-position: 65% center;
+  }
+
+  .hero-section.recovery-hero-section::after {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 26, 61, 0.94) 0%,
+      rgba(7, 26, 61, 0.75) 45%,
+      rgba(7, 26, 61, 0.4) 100%
+    );
+  }
+}
+
 /* Mida Omni product hero: pale lavender-blue + pattern */
 .hero-section.mida-omni.midaomni-hero-section {
   background-color: #eef0fc;
@@ -652,6 +754,25 @@
   /* box-shadow: 0 16px 48px rgba(18, 43, 67, 0.1); */
 }
 
+/* Mida Recovery: white band, two-column problem + composite visual */
+.product-info-section--recovery-problem {
+  max-width: none;
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(56px, 6vw, 96px) clamp(20px, 4vw, 48px);
+  gap: 0;
+}
+
+.product-info-problem--recovery {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 64px);
+}
+
+.product-info-problem--recovery .product-info-problem-visual img {
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(18, 43, 67, 0.1);
+}
+
 /* MidaForms: full-bleed light band; image left, copy right */
 .product-info-section--forms-problem {
   max-width: none;
@@ -751,6 +872,15 @@
   }
 
   .product-info-problem--omni .product-info-problem-visual {
+    order: 0;
+  }
+
+  /* Recovery: stack with copy first, then image */
+  .product-info-problem--recovery .product-info-problem-copy {
+    order: -1;
+  }
+
+  .product-info-problem--recovery .product-info-problem-visual {
     order: 0;
   }
 }
@@ -933,16 +1063,43 @@
   object-fit: contain;
 }
 
+/* Mida Recovery: Key Capabilities — light band, 3+2 grid, pink icon circles */
+.product-info-section--recovery-capabilities {
+  max-width: none;
+  width: 100%;
+  background-color: #f5f6f8;
+  padding: clamp(56px, 6vw, 88px) clamp(20px, 4vw, 48px);
+  gap: 0;
+}
+
+.key-capabilities--recovery {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.key-capabilities--recovery .key-capability-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(252, 232, 242, 1);
+}
+
+.key-capabilities--recovery .key-capability-icon img {
+  object-fit: contain;
+}
+
 @media (max-width: 900px) {
   .key-capabilities-grid--three {
     grid-template-columns: 1fr;
   }
 }
 
-/* Who It's For banner — MidaX + MidaForms + Mida Omni (magenta panel, stripes, photo) */
+/* Who It's For banner — MidaX + MidaForms + Mida Omni + Mida Recovery (magenta panel, stripes, photo) */
 .midax-who-for,
 .forms-who-for,
-.omni-who-for {
+.omni-who-for,
+.recovery-who-for {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
@@ -951,7 +1108,8 @@
 
 .midax-who-for-inner,
 .forms-who-for-inner,
-.omni-who-for-inner {
+.omni-who-for-inner,
+.recovery-who-for-inner {
   display: grid;
   grid-template-columns: minmax(260px, 1.12fr) 36px minmax(220px, 1fr);
   align-items: stretch;
@@ -980,9 +1138,19 @@
   justify-content: center;
 }
 
+.recovery-who-for-copy {
+  background: #A80B5E;
+  padding: clamp(32px, 5vw, 56px) clamp(28px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 22px);
+  justify-content: center;
+}
+
 .midax-who-for-title,
 .forms-who-for-title,
-.omni-who-for-title {
+.omni-who-for-title,
+.recovery-who-for-title {
   font-family: var(--bold-font-h1), var(--font-bold-aeonik), sans-serif;
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
@@ -993,7 +1161,8 @@
 
 .midax-who-for-lead,
 .forms-who-for-lead,
-.omni-who-for-lead {
+.omni-who-for-lead,
+.recovery-who-for-lead {
   font-family: var(--font-regular-satoshi), var(--regular-font-p-aeonik), sans-serif;
   font-size: clamp(0.95rem, 1.05vw, 1.0625rem);
   font-weight: 400;
@@ -1004,7 +1173,8 @@
 }
 
 .midax-who-for-tags,
-.forms-who-for-tags {
+.forms-who-for-tags,
+.recovery-who-for-tags {
   list-style: none;
   margin: clamp(8px, 1vw, 12px) 0 0;
   padding: 0;
@@ -1024,7 +1194,8 @@
 
 .midax-who-for-tags li,
 .forms-who-for-tags li,
-.omni-who-for-tags li {
+.omni-who-for-tags li,
+.recovery-who-for-tags li {
   background: #ffffff;
   color: #0f0f0f;
   font-family: var(--font-regular-satoshi), var(--regular-font-p-aeonik), sans-serif;
@@ -1058,7 +1229,8 @@
 
 .midax-who-for-divider,
 .forms-who-for-divider,
-.omni-who-for-divider {
+.omni-who-for-divider,
+.recovery-who-for-divider {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -1073,9 +1245,14 @@
   background-color: #A80B5E;
 }
 
+.recovery-who-for-divider {
+  background-color: #A80B5E;
+}
+
 .midax-who-for-stripe,
 .forms-who-for-stripe,
-.omni-who-for-stripe {
+.omni-who-for-stripe,
+.recovery-who-for-stripe {
   width: 50px;
   flex-shrink: 0;
   align-self: stretch;
@@ -1086,25 +1263,29 @@
 
 .midax-who-for-stripe--1,
 .forms-who-for-stripe--1,
-.omni-who-for-stripe--1 {
+.omni-who-for-stripe--1,
+.recovery-who-for-stripe--1 {
   background: transparent;
 }
 
 .midax-who-for-stripe--2,
 .forms-who-for-stripe--2,
-.omni-who-for-stripe--2 {
+.omni-who-for-stripe--2,
+.recovery-who-for-stripe--2 {
   background: #d9468c;
 }
 
 .midax-who-for-stripe--3,
 .forms-who-for-stripe--3,
-.omni-who-for-stripe--3 {
+.omni-who-for-stripe--3,
+.recovery-who-for-stripe--3 {
   background: #fbcfe8;
 }
 
 .midax-who-for-visual,
 .forms-who-for-visual,
-.omni-who-for-visual {
+.omni-who-for-visual,
+.recovery-who-for-visual {
   position: relative;
   min-height: 280px;
   background: #1a1a1a;
@@ -1112,7 +1293,8 @@
 
 .midax-who-for-visual img,
 .forms-who-for-visual img,
-.omni-who-for-visual img {
+.omni-who-for-visual img,
+.recovery-who-for-visual img {
   width: 100%;
   height: 100%;
   min-height: 280px;
@@ -1122,7 +1304,8 @@
 }
 
 .product-info-section--forms-who,
-.product-info-section--omni-who {
+.product-info-section--omni-who,
+.product-info-section--recovery-who {
   max-width: none;
   width: 100%;
   padding: clamp(24px, 4vw, 48px) clamp(20px, 4vw, 48px);
@@ -1132,7 +1315,8 @@
 @media screen and (max-width: 820px) {
   .midax-who-for-inner,
   .forms-who-for-inner,
-  .omni-who-for-inner {
+  .omni-who-for-inner,
+  .recovery-who-for-inner {
     grid-template-columns: 1fr;
     border-radius: 24px;
     min-height: 0;
@@ -1140,27 +1324,31 @@
 
   .midax-who-for-divider,
   .forms-who-for-divider,
-  .omni-who-for-divider {
+  .omni-who-for-divider,
+  .recovery-who-for-divider {
     display: none;
   }
 
   .midax-who-for-visual,
   .forms-who-for-visual,
-  .omni-who-for-visual {
+  .omni-who-for-visual,
+  .recovery-who-for-visual {
     min-height: 220px;
     order: -1;
   }
 
   .midax-who-for-visual img,
   .forms-who-for-visual img,
-  .omni-who-for-visual img {
+  .omni-who-for-visual img,
+  .recovery-who-for-visual img {
     min-height: 220px;
     max-height: 320px;
   }
 
   .midax-who-for-tags,
   .forms-who-for-tags,
-  .omni-who-for-tags {
+  .omni-who-for-tags,
+  .recovery-who-for-tags {
     grid-template-columns: 1fr;
   }
 
@@ -1173,10 +1361,11 @@
   }
 }
 
-/* How It Fits — MidaX (diagram left) + MidaForms (copy left, diagram right) + Mida Omni */
+/* How It Fits — MidaX (diagram left) + MidaForms (copy left, diagram right) + Mida Omni + Mida Recovery */
 .midax-how-fits,
 .forms-how-fits,
-.omni-how-fits {
+.omni-how-fits,
+.recovery-how-fits {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
@@ -1184,7 +1373,8 @@
 
 .midax-how-fits-inner,
 .forms-how-fits-inner,
-.omni-how-fits-inner {
+.omni-how-fits-inner,
+.recovery-how-fits-inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 64px);
@@ -1192,7 +1382,8 @@
 }
 
 .midax-how-fits-visual,
-.forms-how-fits-visual {
+.forms-how-fits-visual,
+.recovery-how-fits-visual {
   background: #f5f5f5;
   border-radius: 20px;
   padding: clamp(24px, 4vw, 40px);
@@ -1214,7 +1405,8 @@
 
 .midax-how-fits-visual img,
 .forms-how-fits-visual img,
-.omni-how-fits-visual img {
+.omni-how-fits-visual img,
+.recovery-how-fits-visual img {
   max-width: 100%;
   width: 100%;
   height: auto;
@@ -1222,7 +1414,8 @@
 }
 
 .midax-how-fits-copy,
-.forms-how-fits-copy {
+.forms-how-fits-copy,
+.recovery-how-fits-copy {
   display: flex;
   flex-direction: column;
   gap: clamp(16px, 2vw, 22px);
@@ -1230,7 +1423,8 @@
 
 .midax-how-fits-title,
 .forms-how-fits-title,
-.omni-how-fits-title {
+.omni-how-fits-title,
+.recovery-how-fits-title {
   font-family: var(--bold-font-h1), var(--font-bold-aeonik), sans-serif;
   font-size: clamp(28px, 3vw, 40px);
   font-weight: 700;
@@ -1242,7 +1436,8 @@
 
 .midax-how-fits-lead,
 .forms-how-fits-lead,
-.omni-how-fits-lead {
+.omni-how-fits-lead,
+.recovery-how-fits-lead {
   font-family: var(--font-regular-satoshi), var(--regular-font-p-aeonik), sans-serif;
   font-size: clamp(1rem, 1.1vw, 1.125rem);
   font-weight: 400;
@@ -1253,7 +1448,8 @@
 }
 
 .product-info-section--forms-how,
-.product-info-section--omni-how {
+.product-info-section--omni-how,
+.product-info-section--recovery-how {
   max-width: none;
   width: 100%;
   background: #ffffff;
@@ -1264,25 +1460,30 @@
 @media (max-width: 768px) {
   .midax-how-fits-inner,
   .forms-how-fits-inner,
-  .omni-how-fits-inner {
+  .omni-how-fits-inner,
+  .recovery-how-fits-inner {
     grid-template-columns: 1fr;
   }
 
   .midax-how-fits-visual,
   .forms-how-fits-visual,
-  .omni-how-fits-visual {
+  .omni-how-fits-visual,
+  .recovery-how-fits-visual {
     order: -1;
   }
 
   .forms-how-fits-copy,
-  .omni-how-fits-copy {
+  .omni-how-fits-copy,
+  .recovery-how-fits-copy {
     text-align: center;
   }
 
   .forms-how-fits-title,
   .forms-how-fits-lead,
   .omni-how-fits-title,
-  .omni-how-fits-lead {
+  .omni-how-fits-lead,
+  .recovery-how-fits-title,
+  .recovery-how-fits-lead {
     text-align: center;
   }
 }

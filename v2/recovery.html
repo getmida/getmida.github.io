@@ -15,11 +15,22 @@
       crossorigin="anonymous"
     />
 
-    <title>Mida - Recovery</title>
+    <script>
+      document.documentElement.classList.add('js')
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="general.css" />
-    <link rel="stylesheet" href="products.css" />
     <link rel="stylesheet" href="header-footer.css" />
+    <link rel="stylesheet" href="nav-pill.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="products.css" />
+    <link rel="stylesheet" href="cookie-consent.css" />
     <!-- Google Tag Manager -->
     <script>
       ;(function (w, d, s, l, i) {
@@ -35,7 +46,7 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body>
+  <body class="nav-pill-style">
     <script type="text/javascript">
       _linkedin_partner_id = "8183569";
       window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
@@ -51,19 +62,26 @@
       s.parentNode.insertBefore(b, s);})(window.lintrk);
       </script>
       <noscript>
-      <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8183569&fmt=gif" />
+      <img
+        class="linkedin-insight-pixel"
+        height="1"
+        width="1"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8183569&fmt=gif"
+      />
       </noscript>
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
+        class="gtm-noscript-iframe"
         src="https://www.googletagmanager.com/ns.html?id=GTM-K45GHL4V"
         height="0"
         width="0"
-        style="display: none; visibility: hidden"
+        title=""
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <section class="hero-section our-collection">
+    <section class="hero-section recovery-hero-section">
       <!--=============== HEADER ===============-->
       <div class="inner-hero-section">
         <section class="header-container">
@@ -71,7 +89,7 @@
             <nav class="nav container">
               <div class="nav__data">
                 <a href="index.html" class="nav__logo">
-                  <img src="assets/images/logo main.png" alt="" srcset="" />
+                  <img src="assets/images/logo main.png" alt="Mida" />
                 </a>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -117,15 +135,15 @@
                             </p>
                             <div class="dropdown-header-card-cta-link-header">
                               <a
-                                href="https://app.getmida.com/register"
+                                href="contact.html"
                                 class="dropdown-header-card-get-started-header"
-                                >Get started</a
+                                >Contact Us</a
                               >
-                              <a
+                              <!-- <a
                                 href="contact.html"
                                 class="dropdown-header-card-book-demo-header"
                                 >Request a demo</a
-                              >
+                              > -->
                             </div>
                           </div>
                         </div>
@@ -158,7 +176,7 @@
                               </div>
                               <div class="company-about-us">
                                 <h2>Careers</h2>
-                                <p>Join our team</p>
+                                <p>Join our team</p>
                               </div>
                             </div>
                           </a>
@@ -186,7 +204,7 @@
                   <!--=============== DROPDOWN 2 ===============-->
                   <li class="dropdown__item">
                     <div class="nav__link dropdown__button">
-                      0ur solutions
+                      Our Solutions
                       <img
                         src="assets/svgs/chevron-down.svg"
                         alt=""
@@ -207,15 +225,15 @@
                             </p>
                             <div class="dropdown-header-card-cta-link-header">
                               <a
-                                href="https://app.getmida.com/register"
+                                href="contact.html"
                                 class="dropdown-header-card-get-started-header"
-                                >Get started</a
+                                >Contact Sales</a
                               >
-                              <a
+                              <!-- <a
                                 href="contact.html"
                                 class="dropdown-header-card-book-demo-header"
                                 >Request a demo</a
-                              >
+                              > -->
                             </div>
                           </div>
                         </div>
@@ -282,12 +300,12 @@
                               </div>
                               <div class="company-about-us">
                                 <h2>MidaX</h2>
-                                <p>Digital skip-tracing solution</p>
+                                <p>Digital skip-tracing solution</p>
                               </div>
                             </div>
                           </a>
 
-                          <a href="debt-buying.html">
+                          <a href="forms.html">
                             <div class="header-icon-list">
                               <div class="icon-div">
                                 <img
@@ -297,8 +315,8 @@
                                 />
                               </div>
                               <div class="company-about-us">
-                                <h2>Debt Buying</h2>
-                                <p>Purchase of loan portfolio</p>
+                                <h2>MidaForms</h2>
+                                <p>Loan origination and decisioning</p>
                               </div>
                             </div>
                           </a>
@@ -339,10 +357,10 @@
 
                   <div class="cta-link-header">
                     <a href="https://app.getmida.com/login" class="login-header"
-                      >Log In</a
+                      >Log in</a
                     >
                     <a
-                      href="https://app.getmida.com/register"
+                      href="contact.html"
                       class="get-started-header"
                       >Get Started</a
                     >
@@ -353,125 +371,246 @@
           </header>
         </section>
 
-        <section class="hero-section-container our-collection-hero">
-          <div class="hero-info-cta">
-            <div class="inner-take-action-info">
-              <p class="product-tag">OUR PRODUCT</p>
-              <h1 class="product-title">Recovery</h1>
-              <p class="product-short-info">
-                Online and field recovery services for NPLs & write-offs,
-                providing effective strategies to maximize asset recovery.
-              </p>
-              <div class="talk-to-us-action-button">
-                <a
-                  class="talk-to-us-button"
-                  href="https://app.getmida.com/register"
-                  >Get started</a
-                >
-
-                <a class="book-demo-button" href="contact.html"
-                  >Request a demo</a
-                >
-              </div>
-            </div>
+        <section class="recovery-hero-fold our-collection-hero">
+          <div class="recovery-hero-copy">
+            <h1 class="recovery-hero-title">Mida Recovery</h1>
+            <p class="recovery-hero-lead">
+              MidaRecovery is built for managing written-off loans and
+              non-performing portfolios through ethical, data-driven recovery
+              processes&mdash;across contact centers, field teams, and
+              centralized reporting.
+            </p>
+            <a href="contact.html" class="get-started-header">Talk to Us</a>
           </div>
         </section>
       </div>
     </section>
 
-    <section class="logo-slider">
-      <h1 class="trusted-by">Trusted By;</h1>
+    <section class="logo-slider logo-slider--static">
+      <h1 class="trusted-by">Trusted by leading institutions in Africa</h1>
       <div class="logos">
         <div class="logos-slide">
-          <img src="assets/images/oxygen.svg" alt="oxygen-logo" />
-          <img src="assets/svgs/LSQ Logo.svg" alt="Lendsqr" />
-          <img src="assets/images/unionBank.png" alt="union-logo" />
+          <!-- <img src="assets/images/oxygen.svg" alt="oxygen-logo" /> -->
+          <img src="assets/images/access-bank-plc-icon-512x128-r5rvcuv8.png" alt="access-bank-logo" />
+          <img src="assets/images/PolarisLogo.png" alt="polarisbank" />
+          <img src="assets/images/Sterling-Logo_+1.png" alt="sterling-logo" />
+          <img src="assets/images/fidelity.png" alt="fidelity-logo" />
           <img
           src="assets/images/carbon_primary_positive_RGB.8ad3546d (1).png"
           alt="carbon-logo"
         />
-          <img src="assets/images/Sterling-Logo_+1.png" alt="sterling-logo" />
-          <img
+          <!-- <img src="assets/svgs/LSQ Logo.svg" alt="Lendsqr" /> -->
+          <img src="assets/images/logo-CgUdohNO.svg" alt="lapo-logo" />
+          <!-- <img src="assets/images/unionBank.png" alt="union-logo" /> -->      
+          <!-- <img
             src="assets/images/GkjpA72KuTfMqGekr1yw4jIVa5E (1).png"
             alt="lendigo-logo"
-          />
-  
-          <img src="assets/images/lightlogox2 (1).png" alt="seamlessHR-logo" />
-          <img src="assets/images/logo (1) (1).png" alt="onepipe-logo" />
-          <img src="assets/images/PolarisLogo.png" alt="polarisbank" />
+          /> -->
+          <!-- <img src="assets/images/lightlogox2 (1).png" alt="seamlessHR-logo" /> -->
+          <!-- <img src="assets/images/logo (1) (1).png" alt="onepipe-logo" /> -->
         </div>
       </div>
     </section>
 
-    <section class="product-info-section">
-      <div class="product-first-section">
-        <h1>Recover NPLs and written-off loans better & faster</h1>
-        <p>
-          We combine digital collections with a data-driven contact center and
-          field recovery agents to locate your customers and collect outstanding
-          repayments.
-        </p>
-      </div>
-      <div class="product-cards">
-        <div class="product-card">
-          <div class="custom-line-div">
-            <h3>01</h3>
-            <hr class="custom-line" />
-          </div>
-          <h2 class="product-card-title">
-            Ultra-modern <br />
-            contact center
+    <section class="product-info-section product-info-section--recovery-problem">
+      <div class="product-info-problem product-info-problem--recovery">
+        <div class="product-info-problem-copy">
+          <h2 class="product-info-problem-title">
+            The Problem <span class="product-info-highlight">It Solves</span>
           </h2>
-          <p class="product-card-details">
-            Our contact center sits on top of our rich network of data and
-            insights and can manage calls nationwide
+          <p class="product-info-problem-lead">
+            Managing non-performing loans is a skill that is tailored to
+            portfolio variables like days overdue, product type, target
+            audience, lending location, etc. Yet many lenders rely on fragmented
+            systems and manual processes, leading to reactive recovery efforts,
+            limited visibility, and weak accountability.
+          </p>
+          <p class="product-info-problem-lead">
+            <strong class="product-info-highlight">MidaRecovery</strong>
+            removes this operational complexity. It centralizes recovery
+            strategy management, coordinates contact center and field operations,
+            and provides real-time visibility into every recovery action.
           </p>
         </div>
-        <div class="product-card">
-          <div class="custom-line-div">
-            <h3>02</h3>
-            <hr class="custom-line" />
-          </div>
-          <h2 class="product-card-title">
-            Nationwide
-            <br />
-            field team
-          </h2>
-          <p class="product-card-details">
-            Our team of professional agents leverage our advanced search product
-            - MidaX, to locate hard-to-find borrowers
-          </p>
-        </div>
-        <div class="product-card">
-          <div class="custom-line-div">
-            <h3>03</h3>
-            <hr class="custom-line" />
-          </div>
-          <h2 class="product-card-title">
-            Ethical <br />
-            collections
-          </h2>
-          <p class="product-card-details">
-            We keep your reputation firmly in mind and at the forefront of all
-            our collections and recovery activities
-          </p>
+        <div class="product-info-problem-visual">
+          <img
+            src="assets/images/pages/recovey.png"
+            alt="Mida Recovery: contact center operations, field engagement, and successful NPL recovery"
+            width="1200"
+            height="800"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
-      <div class="product-last-section">
-        <div class="-product-inner-last-section-collections">
-          <p class="product-request-get-started">
-            You can request a demo from our team by clicking on
-            <a href="https://forms.gle/VKFWN61rL4j57R6o7" target="_blank"
-              >‘request a demo’</a
-            >
-            or explore Mida on your own with our self-service option by clicking
-            on <a href="https://app.getmida.com/register">‘Get started’</a>.
-          </p>
-          <div class="talk-to-us-action-button">
-            <a class="talk-to-us-button" href="https://app.getmida.com/register"
-              >Get started</a
-            >
-            <a class="book-demo-button" href="contact.html">Request a demo</a>
+    </section>
+
+    <section class="product-info-section product-info-section--recovery-capabilities">
+      <div class="key-capabilities key-capabilities--recovery">
+        <h2 class="key-capabilities-title">
+          Key <span class="product-info-highlight">Capabilities</span>
+        </h2>
+        <div class="key-capabilities-grid">
+          <div class="key-capability-card">
+            <div class="key-capability-icon" aria-hidden="true">
+              <img
+                src="assets/images/icons/decisioning.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="key-capability-heading">Recovery Strategy Management</h3>
+            <p class="key-capability-body">
+              Design and execute recovery strategies tailored to portfolio
+              segments, delinquency stages, and channel mix&mdash;aligned to your
+              risk and compliance policies.
+            </p>
+          </div>
+          <div class="key-capability-card">
+            <div class="key-capability-icon" aria-hidden="true">
+              <img
+                src="assets/images/icons/collection.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="key-capability-heading">
+              Tele-collection via Ultra-Modern Contact Center
+            </h3>
+            <p class="key-capability-body">
+              A professional, multilingual contact center supported by data and
+              operational insights.
+            </p>
+          </div>
+          <div class="key-capability-card">
+            <div class="key-capability-icon" aria-hidden="true">
+              <img
+                src="assets/images/icons/digital_workflow.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="key-capability-heading">Field Recovery Team Operations</h3>
+            <p class="key-capability-body">
+              Coordinate and track field recovery agents with structured
+              workflows and accountability.
+            </p>
+          </div>
+          <div class="key-capability-card">
+            <div class="key-capability-icon" aria-hidden="true">
+              <img
+                src="assets/images/icons/collection_analysis.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="key-capability-heading">NPL Tracking &amp; Reporting</h3>
+            <p class="key-capability-body">
+              Full visibility into non-performing loan performance, recovery
+              progress, and outcomes.
+            </p>
+          </div>
+          <div class="key-capability-card">
+            <div class="key-capability-icon" aria-hidden="true">
+              <img
+                src="assets/images/icons/validation.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="key-capability-heading">
+              Accountability &amp; Ethical Processes
+            </h3>
+            <p class="key-capability-body">
+              Ensure all recovery activities follow ethical guidelines that
+              protect customer dignity and lender reputation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-info-section product-info-section--recovery-who">
+      <div class="recovery-who-for">
+        <div class="recovery-who-for-inner">
+          <div class="recovery-who-for-copy">
+            <h2 class="recovery-who-for-title">Who It&rsquo;s For</h2>
+            <p class="recovery-who-for-lead">
+              Built for lenders managing written-off and non-performing
+              portfolios. Oversee teams, improve reporting, and drive ethical,
+              effective recovery.
+            </p>
+            <ul class="recovery-who-for-tags">
+              <li>Field Recovery Teams</li>
+              <li>NPL Management Units</li>
+              <li>Collections Operations</li>
+              <li>External Recovery Partners (DCAs)</li>
+            </ul>
+          </div>
+          <div class="recovery-who-for-divider" aria-hidden="true">
+            <span class="recovery-who-for-stripe recovery-who-for-stripe--1"></span>
+            <span class="recovery-who-for-stripe recovery-who-for-stripe--2"></span>
+            <span class="recovery-who-for-stripe recovery-who-for-stripe--3"></span>
+          </div>
+          <div class="recovery-who-for-visual">
+            <img
+              src="assets/images/pages/recovery_who.png"
+              alt="Recovery operations team in a modern call center with data dashboards"
+              width="800"
+              height="480"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-info-section product-info-section--recovery-how">
+      <div class="recovery-how-fits">
+        <div class="recovery-how-fits-inner">
+          <div class="recovery-how-fits-visual">
+            <img
+              src="assets/images/pages/recovery_fit.png"
+              alt="Diagram: Mida Omni connects contact center and field recovery to NPL tracking and reporting"
+              width="800"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="recovery-how-fits-copy">
+            <h2 class="recovery-how-fits-title">
+              How It <span class="product-info-highlight">Fits</span>
+            </h2>
+            <p class="recovery-how-fits-lead">
+              We leverage MidaOmni to enhance recovery operations. All
+              recoveries flow directly to the lender&rsquo;s central data source,
+              ensuring all loan performance information is up-to-date and
+              complete.
+            </p>
+            <p class="recovery-how-fits-lead">
+              By operating as part of the broader Mida platform, MidaRecovery
+              ensures that recovery is not an isolated function, but a structured
+              extension of the lending lifecycle, maintaining visibility,
+              accountability, and operational control from origination to
+              resolution.
+            </p>
           </div>
         </div>
       </div>
@@ -575,65 +714,13 @@
       </div>
     </section>
 
-    <!-- why choose mida -->
-
-    <section class="why-choose-mida">
-      <div class="inner-container-why-choose-mida">
-        <div class="why-mida">
-          <h2 class="why-choose-mida-title">Why Choose Mida?</h2>
-          <p class="why-choose-mida-text">
-            We offer an optimized blend of advanced technology and experienced
-            people to deliver better success rates
-          </p>
-        </div>
-
-        <div class="why-choose-mida-cards">
-          <div class="mida-card-technology">
-            <div class="choose-mida-card-info">
-              <span class="radio-circle"></span>
-              <h3 class="choose-mida-card-title">Our Technology</h3>
-              <p class="choose-mida-card-description">
-                We rapidly test multiple tactics in real-time, then intensify &
-                automate those that successfully influence collections at scale,
-                ensuring we can serve more people faster.
-              </p>
-            </div>
-          </div>
-
-          <div class="mida-card-data-analytics">
-            <div class="choose-mida-card-info-data-analytics">
-              <span class="radio-circle"></span>
-              <h3 class="choose-mida-card-title">Our Data Analytics</h3>
-              <p class="choose-mida-card-description">
-                Our algorithm processes a large data set of over 300 user
-                variables to identify trends & patterns that influence how and
-                when we engage pre and post-default
-              </p>
-            </div>
-          </div>
-
-          <div class="mida-card-localized-experience">
-            <div class="choose-mida-card-info-localized-experience">
-              <span class="radio-circle"></span>
-              <h3 class="choose-mida-card-title">Our Localized Experience</h3>
-              <p class="choose-mida-card-description">
-                With over 40 years of experience in Africa’s toughest market, we
-                combine technology with a hands-on approach and community
-                integration to drive performance.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- //b4 footer section -->
     <section>
       <div class="section-before-info-footer">
         <div class="inner-take-action-info-footer">
           <h1 class="footer-more-title">
-            End-to-end solutions for better debt collections performance and
-            debt management
+            End-to-end solutions for better debt portfolio performance
           </h1>
           <p class="footer-more-short-info">
             Connect with our sales team to explore how our innovative tools can
@@ -642,10 +729,6 @@
           <div class="talk-to-us-action-button">
             <a class="talk-to-us-button-footer" href="contact.html"
               >Talk to us</a
-            >
-
-            <a class="book-demo-button-footer" href="contact.html"
-              >Request a demo</a
             >
           </div>
         </div>
