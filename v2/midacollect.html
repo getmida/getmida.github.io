@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="general.css" />
     <link rel="stylesheet" href="products.css" />
     <link rel="stylesheet" href="header-footer.css" />
+    <link rel="stylesheet" href="nav-pill.css" />
     <!-- Google Tag Manager -->
     <script>
       ;(function (w, d, s, l, i) {
@@ -35,7 +36,7 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body>
+  <body class="nav-pill-style">
     <script type="text/javascript">
       _linkedin_partner_id = "8183569";
       window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
@@ -63,7 +64,7 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <section class="hero-section our-collection">
+    <section class="hero-section our-collection midacollect-hero-section">
       <!--=============== HEADER ===============-->
       <div class="inner-hero-section">
         <section class="header-container">
@@ -71,7 +72,7 @@
             <nav class="nav container">
               <div class="nav__data">
                 <a href="index.html" class="nav__logo">
-                  <img src="assets/images/logo main.png" alt="" srcset="" />
+                  <img src="assets/images/logo main.png" alt="Mida" />
                 </a>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -117,15 +118,15 @@
                             </p>
                             <div class="dropdown-header-card-cta-link-header">
                               <a
-                                href="https://app.getmida.com/register"
+                                href="contact.html"
                                 class="dropdown-header-card-get-started-header"
-                                >Get started</a
+                                >Contact Us</a
                               >
-                              <a
+                              <!-- <a
                                 href="contact.html"
                                 class="dropdown-header-card-book-demo-header"
                                 >Request a demo</a
-                              >
+                              > -->
                             </div>
                           </div>
                         </div>
@@ -186,7 +187,7 @@
                   <!--=============== DROPDOWN 2 ===============-->
                   <li class="dropdown__item">
                     <div class="nav__link dropdown__button">
-                      0ur solutions
+                      Our Solutions
                       <img
                         src="assets/svgs/chevron-down.svg"
                         alt=""
@@ -207,15 +208,15 @@
                             </p>
                             <div class="dropdown-header-card-cta-link-header">
                               <a
-                                href="https://app.getmida.com/register"
+                                href="contact.html"
                                 class="dropdown-header-card-get-started-header"
-                                >Get started</a
+                                >Contact Sales</a
                               >
-                              <a
+                              <!-- <a
                                 href="contact.html"
                                 class="dropdown-header-card-book-demo-header"
                                 >Request a demo</a
-                              >
+                              > -->
                             </div>
                           </div>
                         </div>
@@ -287,7 +288,7 @@
                             </div>
                           </a>
 
-                          <a href="debt-buying.html">
+                          <a href="forms.html">
                             <div class="header-icon-list">
                               <div class="icon-div">
                                 <img
@@ -297,8 +298,8 @@
                                 />
                               </div>
                               <div class="company-about-us">
-                                <h2>Debt Buying</h2>
-                                <p>Purchase of loan portfolio</p>
+                                <h2>MidaForms</h2>
+                                <p>Loan origination and decisioning</p>
                               </div>
                             </div>
                           </a>
@@ -339,10 +340,10 @@
 
                   <div class="cta-link-header">
                     <a href="https://app.getmida.com/login" class="login-header"
-                      >Log In</a
+                      >Log in</a
                     >
                     <a
-                      href="https://app.getmida.com/register"
+                      href="contact.html"
                       class="get-started-header"
                       >Get Started</a
                     >
@@ -353,26 +354,36 @@
           </header>
         </section>
 
-        <section class="hero-section-container our-collection-hero">
-          <div class="hero-info-cta">
-            <div class="inner-take-action-info">
-              <p class="product-tag">OUR PRODUCT</p>
-              <h1 class="product-title">MidaCollect</h1>
-              <p class="product-short-info">
-                Create tailored strategies for your loan portfolio when it comes
-                to collections and recovery and manage your team productivity
-                all from one place
+        <section
+          class="hero-section-container our-collection-hero midacollect-hero-fold"
+        >
+          <div class="midacollect-hero-grid">
+            <div class="midacollect-hero-copy">
+              <img
+                class="midacollect-product-logo"
+                src="assets/images/products/collect.png"
+                alt="MidaCollect"
+                width="120"
+                decoding="async"
+              />
+              <h1 class="midacollect-hero-title">MidaCollect</h1>
+              <p class="midacollect-hero-lead">
+                MidaCollect is a digital collections platform designed to drive
+                repayment through structured, data-driven workflows.
               </p>
-              <div class="talk-to-us-action-button">
-                <a
-                  class="talk-to-us-button"
-                  href="https://app.getmida.com/register"
-                  >Get started</a
-                >
-
-                <a class="book-demo-button" href="contact.html"
-                  >Request a demo</a
-                >
+              <a class="get-started-header" href="contact.html">Talk to Us</a>
+            </div>
+            <div class="midacollect-hero-visual" aria-hidden="true">
+              <span class="midacollect-hero-blue"></span>
+              <div class="midacollect-hero-visual-frame">
+                <img
+                  src="assets/images/pages/collect.png"
+                  alt=""
+                  width="640"
+                  height="520"
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
@@ -380,40 +391,58 @@
       </div>
     </section>
 
-    <section class="logo-slider">
-      <h1 class="trusted-by">Trusted By;</h1>
+    <section class="logo-slider logo-slider--static">
+      <h1 class="trusted-by">Trusted by leading institutions in Africa</h1>
       <div class="logos">
         <div class="logos-slide">
-          <img src="assets/images/oxygen.svg" alt="oxygen-logo" />
+          <!-- <img src="assets/images/oxygen.svg" alt="oxygen-logo" /> -->
+          <img src="assets/images/access-bank-plc-icon-512x128-r5rvcuv8.png" alt="access-bank-logo" />
           <img src="assets/images/PolarisLogo.png" alt="polarisbank" />
           <img src="assets/images/Sterling-Logo_+1.png" alt="sterling-logo" />
-          <img src="assets/images/fcmb-logo.png" alt="fcmb-logo" />
+          <img src="assets/images/fidelity.png" alt="fidelity-logo" />
           <img
           src="assets/images/carbon_primary_positive_RGB.8ad3546d (1).png"
           alt="carbon-logo"
         />
-          <img src="assets/svgs/LSQ Logo.svg" alt="Lendsqr" />
+          <!-- <img src="assets/svgs/LSQ Logo.svg" alt="Lendsqr" /> -->
           <img src="assets/images/logo-CgUdohNO.svg" alt="lapo-logo" />
           <!-- <img src="assets/images/unionBank.png" alt="union-logo" /> -->      
-          <img
+          <!-- <img
             src="assets/images/GkjpA72KuTfMqGekr1yw4jIVa5E (1).png"
             alt="lendigo-logo"
-          />
-          <img src="assets/images/lightlogox2 (1).png" alt="seamlessHR-logo" />
-          <img src="assets/images/logo (1) (1).png" alt="onepipe-logo" />
+          /> -->
+          <!-- <img src="assets/images/lightlogox2 (1).png" alt="seamlessHR-logo" /> -->
+          <!-- <img src="assets/images/logo (1) (1).png" alt="onepipe-logo" /> -->
         </div>
       </div>
     </section>
 
     <section class="product-info-section">
-      <div class="product-first-section">
-        <h1>Increase your collections success rate</h1>
-        <p>
-          Collections is both a science and an art. Go beyond setting up
-          repayment instruments and layer on the art of Mida’s advanced
-          collections intelligence and algorithms to increase your collections
-          success rate
+      <div class="product-info-problem">
+        <div class="product-info-problem-copy">
+        <h2 class="product-info-problem-title">
+            The Problem <span class="product-info-highlight">It Solves</span>
+          </h2>
+        <p class="product-info-problem-lead">
+          Collections often fail not because borrowers refuse to pay, but because lenders rely on rigid instruments, poorly timed reminders, and disconnected engagement channels. Generic repayment tools lack context, ignore borrower behavior, and escalate too late — leading to missed repayments, damaged trust, and lower recovery rates.
         </p>
+        <p class="product-info-problem-lead">
+          <strong class="product-info-highlight">MidaCollect</strong> replaces ad-hoc collections with structured, intelligent execution. It layers advanced logic on top of standard repayment instruments, coordinates borrower engagement across channels, and enables lenders to act early, turning repayment from a reactive process into a controlled, ethical system.
+        </p>
+        </div>
+        <div class="product-info-problem-visual">
+          <img
+            src="assets/images/pages/collect_problem.png"
+            alt="Repayment instrument setup flow: link, success screen, and instrument card"
+            width="640"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <!-- removed
+          repayment instruments and layer on the art of Mida’s advanced
+-->
       </div>
       <div class="product-cards">
         <div class="product-card">

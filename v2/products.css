@@ -115,6 +115,68 @@
   gap: 88px;
 }
 
+/* The Problem It Solves: two-column layout (copy left, image right) */
+.product-info-problem {
+  width: 100%;
+  max-width: 1240px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.product-info-problem-copy {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.product-info-problem-title {
+  font-family: var(--bold-font-h1);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgba(15, 15, 15, 1);
+  margin: 0;
+  text-align: left;
+}
+
+.product-info-highlight {
+  color: var(--color-secondary);
+}
+
+.product-info-problem-lead {
+  font-family: var(--font-regular-satoshi), var(--regular-font-p-aeonik), sans-serif;
+  font-size: clamp(1rem, 1.1vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(95, 96, 96, 1);
+  margin: 0;
+  text-align: left;
+}
+
+.product-info-problem-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-info-problem-visual img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .product-info-problem {
+    grid-template-columns: 1fr;
+  }
+
+  .product-info-problem-visual {
+    order: -1;
+  }
+}
+
 .product-first-section {
   width: 100%;
   max-width: 1225px;
@@ -363,4 +425,153 @@
 
   /* border-top: 1px solid; */
   /* border-image: linear-gradient(to right, transparent, #34495e, transparent) 1; */
+}
+
+/* —— MidaCollect product hero (matches home-style pill nav + mockup layout) —— */
+/* Same background stack as index.html .hero-section */
+.hero-section.our-collection.midacollect-hero-section {
+  background-color: #ffe1e6;
+  background-image: url(assets/images/pattern-mask-group.png);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: background-image;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.midacollect-hero-fold.our-collection-hero {
+  padding-top: clamp(28px, 4vw, 48px);
+  padding-bottom: clamp(48px, 7vw, 88px);
+}
+
+.midacollect-hero-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 1.12fr);
+  gap: clamp(28px, 5vw, 56px);
+  align-items: center;
+}
+
+.midacollect-hero-copy {
+  text-align: left;
+}
+
+.midacollect-product-logo {
+  display: block;
+  max-width: min(140px, 85vw);
+  width: auto;
+  height: auto;
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+.midacollect-hero-title {
+  font-family: var(--bold-font-h1), var(--font-bold-aeonik), sans-serif;
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin: 0 0 16px;
+}
+
+.midacollect-hero-lead {
+  font-family: var(--font-regular-satoshi), var(--regular-font-p-aeonik), sans-serif;
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #5f6060;
+  max-width: 460px;
+  margin: 0 0 clamp(24px, 3vw, 32px);
+}
+
+/* Hero CTA uses .get-started-header (header-footer.css + ripple in style.css) */
+.midacollect-hero-copy .get-started-header {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.midacollect-hero-visual {
+  position: relative;
+  min-height: min(52vw, 420px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.midacollect-hero-blue {
+  position: absolute;
+  right: 4%;
+  top: 8%;
+  bottom: 8%;
+  width: min(42%, 220px);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #4f8ff7 0%, #2563eb 55%, #1d4ed8 100%);
+  z-index: 0;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25);
+}
+
+.midacollect-hero-visual-frame {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.midacollect-hero-visual-frame img {
+  max-width: 100%;
+  width: min(580px, 100%);
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  filter: drop-shadow(0 20px 50px rgba(18, 43, 67, 0.14));
+}
+
+@media screen and (max-width: 900px) {
+  .midacollect-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .midacollect-hero-copy {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .midacollect-product-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .midacollect-hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .midacollect-hero-visual {
+    justify-content: center;
+    min-height: auto;
+    margin-top: 12px;
+  }
+
+  .midacollect-hero-blue {
+    right: 50%;
+    transform: translateX(38%);
+    width: min(48%, 180px);
+  }
+
+  .midacollect-hero-visual-frame {
+    justify-content: center;
+  }
+
+  .midacollect-hero-visual-frame img {
+    width: min(100%, 480px);
+  }
 }
