@@ -784,7 +784,7 @@
 
 .product-info-problem--forms .product-info-problem-visual img {
   border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(18, 43, 67, 0.08);
+  /* box-shadow: 0 12px 40px rgba(18, 43, 67, 0.08); */
 }
 
 /* MidaForms: Key Capabilities — four equal columns, icon circles */
