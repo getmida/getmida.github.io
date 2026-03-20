@@ -770,7 +770,7 @@
 
 .product-info-problem--recovery .product-info-problem-visual img {
   border-radius: 16px;
-  box-shadow: 0 16px 48px rgba(18, 43, 67, 0.1);
+  /* box-shadow: 0 16px 48px rgba(18, 43, 67, 0.1); */
 }
 
 /* MidaForms: full-bleed light band; image left, copy right */
