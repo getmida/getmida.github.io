@@ -948,6 +948,19 @@ height: Fixed (36px)px; */
   scrollbar-width: thin;
 }
 
+@media screen and (max-width: 767px) {
+  .mida-solution-unified-diagram--interactive .unified-platform-stage--feature-diagram {
+    overflow-y: visible;
+    overflow-x: auto;
+    padding-bottom: 48px;
+  }
+
+  .mida-solution-unified-diagram {
+    padding-bottom: 24px;
+    min-height: 320px;
+  }
+}
+
 /* Interactive feature diagram (replaces unified-platform.png) */
 .unified-feature-diagram {
   position: relative;
@@ -1688,7 +1701,7 @@ html:not(.js) #unified-feature-diagram-root .feature-wrapper {
 
 @media screen and (max-width: 650px) {
   .mida-solution.mida-solution--unified {
-    padding: 56px 20px 64px;
+    padding: 56px 20px 96px;
   }
 }
 
