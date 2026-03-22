@@ -283,10 +283,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) stopAuto()
-    else startAuto()
+    else if (sectionInView) startAuto()
   })
 
-  startAuto()
+  let sectionInView = false
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        sectionInView = entry.isIntersecting
+        if (sectionInView) {
+          startAuto()
+        } else {
+          stopAuto()
+        }
+      })
+    },
+    { threshold: 0.2, rootMargin: '0px' }
+  )
+  observer.observe(root)
 })()
 
 /* Smooth scroll: Explore Our Solutions → #our-solutions (index) */

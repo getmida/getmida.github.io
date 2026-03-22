@@ -63,6 +63,12 @@
 
   .nav-pill-style .nav__list {
     column-gap: 1.75rem;
+    justify-content: center;
+  }
+
+  .nav-pill-style .nav__menu {
+    flex: 1;
+    justify-content: center;
   }
 
   .nav-pill-style .dropdown__button img {
