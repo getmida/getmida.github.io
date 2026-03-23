@@ -968,7 +968,7 @@ height: Fixed (36px)px; */
   max-width: 1000px;
   min-width: min(100%, 620px);
   margin: 0 auto;
-  aspect-ratio: 1000 / 600;
+  aspect-ratio: 1000 / 650;
   min-height: 240px;
   box-sizing: border-box;
   container-type: inline-size;
@@ -1300,6 +1300,7 @@ height: Fixed (36px)px; */
   font-family: var(--font-regular-satoshi), var(--regular-font-p), -apple-system, sans-serif;
   font-size: clamp(9px, 2.5cqw, 12px);
   color: #333;
+  font-size: medium;
   text-align: center;
   line-height: 1.35;
   font-weight: 700;
