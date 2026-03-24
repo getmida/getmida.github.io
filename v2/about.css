@@ -312,11 +312,23 @@
 }
 
 .sustainable-lending-banner__decoration--left {
-  left: clamp(16px, 4vw, 48px);
+  left: 0;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .sustainable-lending-banner__decoration--right {
-  right: clamp(16px, 4vw, 48px);
+  right: 0;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.sustainable-lending-banner__decoration--left img {
+  object-position: left bottom;
+}
+
+.sustainable-lending-banner__decoration--right img {
+  object-position: right bottom;
 }
 
 @media screen and (max-width: 768px) {
