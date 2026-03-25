@@ -33,51 +33,6 @@
 }
 
 @font-face {
-  font-family: 'Aeonik-Bold';
-  src: url('assets/fonts/Aeonik-Bold.woff2') format('woff2'),
-    url('assets/fonts/Aeonik-Bold.woff') format('woff'),
-    url('assets/fonts/Aeonik-Bold.otf') format('opentype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik';
-  src: url('assets/fonts/Aeonik-Medium.woff2') format('woff2'),
-    url('assets/fonts/Aeonik-Medium.woff') format('woff'),
-    url('assets/fonts/Aeonik-Medium.otf') format('opentype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik-regular';
-  src: url('assets/fonts/Aeonik-Regular.woff2') format('woff2'),
-    url('assets/fonts/Aeonik-Regular.woff') format('woff'),
-    url('assets/fonts/Aeonik-Regular.otf') format('opentype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik-meduim';
-  src: url('assets/fonts/Aeonik-Medium.woff2') format('woff2'),
-    url('assets/fonts/Aeonik-Medium.woff') format('woff'),
-    url('assets/fonts/Aeonik-Medium.otf') format('opentype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik-light';
-  src: url('assets/fonts/Aeonik-Light.woff2') format('woff2'),
-    url('assets/fonts/Aeonik-Light.woff') format('woff'),
-    url('assets/fonts/Aeonik-Light.otf') format('opentype');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Satoshi-light';
   src: url('assets/fonts/Satoshi-Light.woff2') format('woff2'),
     url('assets/fonts/Satoshi-Light.woff') format('woff'),

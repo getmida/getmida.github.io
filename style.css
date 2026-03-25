@@ -18,12 +18,12 @@
   --color-light-sky-blue: #e6f6ff;
   --color-sliver-gray: #c8c8c8;
   --regular-font-p: 'Satoshi';
-  --bold-font-h1: 'Aeonik';
+  --bold-font-h1: 'Satoshi-bold';
   --regular-r-font-p: 'Satoshi Regular';
-  --regular-font-p-aeonik: 'Aeonik-regular';
-  --font-bold-aeonik: 'Aeonik-Bold';
-  --font-meduim-aeonik: 'Aeonik-meduim';
-  --font-light-aeonik: 'Aeonik-light';
+  --regular-font-p-aeonik: 'Satoshi-regular';
+  --font-bold-aeonik: 'Satoshi-bold';
+  --font-meduim-aeonik: 'Satoshi';
+  --font-light-aeonik: 'Satoshi-light';
   --font-regular-satoshi: 'Satoshi-regular';
   --font-bold-satoshi: 'Satoshi-bold';
   --font-light-satoshi: 'Satoshi-light';
