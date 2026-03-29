@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const tabRow = root.querySelector('.modular-solutions-tabs')
   if (!tabs.length) return
 
-  const INTERVAL_MS = 3000
+  const INTERVAL_MS = 5000
   const EXIT_MS = 380
   let current = Math.max(
     0,
