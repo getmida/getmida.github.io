@@ -1928,8 +1928,20 @@ html:not(.js) #unified-feature-diagram-root .feature-wrapper {
 }
 
 .modular-product-wordmark--tyche .modular-product-wordmark__tyche {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
   color: #0c1017;
   font-size: 32px;
+  line-height: 1;
+}
+
+.modular-product-wordmark--tyche .modular-product-wordmark__tyche img {
+  height: 1em;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .modular-solutions-subtitle {
