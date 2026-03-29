@@ -1299,15 +1299,22 @@ height: Fixed (36px)px; */
 
 .unified-feature-diagram .feature-label {
   font-family: var(--font-regular-satoshi), var(--regular-font-p), -apple-system, sans-serif;
-  font-size: clamp(9px, 2.5cqw, 12px);
-  color: #333;
   font-size: medium;
+  color: #333;
   text-align: center;
   line-height: 1.35;
   font-weight: 700;
   margin-top: clamp(5px, 1cqw, 14px);
   opacity: 1;
   transition: color 0.3s ease, transform 0.3s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .unified-feature-diagram .feature-label {
+    font-size: clamp(8px, 2.8cqw, 11px);
+    line-height: 1.3;
+    margin-top: clamp(3px, 0.8cqw, 10px);
+  }
 }
 
 .unified-feature-diagram--play .feature-label {
