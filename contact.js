@@ -1,150 +1,78 @@
-// // Maintain selected options globally
-// let selectedHearAboutUsOptions = []
-// let selectedProductOptions = []
+'use strict'
 
-// // Function to initialize custom select dropdown
-// function initializeCustomSelect(selectContainerId) {
-//   const selectContainer = document.getElementById(selectContainerId)
-//   const selectBox = selectContainer.querySelector('.select-box')
-//   const optionsContainer = selectContainer.querySelector('.options-container')
+function syncCheckboxGroup(containerSelector, hiddenInput) {
+  var box = document.querySelector(containerSelector)
+  if (!box || !hiddenInput) return
+  var values = []
+  box.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+    if (cb.checked) values.push(cb.value)
+  })
+  hiddenInput.value = values.join(', ')
+}
 
-//   // Toggle dropdown visibility
-//   selectBox.addEventListener('click', function () {
-//     selectContainer.classList.toggle('open')
-//   })
+document.addEventListener('DOMContentLoaded', function () {
+  var productBox = document.querySelector('#productInterestedIn')
+  var hearBox = document.querySelector('#hearAbout')
+  var productHidden = document.querySelector('input[name="product"]')
+  var hearHidden = document.querySelector('input[name="hearAboutUs"]')
+  var form = document.getElementById('contact-page-form')
+  var errEl = document.getElementById('contact-form-error')
 
-//   // Handle checkbox change events for each checkbox
-//   optionsContainer
-//     .querySelectorAll('input[type="checkbox"]')
-//     .forEach((checkbox) => {
-//       checkbox.addEventListener('change', function (e) {
-//         const value = e.target.value
+  function showError(msg) {
+    if (errEl) {
+      errEl.textContent = msg
+      errEl.hidden = false
+    } else {
+      window.alert(msg)
+    }
+  }
 
-//         if (e.target.checked) {
-//           // Prevent duplicates
-//           if (
-//             selectContainerId === 'howDidYouHearAboutUs' &&
-//             !selectedHearAboutUsOptions.includes(value)
-//           ) {
-//             selectedHearAboutUsOptions.push(value)
-//           } else if (
-//             selectContainerId === 'productInterestedIn' &&
-//             !selectedProductOptions.includes(value)
-//           ) {
-//             selectedProductOptions.push(value)
-//           }
-//         } else {
-//           // Remove unchecked value from selected options
-//           if (selectContainerId === 'howDidYouHearAboutUs') {
-//             selectedHearAboutUsOptions = selectedHearAboutUsOptions.filter(
-//               (item) => item !== value
-//             )
-//           } else if (selectContainerId === 'productInterestedIn') {
-//             selectedProductOptions = selectedProductOptions.filter(
-//               (item) => item !== value
-//             )
-//           }
-//         }
+  function clearError() {
+    if (errEl) {
+      errEl.textContent = ''
+      errEl.hidden = true
+    }
+  }
 
-//         // Update the select box for the specific dropdown
-//         updateSelectBox(
-//           selectBox,
-//           selectContainerId === 'howDidYouHearAboutUs'
-//             ? selectedHearAboutUsOptions
-//             : selectedProductOptions
-//         )
-//       })
-//     })
+  if (productBox && productHidden) {
+    productBox.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+      cb.addEventListener('change', function () {
+        syncCheckboxGroup('#productInterestedIn', productHidden)
+        clearError()
+      })
+    })
+  }
 
-//   // Update the displayed text in the select box
-//   function updateSelectBox(selectBox, selectedOptions) {
-//     selectBox.innerHTML = ''
+  if (hearBox && hearHidden) {
+    hearBox.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+      cb.addEventListener('change', function () {
+        syncCheckboxGroup('#hearAbout', hearHidden)
+        clearError()
+      })
+    })
+  }
 
-//     if (selectedOptions.length > 0) {
-//       selectedOptions.forEach((option) => {
-//         const item = document.createElement('div')
-//         item.classList.add('selected-item')
-//         item.innerHTML = `${option} <span class="remove">x</span>`
+  if (form && hearHidden && productHidden) {
+    form.addEventListener('submit', function (e) {
+      syncCheckboxGroup('#hearAbout', hearHidden)
+      syncCheckboxGroup('#productInterestedIn', productHidden)
 
-//         // Add a click event to the "X" to remove the selected option
-//         item.querySelector('.remove').addEventListener('click', function () {
-//           removeOption(option, selectContainerId)
-//         })
+      var hear = hearHidden.value.trim()
+      var prod = productHidden.value.trim()
 
-//         selectBox.appendChild(item)
-//       })
-//     } else {
-//       selectBox.textContent = 'Select'
-//     }
-//   }
-
-//   // Remove the option when "X" is clicked
-//   function removeOption(value, selectContainerId) {
-//     const checkbox = optionsContainer.querySelector(`input[value="${value}"]`)
-//     if (checkbox) checkbox.checked = false
-
-//     if (selectContainerId === 'howDidYouHearAboutUs') {
-//       selectedHearAboutUsOptions = selectedHearAboutUsOptions.filter(
-//         (item) => item !== value
-//       )
-//     } else if (selectContainerId === 'productInterestedIn') {
-//       selectedProductOptions = selectedProductOptions.filter(
-//         (item) => item !== value
-//       )
-//     }
-
-//     updateSelectBox(
-//       selectBox,
-//       selectContainerId === 'howDidYouHearAboutUs'
-//         ? selectedHearAboutUsOptions
-//         : selectedProductOptions
-//     )
-//   }
-
-//   // Close dropdown if clicking outside
-//   document.addEventListener('click', function (e) {
-//     if (!selectContainer.contains(e.target)) {
-//       selectContainer.classList.remove('open')
-//     }
-//   })
-// }
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   initializeCustomSelect('howDidYouHearAboutUs')
-//   initializeCustomSelect('productInterestedIn')
-// })
-
-// add value of checked checkboxes to input field
-const checkboxes = document.querySelectorAll(
-    "#productInterestedIn input"
-);
-const input = document.querySelector("input[name=product]");
-checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", function () {
-        let values = [];
-        checkboxes.forEach((checkbox) => {
-            if (checkbox.checked) {
-                values.push(checkbox.value);
-            }
-        });
-        input.value = values.join(", ");
-    });
-});
-
-// add value of checked checkboxes to input field
-const checkboxestwo = document.querySelectorAll(
-    "#hearAbout input"
-);
-const inputtwo = document.querySelector("input[name=hearAboutUs]");
-checkboxestwo.forEach((checkboxtwo) => {
-    checkboxtwo.addEventListener("change", function () {
-        let values = [];
-        checkboxestwo.forEach((checkboxtwo) => {
-            if (checkboxtwo.checked) {
-                values.push(checkboxtwo.value);
-            }
-        });
-        inputtwo.value = values.join(", ");
-    });
-});
-
+      if (!hear) {
+        e.preventDefault()
+        showError('Please select at least one option for “How did you hear about us?”.')
+        if (hearBox) hearBox.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        return
+      }
+      if (!prod) {
+        e.preventDefault()
+        showError('Please select at least one product you are interested in.')
+        if (productBox) productBox.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        return
+      }
+      clearError()
+    })
+  }
+})

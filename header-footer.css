@@ -87,7 +87,8 @@
 
 .get-started-header {
   padding: 10px 20px 12px 20px;
-  border-radius: 8px;
+  /* Same radius as .talk-to-us-button (v2/style.css); ripple hover in style.css */
+  border-radius: 8.86px;
   background-color: rgba(237, 15, 132, 1);
   color: rgba(255, 255, 255, 1);
   text-decoration: none;
@@ -97,6 +98,9 @@
   line-height: 19.2px;
   letter-spacing: 0.25px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .nav__link {
@@ -140,9 +144,14 @@
     overflow: auto;
     padding-block: 1.5rem 4rem;
     pointer-events: none;
-    /* opacity: 0; */
-    display: none;
-    transition: top 0.4s, opacity 0.3s;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    /* Longer fade-out when closing; visibility delays until opacity finishes */
+    transition:
+      opacity 0.72s cubic-bezier(0.33, 1, 0.68, 1),
+      visibility 0s linear 0.72s,
+      top 0.5s cubic-bezier(0.33, 1, 0.68, 1);
   }
   .nav__menu::-webkit-scrollbar {
     width: 0.5rem;
@@ -152,9 +161,17 @@
   }
 
   .cta-link-header {
-    margin-top: 30px;
+    margin-top: 1.5rem;
+    margin-left: 0;
+    padding-top: 1.25rem;
     padding-right: 1.5rem;
-    margin-left: 0.25rem;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(208, 205, 205, 1);
+    width: calc(100% - 3rem);
+    max-width: 100%;
+    justify-content: flex-start;
+    gap: 1rem;
   }
 
   .login-header {
@@ -200,6 +217,17 @@
   pointer-events: initial;
   background-color: white;
   z-index: 100;
+}
+
+/* Snappier fade-in on open (mobile); must follow .show-menu for cascade */
+@media screen and (max-width: 931px) {
+  .nav__menu.show-menu {
+    visibility: visible;
+    transition:
+      opacity 0.32s ease-out,
+      visibility 0s,
+      top 0.38s ease-out;
+  }
 }
 
 /* Show icon */
@@ -344,6 +372,18 @@
     column-gap: 2.2rem;
     height: 100%;
     list-style-type: none;
+    align-items: center;
+  }
+
+  /* Space + vertical line before Log in / Get Started */
+  .cta-link-header {
+    margin-left: 0.5rem;
+    padding-left: 1.75rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+    align-self: center;
+    flex-shrink: 0;
+    height: auto;
+    min-height: 2rem;
   }
 
   .show-menu {
@@ -395,8 +435,13 @@
     z-index: 1;
   }
 
-  /* When hovering over the dropdown item */
-  .dropdown__item:hover > .dropdown__container {
+  .inner-hero-section .header-container:hover {
+    background-color: transparent !important;
+  }
+
+  /* Hover or JS .dropdown--open: mega menu is full-width so pointer often leaves the <li> */
+  .dropdown__item:hover > .dropdown__container,
+  .dropdown__item.dropdown--open > .dropdown__container {
     top: 5.5rem;
     visibility: visible;
     opacity: 1;
@@ -463,7 +508,8 @@
   .dropdown__item {
     cursor: pointer;
   }
-  .dropdown__item:hover .dropdown__arrow {
+  .dropdown__item:hover .dropdown__arrow,
+  .dropdown__item.dropdown--open .dropdown__arrow {
     transform: rotate(180deg);
   }
 
@@ -518,7 +564,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    z-index: 0;
+    z-index: 1;
   }
 
   .dropdown-header-card-get-started-header::before {
@@ -558,10 +604,6 @@
     transition: color 0.3s ease-in-out, border-color 0.5s ease-in-out;
   }
 
-  .dropdown-header-card-book-demo-header:hover {
-    border-color: transparent;
-    color: rgba(237, 15, 132, 1);
-  }
 }
 @media screen and (min-width: 993px) {
   .container {
@@ -571,7 +613,7 @@
 
 /* footer csss */
 .section-before-info-footer {
-  background-color: #fbe9f2; /* Set the background color */
+  background-color: #fce8f2; /* Set the background color */
   background-image: url(assets/images/pattern-mask-group.png); /* Set the background image */
   background-blend-mode: multiply; /* Use blending to combine image and color */
   background-size: cover; /* Ensure the image covers the section */

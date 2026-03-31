@@ -1,5 +1,5 @@
 'use strict'
-//accordion-cycle
+//accordion-cycle (skipped on pages without accordion, e.g. index)
 const accordionItems = document.querySelectorAll('.accordion-item')
 const desktopAccordionImages = document.querySelectorAll(
   '.accordion-image-container .accordion-image'
@@ -12,8 +12,8 @@ let currentIndex = 0
 const intervalTime = 3000 // Time between each accordion auto-click (in milliseconds)
 let autoCycleInterval
 
-// Function to handle accordion item click
 function handleAccordionItemClick(index) {
+  if (!accordionItems.length) return
   accordionItems.forEach((item, i) => {
     const isActive = i === index
     item.classList.toggle('active', isActive)
@@ -43,36 +43,32 @@ function handleAccordionItemClick(index) {
   })
 }
 
-// Function to auto-cycle through accordion items
 function autoCycleAccordion() {
+  if (!accordionItems.length) return
   handleAccordionItemClick(currentIndex)
-
-  // Move to the next item, or loop back to the first item
   currentIndex = (currentIndex + 1) % accordionItems.length
 }
 
-// Start auto-cycling
 function startAutoCycle() {
+  if (!accordionItems.length) return
   autoCycleInterval = setInterval(autoCycleAccordion, intervalTime)
 }
 
-// Stop auto-cycling
 function stopAutoCycle() {
-  clearInterval(autoCycleInterval)
+  if (autoCycleInterval) clearInterval(autoCycleInterval)
 }
 
-// Add click event listeners to all accordion items
-accordionItems.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    stopAutoCycle() // Optionally stop auto-cycle on click
-    handleAccordionItemClick(index)
-    currentIndex = index // Update the current index
+if (accordionItems.length > 0) {
+  accordionItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      stopAutoCycle()
+      handleAccordionItemClick(index)
+      currentIndex = index
+    })
   })
-})
-
-// Initialize the first accordion item and start auto-cycling
-handleAccordionItemClick(0)
-startAutoCycle()
+  handleAccordionItemClick(0)
+  startAutoCycle()
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -99,3 +95,228 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   })
 })
+
+/* Modular solutions tabs — auto-advance + pane transitions (index) */
+;(function () {
+  const root = document.querySelector('.modular-solutions')
+  if (!root) return
+  const tabs = Array.from(root.querySelectorAll('.modular-solutions-tab'))
+  const panes = root.querySelectorAll('.modular-solutions-pane')
+  const tabRow = root.querySelector('.modular-solutions-tabs')
+  if (!tabs.length) return
+
+  const INTERVAL_MS = 5000
+  const EXIT_MS = 380
+  let current = Math.max(
+    0,
+    tabs.findIndex((t) => t.classList.contains('is-active'))
+  )
+  let timer = null
+  let exitingPane = null
+  let exitHandler = null
+  let exitFallbackTimer = null
+  let pointerOverTabs = false
+  let pointerOverPanes = false
+
+  function scrollTabIntoView(tab) {
+    if (
+      tabRow &&
+      tabRow.scrollWidth > tabRow.clientWidth + 2
+    ) {
+      tab.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      })
+    }
+  }
+
+  function abortPaneTransition() {
+    if (exitFallbackTimer != null) {
+      window.clearTimeout(exitFallbackTimer)
+      exitFallbackTimer = null
+    }
+    if (exitingPane && exitHandler) {
+      exitingPane.classList.remove('modular-pane--exit')
+      exitingPane.setAttribute('hidden', '')
+      exitingPane.classList.remove('is-active')
+    }
+    exitingPane = null
+    exitHandler = null
+  }
+
+  function revealPane(newPane, tab) {
+    newPane.removeAttribute('hidden')
+    newPane.classList.add('is-active')
+    newPane.classList.add('modular-pane--enter')
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        newPane.classList.remove('modular-pane--enter')
+      })
+    })
+    current = tabs.indexOf(tab)
+    scrollTabIntoView(tab)
+  }
+
+  function activateTab(tab) {
+    const paneId = tab.getAttribute('aria-controls')
+    const newPane = paneId ? document.getElementById(paneId) : null
+    if (!newPane) return
+
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
+    const oldPane = root.querySelector('.modular-solutions-pane:not([hidden])')
+
+    abortPaneTransition()
+
+    tabs.forEach((t) => {
+      const on = t === tab
+      t.classList.toggle('is-active', on)
+      t.setAttribute('aria-selected', on ? 'true' : 'false')
+    })
+
+    if (oldPane === newPane) {
+      current = tabs.indexOf(tab)
+      scrollTabIntoView(tab)
+      return
+    }
+
+    if (reduceMotion) {
+      panes.forEach((p) => {
+        p.setAttribute('hidden', '')
+        p.classList.remove('is-active', 'modular-pane--exit', 'modular-pane--enter')
+      })
+      newPane.removeAttribute('hidden')
+      newPane.classList.add('is-active')
+      current = tabs.indexOf(tab)
+      scrollTabIntoView(tab)
+      return
+    }
+
+    if (!oldPane) {
+      panes.forEach((p) => {
+        p.setAttribute('hidden', '')
+        p.classList.remove('is-active', 'modular-pane--exit', 'modular-pane--enter')
+      })
+      revealPane(newPane, tab)
+      return
+    }
+
+    exitingPane = oldPane
+    exitHandler = function finishExit() {
+      if (exitFallbackTimer != null) {
+        window.clearTimeout(exitFallbackTimer)
+        exitFallbackTimer = null
+      }
+      exitingPane = null
+      exitHandler = null
+      oldPane.setAttribute('hidden', '')
+      oldPane.classList.remove('is-active', 'modular-pane--exit')
+      revealPane(newPane, tab)
+    }
+    window.requestAnimationFrame(() => {
+      oldPane.classList.add('modular-pane--exit')
+    })
+    exitFallbackTimer = window.setTimeout(() => {
+      exitFallbackTimer = null
+      if (exitingPane === oldPane && exitHandler) exitHandler()
+    }, EXIT_MS)
+  }
+
+  function goNext() {
+    const next = (current + 1) % tabs.length
+    activateTab(tabs[next])
+  }
+
+  function stopAuto() {
+    if (timer != null) {
+      window.clearInterval(timer)
+      timer = null
+    }
+  }
+
+  function startAuto() {
+    stopAuto()
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (document.hidden) return
+    if (pointerOverTabs || pointerOverPanes) return
+    timer = window.setInterval(goNext, INTERVAL_MS)
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      activateTab(tab)
+      stopAuto()
+      startAuto()
+    })
+  })
+
+  if (tabRow) {
+    tabRow.addEventListener('mouseenter', () => {
+      pointerOverTabs = true
+      stopAuto()
+    })
+    tabRow.addEventListener('mouseleave', () => {
+      pointerOverTabs = false
+      startAuto()
+    })
+  }
+
+  const paneBody = root.querySelector('.modular-solutions-panes')
+  if (paneBody) {
+    paneBody.addEventListener('mouseenter', () => {
+      pointerOverPanes = true
+      stopAuto()
+    })
+    paneBody.addEventListener('mouseleave', () => {
+      pointerOverPanes = false
+      startAuto()
+    })
+    paneBody.addEventListener('focusin', stopAuto)
+    paneBody.addEventListener('focusout', (e) => {
+      if (!e.relatedTarget || !paneBody.contains(e.relatedTarget)) {
+        startAuto()
+      }
+    })
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopAuto()
+    else if (sectionInView) startAuto()
+  })
+
+  let sectionInView = false
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        sectionInView = entry.isIntersecting
+        if (sectionInView) {
+          startAuto()
+        } else {
+          stopAuto()
+        }
+      })
+    },
+    { threshold: 0.2, rootMargin: '0px' }
+  )
+  observer.observe(root)
+})()
+
+/* Smooth scroll: Explore Our Solutions → #our-solutions (index) */
+;(function () {
+  var btn = document.querySelector('a.book-demo-button[href="#our-solutions"]')
+  var target = document.getElementById('our-solutions')
+  if (!btn || !target) return
+  btn.addEventListener('click', function (e) {
+    e.preventDefault()
+    var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    target.scrollIntoView({
+      behavior: smooth ? 'smooth' : 'auto',
+      block: 'start',
+    })
+    try {
+      history.replaceState(null, '', '#our-solutions')
+    } catch (err) {}
+  })
+})()

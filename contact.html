@@ -16,11 +16,23 @@
     <meta name="description" content="Reach out to Mida Technologies for a personalized walkthrough of our debt collection and recovery solutions. Connect with our experts for tailored financial strategies.">
     <meta name="keywords" content="Contact Mida, debt management solutions, financial technology support, recovery tools, collections solutions.">
 
-    <link rel="stylesheet" href="header-footer.css" />
-    <link rel="stylesheet" href="about.css" />
+    <script>
+      document.documentElement.classList.add('js')
+    </script>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="contact.css" />
     <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="header-footer.css" />
+    <link rel="stylesheet" href="nav-pill.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="cookie-consent.css" />
     <!-- Google Tag Manager -->
     <script>
       ;(function (w, d, s, l, i) {
@@ -36,7 +48,7 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body>
+  <body class="nav-pill-style contact-page">
     <script type="text/javascript">
       _linkedin_partner_id = "8183569";
       window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
@@ -52,15 +64,22 @@
       s.parentNode.insertBefore(b, s);})(window.lintrk);
       </script>
       <noscript>
-      <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8183569&fmt=gif" />
+      <img
+        class="linkedin-insight-pixel"
+        height="1"
+        width="1"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8183569&fmt=gif"
+      />
       </noscript>
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
+        class="gtm-noscript-iframe"
         src="https://www.googletagmanager.com/ns.html?id=GTM-K45GHL4V"
         height="0"
         width="0"
-        style="display: none; visibility: hidden"
+        title=""
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
@@ -72,7 +91,7 @@
             <nav class="nav container">
               <div class="nav__data">
                 <a href="index.html" class="nav__logo">
-                  <img src="assets/images/logo main.png" alt="" srcset="" />
+                  <img src="assets/images/logo main.png" alt="Mida" />
                 </a>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -118,15 +137,15 @@
                             </p>
                             <div class="dropdown-header-card-cta-link-header">
                               <a
-                                href="https://app.getmida.com/register"
+                                href="contact.html"
                                 class="dropdown-header-card-get-started-header"
-                                >Get started</a
+                                >Contact Us</a
                               >
-                              <a
+                              <!-- <a
                                 href="contact.html"
                                 class="dropdown-header-card-book-demo-header"
                                 >Request a demo</a
-                              >
+                              > -->
                             </div>
                           </div>
                         </div>
@@ -187,7 +206,7 @@
                   <!--=============== DROPDOWN 2 ===============-->
                   <li class="dropdown__item">
                     <div class="nav__link dropdown__button">
-                      0ur solutions
+                      Our Solutions
                       <img
                         src="assets/svgs/chevron-down.svg"
                         alt=""
@@ -208,15 +227,15 @@
                             </p>
                             <div class="dropdown-header-card-cta-link-header">
                               <a
-                                href="https://app.getmida.com/register"
+                                href="contact.html"
                                 class="dropdown-header-card-get-started-header"
-                                >Get started</a
+                                >Contact Sales</a
                               >
-                              <a
+                              <!-- <a
                                 href="contact.html"
                                 class="dropdown-header-card-book-demo-header"
                                 >Request a demo</a
-                              >
+                              > -->
                             </div>
                           </div>
                         </div>
@@ -288,7 +307,7 @@
                             </div>
                           </a>
 
-                          <a href="debt-buying.html">
+                          <a href="forms.html">
                             <div class="header-icon-list">
                               <div class="icon-div">
                                 <img
@@ -298,8 +317,8 @@
                                 />
                               </div>
                               <div class="company-about-us">
-                                <h2>Debt Buying</h2>
-                                <p>Purchase of loan portfolio</p>
+                                <h2>MidaForms</h2>
+                                <p>Loan origination and decisioning</p>
                               </div>
                             </div>
                           </a>
@@ -338,16 +357,16 @@
                     <a href="contact.html" class="nav__link">Contact us</a>
                   </li>
 
-                  <div class="cta-link-header">
+                  <!-- <div class="cta-link-header">
                     <a href="https://app.getmida.com/login" class="login-header"
-                      >Log In</a
+                      >Log in</a
                     >
                     <a
-                      href="https://app.getmida.com/register"
+                      href="contact.html"
                       class="get-started-header"
                       >Get Started</a
                     >
-                  </div>
+                  </div> -->
                 </ul>
               </div>
             </nav>
@@ -379,7 +398,7 @@
       </div>
     </section>
 
-    <section class="form">
+    <section class="form" id="contact-form">
       <div class="form-container">
         <div class="form-top-section">
           <h1 class="form-heading">Complete the form</h1>
@@ -577,8 +596,8 @@
                 <input type="checkbox" id="midaX" value="MidaX" />
                 <label for="midaX">MidaX</label>
 
-                <input type="checkbox" id="debtBuying" value="Debt Buying" />
-                <label for="debtBuying">Debt Buying</label>
+                <input type="checkbox" id="debtBuying" value="MidaForms" />
+                <label for="debtBuying">MidaForms</label>
 
                 <input type="checkbox" id="recovery" value="Recovery" />
                 <label for="recovery">Recovery</label>
@@ -793,7 +812,7 @@
                   <ul class="footer-link-list">
                     <li><a href="midacollect.html">MidaCollect</a></li>
                     <li><a href="recovery.html">Recovery</a></li>
-                    <li><a href="v2/forms.html">MidaForms</a></li>
+                    <li><a href="forms.html">MidaForms</a></li>
                     <li><a href="mida-omni.html">MidaOmni</a></li>
                     <li><a href="midax.html">MidaX</a></li>
                     <li><a target="_blank" href="https://tychebanking.com/">Tyche</a></li>
@@ -828,6 +847,16 @@
                   <div class="certification-badges">
                     <div class="ndpr-badge">
                       <img src="assets/images/2024.png" alt="MIDA AFRICA LIMITED NDPR AUDIT COMPLIANT 2024" />
+                    </div>
+                    <div class="footer-iso-badge">
+                      <img
+                        src="assets/images/v2/iso.png"
+                        alt="ISO 27001 Information Security Management Certified"
+                        width="88"
+                        height="88"
+                        loading="lazy"
+                        decoding="async"
+                      />
                     </div>
                   </div>
                 </div>
@@ -879,9 +908,11 @@
       </div>
     </footer>
 
-    <script src="header-footer.js" defer></script>
-    <script src="contact.js"></script>
     <script src="script.js" defer></script>
+    <script src="general.js" defer></script>
+    <script src="header-footer.js" async></script>
+    <script src="cookie-consent.js" defer></script>
+    <script src="contact.js"></script>
     <script>(function(w, d) { w.CollectId = "67e59c163b5fcbcbdb7873c0"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
   </body>
 </html>

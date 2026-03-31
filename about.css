@@ -4,10 +4,10 @@
 
 .hero-left-right-container {
   display: flex;
-  max-width: 973px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 100px 20px 150px 40px;
+  padding: 100px 20px 0px 40px;
   align-items: flex-start;
   justify-content: space-between;
 }
@@ -127,11 +127,11 @@
 }
 
 .passion-section img {
-  max-width: 89.93px;
-  min-height: 89.93px;
   width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .about-passion h2 {
@@ -140,6 +140,10 @@
   font-weight: 700;
   line-height: 71px;
   text-align: left;
+  color: rgba(15, 15, 15, 1);
+}
+
+.about-passion .product-info-highlight {
   color: var(--color-secondary);
 }
 
@@ -166,11 +170,11 @@
 .inner-vision-mission {
   max-width: 1018px;
   width: 100%;
-  padding: 100px 40px;
+  padding: clamp(40px, 5vw, 64px) clamp(24px, 4vw, 40px);
   display: flex;
   margin: 0 auto;
   gap: 80px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 .vision-container {
   max-width: 294px;
@@ -205,11 +209,12 @@
 }
 
 .straightLine {
-  width: 0.9px; /* Width of the vertical line */
-  height: 70vh; /* Height of the vertical line */
-  /* min-height: 287px; */
-  background-color: rgba(168, 206, 216, 1); /* Color of the line */
-  margin: 20px auto; /* Space between the divs and the line */
+  width: 0.9px;
+  flex: 0 0 auto;
+  align-self: stretch;
+  min-height: 0;
+  background-color: rgba(168, 206, 216, 1);
+  margin: 0;
 }
 
 .mission-container {
@@ -258,6 +263,204 @@
   .mission-container {
     max-width: 100%;
     gap: 10px;
+  }
+}
+
+/* Sustainable lending banner */
+.sustainable-lending-banner {
+  width: 100%;
+  background-color: #a3005b;
+  padding: clamp(48px, 6vw, 72px) clamp(24px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 280px;
+}
+
+.sustainable-lending-banner__text {
+  font-family: var(--font-regular-satoshi), sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: white;
+  text-align: center;
+  margin: 0;
+  max-width: 800px;
+  word-wrap: break-word;
+}
+
+.sustainable-lending-banner__text strong {
+  font-weight: 700;
+}
+
+.sustainable-lending-banner__decoration {
+  position: absolute;
+  bottom: 0;
+  width: clamp(240px, 36vw, 480px);
+  height: 240px;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sustainable-lending-banner__decoration img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sustainable-lending-banner__decoration--left {
+  left: 0;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.sustainable-lending-banner__decoration--right {
+  right: 0;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.sustainable-lending-banner__decoration--left img {
+  object-position: left bottom;
+}
+
+.sustainable-lending-banner__decoration--right img {
+  object-position: right bottom;
+}
+
+@media screen and (max-width: 768px) {
+  .sustainable-lending-banner__decoration {
+    display: none;
+  }
+}
+
+/* The Mida Thesis */
+.mida-thesis-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(48px, 6vw, 88px) clamp(24px, 4vw, 48px);
+}
+
+.mida-thesis-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(48px, 8vw, 96px);
+  align-items: start;
+}
+
+.mida-thesis-title {
+  font-family: var(--font-bold-satoshi), var(--font-regular-satoshi), sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgba(15, 15, 15, 1);
+  margin: 0;
+  text-align: left;
+}
+
+.mida-thesis-title .product-info-highlight {
+  color: var(--color-secondary);
+}
+
+.mida-thesis-copy {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.mida-thesis-copy p {
+  font-family: var(--font-light-satoshi), var(--font-regular-satoshi), sans-serif;
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(15, 15, 15, 1);
+  margin: 0;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .mida-thesis-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .mida-thesis-title,
+  .mida-thesis-copy p {
+    text-align: center;
+  }
+}
+
+/* How We Work */
+.how-we-work-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(48px, 6vw, 88px) clamp(24px, 4vw, 48px);
+}
+
+.how-we-work-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(48px, 8vw, 96px);
+  align-items: start;
+}
+
+.how-we-work-title {
+  font-family: var(--font-bold-satoshi), var(--font-regular-satoshi), sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgba(15, 15, 15, 1);
+  margin: 0;
+  text-align: left;
+}
+
+.how-we-work-title .product-info-highlight {
+  color: var(--color-secondary);
+}
+
+.how-we-work-copy {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.how-we-work-subtitle {
+  font-family: var(--font-bold-satoshi), var(--font-regular-satoshi), sans-serif;
+  font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: rgba(15, 15, 15, 1);
+  margin: 0;
+  text-align: left;
+}
+
+.how-we-work-copy p {
+  font-family: var(--font-light-satoshi), var(--font-regular-satoshi), sans-serif;
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(15, 15, 15, 1);
+  margin: 0;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .how-we-work-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .how-we-work-title,
+  .how-we-work-subtitle,
+  .how-we-work-copy p {
+    text-align: center;
   }
 }
 

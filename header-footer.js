@@ -64,7 +64,7 @@ const removeStyle = () => {
       e.removeAttribute('style')
     })
 
-    // Remove the show-dropdown class from dropdown item
+    // Remove the show-dropdown class from each dropdown item
     dropdownItems.forEach((e) => {
       e.classList.remove('show-dropdown')
     })
@@ -73,21 +73,73 @@ const removeStyle = () => {
 
 addEventListener('resize', removeStyle)
 
-const headerContainer = document.querySelector('.header-container')
-const drop = document.querySelectorAll('.dropdown__item')
+/*=============== DESKTOP MEGA MENU: stay open while moving to submenu ===============*/
+;(function () {
+  const DESKTOP = matchMedia('(min-width: 931px)')
+  const CLOSE_DELAY_MS = 380
+  const headerContainer = document.querySelector('.header-container')
 
+  function clearOpenState() {
+    document.querySelectorAll('.dropdown__item.dropdown--open').forEach((el) => {
+      el.classList.remove('dropdown--open')
+    })
+    if (headerContainer && DESKTOP.matches) {
+      headerContainer.style.backgroundColor = ''
+      headerContainer.style.width = ''
+    }
+  }
 
+  function setupDesktopMegaHover() {
+    if (!DESKTOP.matches) {
+      clearOpenState()
+      return
+    }
 
+    dropdownItems.forEach((item) => {
+      if (item.dataset.megaNavHoverBound === '1') return
+      item.dataset.megaNavHoverBound = '1'
 
-drop.forEach((list) => {
-  list.addEventListener('mouseover', () => {
-    headerContainer.style.backgroundColor = 'white'
-    headerContainer.style.width = '100%'
+      const container = item.querySelector('.dropdown__container')
+      if (!container) return
+
+      let closeTimer
+
+      const armOpen = () => {
+        clearTimeout(closeTimer)
+        item.classList.add('dropdown--open')
+        if (headerContainer) {
+          headerContainer.style.backgroundColor = 'white'
+          headerContainer.style.width = '100%'
+        }
+      }
+
+      const scheduleClose = () => {
+        clearTimeout(closeTimer)
+        closeTimer = setTimeout(() => {
+          item.classList.remove('dropdown--open')
+          const anyOpen = document.querySelector('.dropdown__item.dropdown--open')
+          if (headerContainer && !anyOpen) {
+            headerContainer.style.backgroundColor = ''
+            headerContainer.style.width = ''
+          }
+        }, CLOSE_DELAY_MS)
+      }
+
+      item.addEventListener('mouseenter', armOpen)
+      item.addEventListener('mouseleave', scheduleClose)
+      container.addEventListener('mouseenter', armOpen)
+      container.addEventListener('mouseleave', scheduleClose)
+    })
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupDesktopMegaHover)
+  } else {
+    setupDesktopMegaHover()
+  }
+
+  DESKTOP.addEventListener('change', () => {
+    clearOpenState()
+    setupDesktopMegaHover()
   })
-})
-
-drop.forEach((list) => {
-  list.addEventListener('mouseout', () => {
-    headerContainer.style.backgroundColor = 'transparent'
-  })
-})
+})()
