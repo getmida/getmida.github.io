@@ -17,17 +17,17 @@
   --color-pale-pink: #ffd9ed;
   --color-light-sky-blue: #e6f6ff;
   --color-sliver-gray: #c8c8c8;
-  --regular-font-p: 'Satoshi';
-  --bold-font-h1: 'Satoshi-bold';
-  --regular-r-font-p: 'Satoshi Regular';
-  --regular-font-p-aeonik: 'Satoshi-regular';
-  --font-bold-aeonik: 'Satoshi-bold';
-  --font-meduim-aeonik: 'Satoshi';
-  --font-light-aeonik: 'Satoshi-light';
-  --font-regular-satoshi: 'Satoshi-regular';
-  --font-bold-satoshi: 'Satoshi-bold';
-  --font-light-satoshi: 'Satoshi-light';
-  --font-outfit: 'outfit';
+  --regular-font-p: 'Aeonik';
+  --bold-font-h1: 'Aeonik';
+  --regular-r-font-p: 'Aeonik';
+  --regular-font-p-aeonik: 'Aeonik';
+  --font-bold-aeonik: 'Aeonik';
+  --font-meduim-aeonik: 'Aeonik';
+  --font-light-aeonik: 'Aeonik';
+  --font-regular-satoshi: 'Aeonik';
+  --font-bold-satoshi: 'Aeonik';
+  --font-light-satoshi: 'Aeonik';
+  --font-outfit: 'Aeonik';
 }
 
 *,
